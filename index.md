@@ -8,17 +8,6 @@
     <link rel="stylesheet" type="text/css" href="responsive.css">
     <link rel="shortcut icon" href="favicon.ico" >
 
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <a href="/" style="text-decoration: none">
-          <h1>Archives</h1>
-        </a>
-        <h2>keeping_the_blinds_closed.exe</h2>
-      </div>
-    </header>
-
     <div class="container">
       <section id="main_content">
         <h1>Welcome to my directory!</h1>

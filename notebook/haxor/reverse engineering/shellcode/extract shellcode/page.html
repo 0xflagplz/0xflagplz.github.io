@@ -1,0 +1,39 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Extract Shellcode</title>
+</head><body><span style="font-size: 14pt"><br/>
+for i in $(objdump -d helloworld |grep &quot;^ &quot; |cut -f2)<br/>
+&gt;&gt; do echo -n '\x'$i<br/>
+&gt;&gt; done<br/>
+&gt;&gt; echo  <br/>
+</span><img height="62" src="image.png" width="850"/><br/>
+<br/>
+<b><span style="font-size: 16pt">or<br/>
+<br/>
+BEST SHELLCODE EXTRACTION:<br/>
+objdump -d ./shellcode|grep '[0-9a-f]:'|grep -v 'file'|cut -f2 -d:|cut -f1-6 -d' '|tr -s ' '|tr '\t' ' '|sed 's/ $//g'|sed 's/ /\\x/g'|paste -d '' -s |sed 's/^/&quot;/'|sed 's/$/&quot;/g'<br/>
+<br/>
+<br/>
+</span></b><b><span style="font-size: 16pt">meh:</span></b><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 14pt">for i in $(objdump -d shellcode.o |grep &quot;^ &quot; |cut -f2); do echo -n '\x'$i; done; echo; print &quot;&quot;</span></li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 14pt">--print at the end is only to give more space since linux terminal <b>sucks cock</b></span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br/>
+<span style="font-size: 12pt">mov [rsp], 1<br/>
+  <b>- </b><span style="font-family: inherit">&quot;Move 1 into the address stored in rsp&quot;</span><br/>
+  <b>-</b>or in C terms <br/>
+<br/>
+</span>xor the thing stored at the address of rsp with rax; then store it at the address of rsp again<br/>
+<br/>
+<br/>
+ln command - link<br/>
+<br/>
+ln -s /flag f<br/>
+<br/>
+then catf<br/>
+<img src="image 2.png"/><br/>
+<img src="image 3.png"/></body></html>

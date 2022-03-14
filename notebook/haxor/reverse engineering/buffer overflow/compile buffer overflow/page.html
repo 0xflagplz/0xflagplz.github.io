@@ -1,0 +1,15 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Compile Buffer Overflow</title>
+</head><body><span style="font-size: 16pt">gcc overflow.c -o overflow -fno-stack-protector -z execstack -no-pie </span><br/>
+<img src="image.png"/><br/>
+<br/>
+<span style="font-size: 16pt">run code in gdb<br/>
+&gt; gdb ./overflow<br/>
+<br/>
+</span><span style="font-size: 16pt">x/10i $eip </span><br/>
+<img src="image 2.png"/><br/>
+<br/>
+<span style="font-size: 18pt">x/6xb 0x8048484 <br/>
+</span><img src="image 3.png"/></body></html>

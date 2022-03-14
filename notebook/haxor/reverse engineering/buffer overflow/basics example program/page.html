@@ -1,0 +1,22 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Basics example program</title>
+</head><body><span style="font-size: 14pt">Anything with a <b>gets()</b>will be succeptable to a buffer overflow (unless a canary is active which will shut it down)<br/>
+</span><span style="font-size: 14pt">So lets look at a simple buffer overflow example.</span><br/>
+<br/>
+#include &lt;stdlib.h&gt;<br/>
+#include &lt;unistd.h&gt;<br/>
+#include &lt;stdio.h&gt;<br/>
+#include &lt;string.h&gt;<br/>
+<br/>
+int main(int argc, char **argv)<br/>
+{<br/>
+char buffer[55];<br/>
+<br/>
+gets(buffer);<br/>
+} <br/>
+<br/>
+<span style="font-size: 14pt">How do we know where the overflow starts?</span><ul><li style="list-style-type: none"><span style="font-size: 12pt">&gt; We look to get a segmentation fault (i.e. we run out of memory for our input)</span></li>
+</ul>
+</body></html>

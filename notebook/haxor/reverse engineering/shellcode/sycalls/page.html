@@ -1,0 +1,69 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>sycalls</title>
+</head><body><a href="https://chromium.googlesource.com/chromiumos/docs/+/master/constants/syscalls.mdWhat is shellcoding?W">https://chromium.googlesource.com/chromiumos/docs/+/master/constants/syscalls.md<br/>
+<br/>
+</a><span style="font-size: 18pt">What is shellcoding?</span><ul><span style="font-size: 18pt"><li style="list-style-type: none">Shellcoding is the process of generating code in order to redirect the programs registers</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">How does one do this?</li>
+</span><li style="list-style-type: none"><ul><span style="font-size: 18pt"><li style="list-style-type: none">System calls.</li>
+<li style="list-style-type: none">Notice all the system calls in this graph have arguments</li>
+</span><li style="list-style-type: none"><ul><span style="font-size: 18pt"><li style="list-style-type: none">These arguments are the values that certain registers hold</li>
+<li style="list-style-type: none"/>
+<span style="font-size: 16pt"><li style="list-style-type: none">an example lets say syscall 2 (open)</li>
+</span></span><li style="list-style-type: none"><ul><span style="font-size: 18pt"><span style="font-size: 16pt"><li style="list-style-type: none">the <b>rdi</b>needs to hold the filename (in little endian)</li>
+<li style="list-style-type: none">the <b>rsi</b>is going to hold the path</li>
+</span></span><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 14pt">by pushing the path into rax, then putting the contents of rax inside the address of rsp, then moving the rsp(pointer) into rdi</span><span style="font-size: 18pt"><span style="font-size: 16pt"/></span></li>
+</ul>
+</li>
+<span style="font-size: 18pt"><span style="font-size: 16pt"><li style="list-style-type: none"><b>ESI</b>will represent what our permissions are (going for O_RDONLY)</li>
+</span></span><li style="list-style-type: none"><ul><span style="font-size: 14pt"><li style="list-style-type: none">O_RDONLY = 0</li>
+<li style="list-style-type: none">SO to get 0 inside esi, we can <b>xor esi, esi</b></li>
+</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 14pt">***xor'ing a register by itself zeros it out</span><span style="font-size: 18pt"><span style="font-size: 16pt"/></span></li>
+</ul>
+</li>
+</ul>
+</li>
+<span style="font-size: 18pt"><li style="list-style-type: none"/>
+</span></ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<a href="https://chromium.googlesource.com/chromiumos/docs/+/master/constants/syscalls.mdWhat is shellcoding?W"><br/>
+<br/>
+https://chromium.googlesource.com/chromiumos/docs/+/master/constants/syscalls.md#arm-32_bit_EABI<br/>
+</a><img height="563" src="image.png" width="900"/><br/>
+<br/>
+<br/>
+<span style="font-size: 16pt">So lets do an example (lets try and cat /etc/passwd)</span><br/>
+<br/>
+<img src="image 2.png"/><br/>
+<br/>
+<span style="font-size: 16pt">So lets do a simple breakdown of what is going on.</span><br/>
+Lets focus on the syscalls<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

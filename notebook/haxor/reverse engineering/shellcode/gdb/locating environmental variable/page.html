@@ -1,0 +1,9 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Locating Environmental variable </title>
+</head><body><span style="font-size: 16pt">Locating environmental variables<br/>
+</span><span style="font-size: 12pt">(gdb) x/s *((char **)environ) <br/>
+&gt;0xbffff688: &quot;SSH_AGENT_PID=2107&quot; <br/>
+(gdb) x/s *((char **)environ+1) <br/>
+&gt;0xbffff69b: &quot;SHELL=/bin/bash&quot; </span></body></html>

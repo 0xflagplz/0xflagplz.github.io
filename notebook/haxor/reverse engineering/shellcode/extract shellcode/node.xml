@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>da4993cd-962f-4d7f-8809-79afda72e4b9</string>
+  <key>title</key><string>Extract Shellcode</string>
+  <key>nodeid</key><string>33c6212e-5085-4b06-9115-2f8314922fe4</string>
+  <key>modified_time</key><integer>1624320730</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1610726425</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>9</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>a5534b1f-5d6b-4153-8482-650a0d47647c</string>
+  <key>title</key><string>Remote Powershell commands</string>
+  <key>nodeid</key><string>e5b240a4-24c1-472d-bea3-effa529e150d</string>
+  <key>modified_time</key><integer>1623517946</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1623516981</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>0</integer>
+  <key>info_sort</key><string>order</string>
+  <key>icon</key><string>note-red.png</string>
+</dict>
+</node>

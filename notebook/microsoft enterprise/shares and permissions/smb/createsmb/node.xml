@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>expanded</key><true/>
+  <key>duplicate_of</key><string>d6bd68c3-f834-478f-9b78-78e444614503</string>
+  <key>title</key><string>CreateSMB</string>
+  <key>nodeid</key><string>f35a17d4-ae36-4150-ac27-a50a54557b7c</string>
+  <key>modified_time</key><integer>1623714551</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1623712908</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>0</integer>
+  <key>info_sort</key><string>order</string>
+  <key>icon</key><string>note-orange.png</string>
+</dict>
+</node>

@@ -1,0 +1,13 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Navigating user groups</title>
+</head><body><span style="font-size: 16pt">Enumerate the users in group IT</span><span style="font-size: 14pt"/><span style="font-size: 14pt"><ul><li style="list-style-type: none">Get-ADUser –Filter * -SearchBase “OU=IT, DC=Cyber, DC=local” – SearchScope subtree </li>
+</ul>
+<br/>
+</span><span style="font-size: 16pt">Add User to Group</span><span style="font-size: 14pt"/><ul><span style="font-size: 14pt"><li style="list-style-type: none">New-ADUser –Name Test1 –SamAccountName Test1 –path “OU=IT, DC=Cyber, DC=local” </li>
+<li style="list-style-type: none"/>
+</span></ul>
+<span style="font-size: 20pt">Show user groups</span><span style="font-size: 16pt"/><ul><li style="list-style-type: none"><span style="font-size: 16pt">&gt; </span>Get-ADPrincipalGroupMembership &lt;username&gt; | select name </li>
+</ul>
+</body></html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>77d6be7f-0fe2-416f-8c03-efc5c8b51e7e</string>
+  <key>title</key><string>Powershell vs CMD</string>
+  <key>nodeid</key><string>b83475a2-e47b-48eb-b852-b9a4105cf5a2</string>
+  <key>modified_time</key><integer>1623283639</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1623283283</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>4</integer>
+  <key>info_sort</key><string>order</string>
+  <key>icon</key><string>note-red.png</string>
+</dict>
+</node>

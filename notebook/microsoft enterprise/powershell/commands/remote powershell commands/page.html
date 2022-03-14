@@ -1,0 +1,48 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Remote Powershell commands</title>
+</head><body><span style="font-size: 16pt">Enable remote PowerSell commands on the Client that will get connected to<ul><li style="list-style-type: none">&gt; Enable-PSRemoting -force</li>
+<li style="list-style-type: none"/>
+</ul>
+Within services.msc</span><ul><span style="font-size: 16pt"><li style="list-style-type: none">find Windows Remote Management &gt;&gt;&gt;&gt; enable it</li>
+<li style="list-style-type: none"/>
+</span></ul>
+<span style="font-size: 18pt">=================================================================<br/>
+</span><br/>
+<span style="font-size: 16pt">Show remote computers name </span><ul><span style="font-size: 12pt"><li style="list-style-type: none">&gt;<b>Invoke-Command -ComputerName Client10 -Credential Cyber\administrator -ScriptBlock {hostname}</b></li>
+<li style="list-style-type: none">- crediantal Cyber\administrator isn't necessary wen running on admin account</li>
+<li style="list-style-type: none">- the response to this command was </li>
+</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 12pt">response&gt; Client 10</span><span style="font-size: 14pt"/></li>
+<span style="font-size: 14pt"><li style="list-style-type: none"/>
+</span></ul>
+</li>
+</ul>
+<span style="font-size: 16pt">Create Local user on remote client</span><ul><span style="font-size: 12pt"><li style="list-style-type: none">&gt; <b>Invoke-Command -ComputerName Client10 -Credential Cyber\administrator -ScriptBlock {net user invoke_user Passw0rd123 /add}</b></li>
+<b><li style="list-style-type: none"/>
+</b></span></ul>
+<span style="font-size: 16pt"><ul>Want to verify the user was created?</ul>
+</span><ul><li style="list-style-type: none"><ul><span style="font-size: 12pt"><li style="list-style-type: none">&gt; <b>Invoke-Command -ComputerName Client10 -Credential Cyber\administrator -Script {net user}</b></li>
+<b><li style="list-style-type: none"/>
+</b></span></ul>
+</li>
+</ul>
+<span style="font-size: 18pt">=================================================================</span><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><b><span style="font-size: 12pt"/></b></li>
+<b><span style="font-size: 12pt"><li style="list-style-type: none"/>
+</span></b></ul>
+</li>
+</ul>
+<span style="font-size: 16pt">Start session between server and client</span><ul><li style="list-style-type: none"><span style="font-size: 16pt">&gt; </span><span style="font-size: 12pt">Enter-PSSession</span></li>
+<span style="font-size: 12pt"><li style="list-style-type: none">- then insert the right computer Name</li>
+</span></ul>
+<ul><span style="font-size: 12pt">- check you are</span></ul>
+<span style="font-size: 14pt"/><span style="font-size: 12pt">logged in correctly with command</span><ul><li style="list-style-type: none"><ul><span style="font-size: 12pt"><li style="list-style-type: none">&gt; hostname </li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">Make the client that you connected to restart</li>
+</span><li style="list-style-type: none"><ul><span style="font-size: 12pt"><li style="list-style-type: none">&gt; Restart-Computer -force</li>
+</span></ul>
+</li>
+</ul>
+</li>
+</ul>
+</body></html>

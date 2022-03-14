@@ -1,0 +1,67 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Bitlocker</title>
+</head><body><span style="font-size: 18pt">Built Into windows 10<ul><li style="list-style-type: none">provides a disk encryption for the OS</li>
+<li style="list-style-type: none"/>
+</ul>
+Encryption uses AES, support for key lengths of 128 and 256<br/>
+<br/>
+Provides pre-boot protection, network unlock, GUI, and PowerShell management<br/>
+</span><span style="font-size: 26pt">=====================================<br/>
+</span><span style="font-size: 16pt">Implementation on Windows Server:<br/>
+</span><img src="image.png"/><br/>
+<img src="image 2.png"/><br/>
+<br/>
+<span style="font-family: sans-serif"><span style="font-size: 14pt">In this task, you will configure a policy for BitLocker to authenticate without a TPM chip because the chip does not exist on the VM<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</span></span><br/>
+<span style="font-family: sans-serif"><span style="font-size: 14pt">Create New GPO inside <b>Group Policy Objects </b>folder</span></span><ul><span style="font-size: 14pt"><li style="list-style-type: none">Name it TPM</li>
+<li style="list-style-type: none">Navigate to Operating System Drives</li>
+</span></ul>
+<img src="image 3.png"/><img height="359" src="image 4.png" width="300"/><br/>
+<span style="font-size: 16pt">Then</span><br/>
+<img src="image 5.png"/><br/>
+<span style="font-size: 16pt">And select your new GPO<br/>
+</span><br/>
+<span style="font-size: 26pt">=====================================</span><br/>
+<span style="font-size: 18pt">OPEN WINDOWS 10 CLIENT<br/>
+</span><span style="font-size: 16pt">search for Manage BitLocker<br/>
+</span><img src="image 6.png"/><span style="font-size: 16pt"><br/>
+</span><img src="image 7.png"/><br/>
+<br/>
+<br/>
+<span style="font-size: 18pt">Print/ Save the Recovery Key somewhere </span><br/>
+<br/>
+<img src="image 8.png"/><br/>
+<img src="image 9.png"/><span style="font-size: 18pt"><br/>
+</span><span style="font-size: 18pt">RESTART AND YOUR DISK IS ENCRYPTED</span><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

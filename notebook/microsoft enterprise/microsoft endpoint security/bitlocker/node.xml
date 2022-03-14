@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>e680446f-1263-413c-97f5-51e48329e785</string>
+  <key>title</key><string>Bitlocker</string>
+  <key>nodeid</key><string>edbb34d5-fb24-4672-8715-ed3d5b597be2</string>
+  <key>modified_time</key><integer>1623886295</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1623882256</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>1</integer>
+  <key>info_sort</key><string>order</string>
+  <key>icon</key><string>note-red.png</string>
+</dict>
+</node>

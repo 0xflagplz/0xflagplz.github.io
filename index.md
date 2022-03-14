@@ -18,8 +18,8 @@
         </div>
         <span class="fa fa-bars menu-icon"></span>
         <div class="header-right">
-          <a href="#">Notes</a>
-          <a href="#">Rubber Ducky</a>
+          <a href="#">Notes</a> <br>
+          <a href="#">Rubber Ducky</a> <br>
           <a href="#">Repo List</a>
         </div>
       </div>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>expanded</key><true/>
+  <key>duplicate_of</key><string>ebfcf102-6565-4510-b51b-bc9d750f4e0b</string>
+  <key>title</key><string>Created Shared FOlders</string>
+  <key>nodeid</key><string>6ce58aed-a624-4f04-ae31-a59c3d1f8807</string>
+  <key>modified_time</key><integer>1623113710</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1623107803</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>2</integer>
+  <key>info_sort</key><string>order</string>
+  <key>icon</key><string>note-blue.png</string>
+</dict>
+</node>

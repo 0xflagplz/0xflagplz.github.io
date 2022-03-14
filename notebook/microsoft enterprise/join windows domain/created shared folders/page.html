@@ -1,0 +1,34 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Created Shared FOlders</title>
+</head><body><img height="282" src="image 2.png" width="350"/><br/>
+<br/>
+<span style="font-size: 22pt">2 Shared folders from domain controller<br/>
+&gt;netlogon<br/>
+</span><span style="font-size: 22pt">&gt;sysvol</span><span style="font-size: 16pt"><br/>
+</span><span style="font-size: 16pt"><br/>
+Right click folder that is to be shared &gt; Shre With &gt; Specific People<br/>
+<br/>
+Enter Who its shared with (you can type Everyone)<br/>
+</span><img height="488" src="image.png" width="650"/><br/>
+<br/>
+<span style="font-size: 18pt">Next Step: Create A Group Policy <br/>
+<br/>
+</span><span style="font-size: 14pt">Head to the Logon section to upload a batch to mount the folder</span><ul><span style="font-size: 14pt"><li style="list-style-type: none">Batch Script:</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">&gt; net use A: \\server1\share</li>
+<li style="list-style-type: none"/>
+</ul>
+</li>
+<li style="list-style-type: none">Batch Script Location:</li>
+</span><li style="list-style-type: none"><ul><span style="font-size: 14pt"><li style="list-style-type: none">User Configuration &gt; Policies &gt; Windows Settings &gt; Scripts(Logon/Logoff)</li>
+<li style="list-style-type: none">Put script in this location</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">&gt; User\Scripts\Logon\&lt;batch file here&gt;</li>
+</ul>
+</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">simple shared folder mount within the network tied to cyber.local</li>
+</span></ul>
+</li>
+</ul>
+</body></html>

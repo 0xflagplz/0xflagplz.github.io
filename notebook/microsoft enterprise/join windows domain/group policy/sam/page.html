@@ -1,0 +1,25 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>SAM</title>
+</head><body><span style="font-size: 14pt">Group Policy manaement overrides the SAM of the pc</span><br/>
+<br/>
+<span style="font-size: 14pt">SAM :</span><ul><span style="font-size: 12pt"><li style="list-style-type: none"><div style="text-align: left"><span style="font-family: Roboto">-The Security Account Manager (</span></div>SAM<div style="text-align: left"><span style="font-family: Roboto">) is a database that is present on </span></div>computers<div style="text-align: left"><span style="font-family: Roboto"> running Windows operating systems that stores user accounts and security descriptors for users on the local </span></div>computer </li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">- stores all the users passwords and its used to authenticate local/ remote users</li>
+<li style="list-style-type: none"/>
+</span><span style="font-size: 16pt"><li style="list-style-type: none">Where is SAM located?<span style="font-size: 12pt"/></li>
+</span><li style="list-style-type: none"><ul><span style="font-size: 16pt"><span style="font-size: 12pt"><li style="list-style-type: none">- HKEY_LOCAL_MACHINE</li>
+<li style="list-style-type: none"/>
+</span></span><li style="list-style-type: none"><span style="font-size: 12pt">-<div style="text-align: left"><span style="font-family: Roboto">The </span></div>SAM database<div style="text-align: left"><span style="font-family: Roboto"> is part of the registry. It's stored in the <b>HKEY_LOCAL_MACHINE\SECURITY\</b></span></div><b>SAM</b><div style="text-align: left"><span style="font-family: Roboto"> subkey and <b>duplicated</b>to the <b>HKEY_LOCAL_MACHINE\</b></span></div><b>SAM</b><div style="text-align: left"><span style="font-family: Roboto"> subkey.</span></div> </span><span style="font-size: 16pt"/></li>
+</ul>
+</li>
+</ul>
+<span style="font-size: 16pt"/><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 12pt">- <div style="text-align: left"><span style="font-family: Roboto">At the file-system level, the </span></div>SAM<div style="text-align: left"><span style="font-family: Roboto"> registry files are stored together with the rest of the registry files under <b>\%systemroot%\system32\config</b></span></div><b> </b></span><span style="font-size: 16pt"/></li>
+</ul>
+</li>
+</ul>
+<span style="font-size: 12pt"><br/>
+</span><span style="font-size: 14pt">SysKey :</span><ul><span style="font-size: 12pt"><li style="list-style-type: none">-<span style="font-family: Roboto"><div style="text-align: left">Windows internal root encryption key that's </div></span>used to<div style="text-align: left"><span style="font-family: Roboto"> encrypt other sensitive OS state data</span></div> </li>
+</span></ul>
+</body></html>

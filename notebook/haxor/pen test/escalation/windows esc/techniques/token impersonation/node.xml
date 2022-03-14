@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>589b0942-86fb-4360-a9eb-ff1b00bd3988</string>
+  <key>title</key><string>Token Impersonation</string>
+  <key>nodeid</key><string>3405cc96-85e5-4e52-9e04-47a6f25245f8</string>
+  <key>modified_time</key><integer>1623687817</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1623686981</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>1</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

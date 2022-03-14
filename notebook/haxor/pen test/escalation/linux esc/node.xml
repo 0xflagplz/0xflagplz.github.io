@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>expanded</key><true/>
+  <key>duplicate_of</key><string>101b247d-e506-4238-a8d6-29a5321015b4</string>
+  <key>nodeid</key><string>22b3abed-4d43-44ad-88e4-033e9c50994b</string>
+  <key>modified_time</key><integer>1623346454</integer>
+  <key>content_type</key><string>application/x-notebook-dir</string>
+  <key>created_time</key><integer>1623346454</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>icon</key><string>folder-violet.png</string>
+  <key>title</key><string>Linux Esc</string>
+  <key>version</key><integer>6</integer>
+  <key>order</key><integer>2</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

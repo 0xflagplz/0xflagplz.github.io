@@ -1,0 +1,37 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Password Hunting</title>
+</head><body><span style="font-size: 18pt">===================================================<br/>
+</span><span style="font-size: 18pt">Searching Directories for specific files/names</span><span style="font-size: 16pt"><br/>
+</span><span style="font-size: 16pt">&gt; findstr /si password <br/>
+</span><span style="font-size: 16pt">Can add to this search</span><ul><span style="font-size: 16pt"><li style="list-style-type: none">&gt; findstr /si password *.txt *.ini *.config</li>
+<li style="list-style-type: none">- searches for file names password, .txt, .ini, .config files</li>
+</span></ul>
+<span style="font-size: 18pt">===================================================<br/>
+</span><span style="font-size: 16pt">Literally has every possibly PRIVESC strat</span><span style="font-size: 18pt"><br/>
+</span><a href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md<br/>
+</a><span style="font-size: 18pt">===================================================<br/>
+Wifi Passwords<br/>
+</span><span style="font-size: 16pt">enumerate:<ul><li style="list-style-type: none">&gt; netsh wlan show profile</li>
+</ul>
+<br/>
+Get Cleartext Password:<ul><li style="list-style-type: none">&gt; netsh wlan show profile &lt;SSID&gt; key=clear</li>
+<li style="list-style-type: none"/>
+</ul>
+</span><span style="font-size: 16pt">One liner to extract all passwords from all access points:</span><br/>
+<span style="font-size: 16pt">&gt; </span>cls &amp; echo. &amp; for /f &quot;tokens=4 delims=: &quot; %a in ('netsh wlan show profiles ^| find &quot;Profile &quot;') do @echo off &gt; nul &amp; (netsh wlan show profiles name=%a key=clear | findstr &quot;SSID Cipher Content&quot; | find /v &quot;Number&quot; &amp; echo.) &amp; @echo on<ul><li style="list-style-type: none"/>
+</ul>
+<span style="font-size: 18pt">===================================================<br/>
+REG Query password search</span><ul><li style="list-style-type: none"><span style="font-size: 14pt">&gt; reg query HKLM /f password /t REG_SZ /s </span><span style="font-size: 16pt"/></li>
+</ul>
+<span style="font-size: 16pt">Search windows registry</span><ul><li style="list-style-type: none"><span style="font-size: 14pt">&gt; </span><span style="font-size: 12pt">reg query &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon&quot;</span></li>
+</ul>
+<span style="font-size: 18pt"><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</span></body></html>

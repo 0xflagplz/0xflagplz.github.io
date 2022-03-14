@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>6f238ffd-ae8f-48d9-8b26-b4159d65198b</string>
+  <key>title</key><string>Linux Just landed one liner</string>
+  <key>nodeid</key><string>6cb979b4-be55-42fa-aeed-071e8884d8e4</string>
+  <key>modified_time</key><integer>1623203221</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1616365353</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>4</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

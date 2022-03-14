@@ -1,0 +1,29 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>AV Enumeration</title>
+</head><body><span style="font-size: 18pt">Enumerate windows defender status</span><ul><span style="font-size: 16pt"><li style="list-style-type: none">&gt; sc query windefend</li>
+</span><span style="font-size: 14pt"><li>	- shows state of windows defender</li>
+</span><span style="font-size: 16pt"><li style="list-style-type: none">&gt;sc queryex type= service</li>
+</span><span style="font-size: 14pt"><li>	- shows all running prgrams</li>
+<li/>
+</span></ul>
+<span style="font-size: 18pt">=============================================<br/>
+Firewall enumeration</span><ul><span style="font-size: 16pt"><li style="list-style-type: none">Firewall </li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">&gt; netsh advfirewall firewall dump</li>
+<li style="list-style-type: none">&gt; netsh forewall show state</li>
+</ul>
+</li>
+<li style="list-style-type: none">  		- shows state of firewall</li>
+<li style="list-style-type: none">        - will show generic info version/ type</li>
+<li style="list-style-type: none">Show Firewall Config</li>
+</span><li style="list-style-type: none"><ul><span style="font-size: 16pt"><li style="list-style-type: none">&gt; netsh firewall show config</li>
+</span><li style="list-style-type: none"><ul><span style="font-size: 16pt"><li style="list-style-type: none">- port config</li>
+<li style="list-style-type: none">- domain profile config</li>
+<li style="list-style-type: none">- file locations</li>
+</span></ul>
+</li>
+</ul>
+</li>
+</ul>
+</body></html>

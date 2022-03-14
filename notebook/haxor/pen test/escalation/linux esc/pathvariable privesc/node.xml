@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>486620ab-580b-4e46-9f54-bbac36d5f2f0</string>
+  <key>title</key><string>PathVariable PrivEsc</string>
+  <key>nodeid</key><string>7661e712-9061-4d83-acf1-810ec5cb2e30</string>
+  <key>modified_time</key><integer>1622220019</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1622218750</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>2</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

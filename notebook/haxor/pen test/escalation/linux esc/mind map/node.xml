@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>998ddcac-a631-4849-bb54-433bf7a0e9dd</string>
+  <key>nodeid</key><string>bfbd7d5f-efbf-495f-81bd-c22e3ea5a6e5</string>
+  <key>modified_time</key><integer>1623677707</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1623677632</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>icon</key><string>important.png</string>
+  <key>title</key><string>Mind Map</string>
+  <key>version</key><integer>6</integer>
+  <key>order</key><integer>1</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

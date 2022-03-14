@@ -1,0 +1,29 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>User Enumeration</title>
+</head><body><span style="font-size: 16pt">What user are you?<ul><li style="list-style-type: none">&gt; whoami </li>
+<li style="list-style-type: none"/>
+</ul>
+What are your user privileges?<ul><li style="list-style-type: none">&gt; whoami /priv</li>
+<li style="list-style-type: none"/>
+</ul>
+What are groups are you assigned to?<br/>
+  &gt; whoami /groups <br/>
+<br/>
+These commands are helpful to know which user account you need to go after<ul><li>sometimes involves lateral movement</li>
+</ul>
+<br/>
+<br/>
+</span><span style="font-size: 16pt">More user info (generally shows # of users)</span><ul><span style="font-size: 16pt"><li style="list-style-type: none">&gt; net user</li>
+<li style="list-style-type: none">&gt; net user &lt;username&gt; (shows information about the user)</li>
+</span></ul>
+<br/>
+<span style="font-size: 16pt">Group Enumeration (Doesn't work 100% of the time)</span><ul><span style="font-size: 16pt"><li style="list-style-type: none">&gt; net localgroup   &lt;-- show all local groups</li>
+<li style="list-style-type: none">***Maybe you know of a local group already***</li>
+<li style="list-style-type: none">***Using example group administrators***</li>
+</span><li style="list-style-type: none"><ul><span style="font-size: 16pt"><li style="list-style-type: none">&gt;net localgroup administrators</li>
+</span></ul>
+</li>
+</ul>
+</body></html>

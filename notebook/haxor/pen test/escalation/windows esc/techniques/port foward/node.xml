@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>68db53e6-1c19-499b-9306-a0b9635702b5</string>
+  <key>nodeid</key><string>46ee2f5d-0909-4be1-9c17-edfa107105eb</string>
+  <key>modified_time</key><integer>1623462677</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1623460632</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>icon</key><string>note-violet.png</string>
+  <key>title</key><string>Port Foward</string>
+  <key>version</key><integer>6</integer>
+  <key>order</key><integer>3</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

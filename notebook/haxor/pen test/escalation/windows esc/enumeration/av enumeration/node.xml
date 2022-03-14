@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>572f491c-e375-4e8e-898b-9cbc1b3ae060</string>
+  <key>title</key><string>AV Enumeration</string>
+  <key>nodeid</key><string>c5d6ab6a-834f-4121-94fe-d8be7f0aacbc</string>
+  <key>modified_time</key><integer>1623346143</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1623345296</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>0</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

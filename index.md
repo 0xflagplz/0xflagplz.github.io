@@ -23,8 +23,8 @@
         </div>
         <span class="fa fa-bars menu-icon"></span>
         <div class="header-right">
-          <a href="#">Notes\n</a>
-          <a href="#">Rubber Ducky\n</a>
+          <a href="#">Notes</a>
+          <a href="#">Rubber Ducky</a>
           <a href="#">Repo List</a>
         </div>
       </div>
@@ -33,8 +33,7 @@
       <div class="container">
         <h1></h1>
         <h1></h1>
-        <p>Progate is a web service where you can learn programming online.</p>
-        <p>We offer you a fully equipped coding environment to get you started.</p>
+
 
 
     

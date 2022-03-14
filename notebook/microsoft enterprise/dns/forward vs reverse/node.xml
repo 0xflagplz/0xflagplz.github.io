@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>2a8cf1a0-3b5a-4ab3-b4c1-83399585dd11</string>
+  <key>title</key><string>Forward vs Reverse</string>
+  <key>nodeid</key><string>f61a8630-7171-4ef6-8350-a01176c46ead</string>
+  <key>modified_time</key><integer>1622680649</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1622680583</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>1</integer>
+  <key>info_sort</key><string>order</string>
+  <key>icon</key><string>note-grey.png</string>
+</dict>
+</node>

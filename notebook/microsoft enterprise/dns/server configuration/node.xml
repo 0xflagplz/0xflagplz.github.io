@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>ef2ab207-818d-4a4d-9277-65e0ac21630f</string>
+  <key>title</key><string>Server Configuration</string>
+  <key>nodeid</key><string>9bf37db4-bbb1-4c44-9386-225d425b8b18</string>
+  <key>modified_time</key><integer>1622675937</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1622675915</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>2</integer>
+  <key>info_sort</key><string>order</string>
+  <key>icon</key><string>note-grey.png</string>
+</dict>
+</node>

@@ -23,9 +23,9 @@
       <section id="main_content">
         <h1>Welcome to my directory!</h1>
 
-<p>I used to have a girlfriend but she ransomware, so I wannacry</p>
+<p><strong style="color: red;"> ></strong> I used to have a girlfriend but she ransomware, so I wannacry.</p>
 
-<p>Gotta love a bad joke.</p>
+<p><strong style="color: red;"> ></strong> Gotta love a bad joke.</p>
         
 <h1>Directory List</h1>
 
@@ -37,6 +37,5 @@
             <li><a href="https://github.com/AchocolatechipPancake">Repo List</a></li>
           </ul>
         </div>
-      </div>
-    </header>
+
 

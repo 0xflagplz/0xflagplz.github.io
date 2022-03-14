@@ -10,7 +10,7 @@
 
     <div class="container">
       <section id="main_content">
-        <h1> <span class="fa fa-cog fa-spin fa-3x fa-fw">Welcome to my directory!</span></h1>
+        <h1> <span class="fa fa-circle-o-notch fa-spin fa-3x fa-fw">Welcome to my directory!</span></h1>
 
 <p><strong style="color: red;"> ></strong> I used to have a girlfriend but she ransomware, so I wannacry.</p>
 

@@ -21,9 +21,9 @@
 
         <span class="fa fa-bars menu-icon"></span>
         <div class="header-right">
-          <a href="/notebook/index.html">Notes</a><p>    - Archived Notes, most of it won't make sense to you</p>
-          <a href="https://github.com/AchocolatechipPancake/DuckyWin10">Rubber Ducky Stuff</a><p>    - Few of my recent ducky scripts </p><br>
-          <a href="https://github.com/AchocolatechipPancake">Repo List</a>
+          <li><a href="/notebook/index.html">Notes</a><p>    - Archived Notes, most of it won't make sense to you</p></li>
+          <li><a href="https://github.com/AchocolatechipPancake/DuckyWin10">Rubber Ducky Stuff</a><p>    - Few of my recent ducky scripts </p></li><br>
+          <li><a href="https://github.com/AchocolatechipPancake">Repo List</a></li>
         </div>
       </div>
     </header>

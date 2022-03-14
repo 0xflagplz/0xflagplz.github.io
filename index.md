@@ -23,9 +23,9 @@
         </div>
         <span class="fa fa-bars menu-icon"></span>
         <div class="header-right">
-          <a href="#">Lessons</a>
-          <a href="#">Sign in</a>
-          <a href="#" class="login">Log in</a>
+          <a href="#">Notes</a>
+          <a href="#">Rubber Ducky</a>
+          <a href="#">Repo List</a>
         </div>
       </div>
     </header>

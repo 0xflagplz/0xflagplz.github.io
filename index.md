@@ -8,23 +8,6 @@
   <link rel="stylesheet" type="text/css" href="responsive.css">
   <link rel="shortcut icon" href="favicon.ico" >
 
-<style>
-div.a {
-  text-align: center;
-}
-
-div.b {
-  text-align: left;
-}
-
-div.c {
-  text-align: right;
-} 
-
-div.d {
-  text-align: justify;
-} 
-</style>  
 </head>
 <body>
     <header>

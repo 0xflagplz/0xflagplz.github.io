@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>0ea3423c-9c03-47fb-92e6-979d934c8170</string>
+  <key>nodeid</key><string>d18e8580-bc93-4e23-910f-f7c93c7fc763</string>
+  <key>modified_time</key><integer>1623417929</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1623336047</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>icon</key><string>note-green.png</string>
+  <key>title</key><string>Devel HTB</string>
+  <key>version</key><integer>6</integer>
+  <key>order</key><integer>6</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

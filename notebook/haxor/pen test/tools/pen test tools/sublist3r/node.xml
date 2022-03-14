@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>b8ae2903-8332-463b-8df9-48a4cd5da41a</string>
+  <key>title</key><string>Sublist3r</string>
+  <key>nodeid</key><string>cc54d29b-7635-41c8-9af7-4d44adcd32ef</string>
+  <key>modified_time</key><integer>1614630572</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1614630526</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>8</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

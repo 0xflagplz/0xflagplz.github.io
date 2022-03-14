@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>145b6228-c1fa-4338-99b6-1ea8369779e7</string>
+  <key>title</key><string>msfVenom/ meterpreter</string>
+  <key>nodeid</key><string>d49875b0-6477-491b-bd68-fbe1b56376af</string>
+  <key>modified_time</key><integer>1604861369</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1604861283</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>0</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

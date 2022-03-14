@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>77c1170e-47f1-43ac-bdbe-6628e2cba0f1</string>
+  <key>title</key><string>Burpsuite stufff</string>
+  <key>nodeid</key><string>8ad26d33-19d8-4403-a5c9-55706db0618c</string>
+  <key>modified_time</key><integer>1605033351</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1604947370</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>11</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

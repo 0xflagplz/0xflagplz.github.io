@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>9c238cca-9b8c-45b5-a1e1-8b914af11494</string>
+  <key>title</key><string>NMAP cheat sheet</string>
+  <key>nodeid</key><string>aea881bd-401f-40fb-9e65-d967593f1f21</string>
+  <key>modified_time</key><integer>1622334481</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1622334369</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>4</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

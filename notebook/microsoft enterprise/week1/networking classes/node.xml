@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>expanded</key><true/>
+  <key>duplicate_of</key><string>2a81a334-edb7-4008-bdfc-01cab274a851</string>
+  <key>title</key><string>Networking Classes</string>
+  <key>nodeid</key><string>db0975b0-3228-43cf-bd44-c87dc2e0c979</string>
+  <key>modified_time</key><integer>1624320145</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1622068660</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>2</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

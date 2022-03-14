@@ -1,0 +1,125 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Study Questions</title>
+</head><body><span style="font-size: 12pt"><br/>
+1.	Understand different between Windows Core vs Windows GUI<br/>
+<br/>
+2.	What is Active Directory?<br/>
+<br/>
+3.	What must be done before you can promote a Windows Server 2016 to a Domain Controller?<br/>
+<br/>
+4.	Understand User rights- e.g. Administrator vs standard user<br/>
+<br/>
+5.	What does DNS do? And what command did you use for an IP address based on a host name or vice versa? (Lecture 3- DNS)<br/>
+<br/>
+Jeff wants to limit the privileges that an application gets from users when executed. Which of the following features can provide this kind of limitation? (textbook page 27)<br/>
+a.	User Access Control (UAC) – <br/>
+b.	BitLocker<br/>
+c.	Exploit Guard<br/>
+d.	Application Guard<br/>
+<br/>
+6.	What are DNS Records? (MS-03 Domain Name System)<br/>
+<br/>
+7.	Where do we create OU (Organizational Unit) in Active Directory?<br/>
+<br/>
+8.	Why do we need to set up the PowerShell execution policy? (MS-07 PowerShell)<br/>
+<br/>
+9.	What is Group Policy Object (GPO)? When you set up the domain / AD what policy is automatically created? <br/>
+<br/>
+10.	What is SMB protocol? (MS-08 Shares and Permissions)<ul><li style="list-style-type: none">port 445</li>
+<li style="list-style-type: none">server message block (used to share resources)</li>
+</ul>
+<br/>
+11.	Default two Domain Controller shared folders: (MS-08 Shares and Permissions)<br/>
+<br/>
+12.	What are two items required to access a shared resource? (MS-08 Shares and Permissions)<br/>
+<br/>
+13.	What command do you use to hide a shared folder and how? (MS-08 Shares and Permissions)<br/>
+<br/>
+14.	What command did we use in CMD to map out a shared folder? (MS-87 Shares and Permissions)<br/>
+<br/>
+15.	What is the main functionality of DHCP? (MS-06 DHCP)<br/>
+<br/>
+16.	What is DHCP reservation? (MS-06 DHCP)<br/>
+<br/>
+17.	What is the DHCP default lease time? (MS-06 DHCP)<br/>
+<br/>
+18.	What Windows feature provides hard disk encryption? (MS-9 Microsoft Endpoint Security)<br/>
+<br/>
+19.	What happened if company enable auditing policy? (MS-10 Security Policies &amp; Authentication)<br/>
+<br/>
+20.	What is Kerberos? (MS-10 Security Policies &amp; Authentication)<br/>
+<span style="font-size: 20pt">==============================================</span><br/>
+</span><span style="font-size: 16pt">Sample Questions</span><span style="font-size: 12pt"><br/>
+</span><span style="font-size: 12pt"><br/>
+1.	Jeff wants to limit the privileges that an application gets from users when executed.<br/>
+Which of the following features can provide this kind of limitation?<br/>
+<b>a.	User Access Control</b><br/>
+b.	BitLocker<br/>
+c.	Exploit Guard<br/>
+d.	Application Guard<br/>
+<br/>
+2.	What should be done to promote a Windows Server 2012 to a Domain Controller?<br/>
+a.	Upgrade to Windows Server 2012.<br/>
+b.	Configure a DNS server.<br/>
+c.	Create a Domain.<br/>
+<b>d.	Add the ADDS role to the server.</b><br/>
+<br/>
+3.	What is the main security benefit of creating an integrated AD DNS primary zone? <br/>
+<b>a.	Secure and dynamic computer updates are supported, and administrators can control the updates.</b><br/>
+b.	Administrators can extract names from the AD.<br/>
+c.	Administrators can control new records in the primary zone.<br/>
+d.	Allows administrators to add DNSsec configuration.<br/>
+<br/>
+4.	Joseph, who was recently hired, was assigned the task of creating a new OU. Which tool should he used to accomplish the task?<br/>
+a.	DHCP Manager.<br/>
+<b>b.	Active Directory users and computers.</b><br/>
+c.	DNS Manager.<br/>
+d.	Group Policy Management Console.<br/>
+<br/>
+5.	When trying to run a PowerShell script on your Windows machine for the first time, you received an error.<br/>
+What could be the reason for that?<br/>
+a.	There is no option to run scripts on a Windows machine.<br/>
+<b>b.	PowerShell requires the execution policy to be enabled.</b><br/>
+c.	The user must be a local administrator on the station.<br/>
+d.	The script must include the ‘exe’ extension.<br/>
+<br/>
+6.	In a domain environment, how can you defend against Brute-Force attacks?<br/>
+a.	Disconnect computers from the network.<br/>
+b.	Configure the &quot;Brute-Force&quot; function in the group policy.<br/>
+c.	There is no way to defend against this type of attack.<br/>
+<b>d.	Limit the number of login attempts, and the attacker will be locked out when the maximum number of attempts is exceeded.</b><br/>
+<br/>
+7.	You need to navigate to hidden files via the GUI, but you can't see the files. You decide to view the hidden files via CMD. What should you do? <br/>
+a.	Run a script to search for hidden files.<br/>
+<b>b.	Use the “dir /a” command.</b><br/>
+c.	Try to copy the directory with the files to another location.<br/>
+d.	Run a command to turn off the firewall.<br/>
+<br/>
+8.	When using the ipconfig /release and ipconfig /renew commands at different times, it seems like the computer is assigned the same IP address. What could be the cause?<br/>
+a.	DHCP lease is still active.<br/>
+b.	Each computer is assigned a specific IP address.<br/>
+<b>c.	A DHCP reservation is configured.</b><br/>
+d.	The commands do not affect a DHCP assigned address.<br/>
+<br/>
+9.	Your company encountered a drive failure. To prevent that from affecting future system performance, you were asked to implement a solution. What would you choose?<br/>
+<b>a.	Mirrored volumes</b><br/>
+b.	RAID 0<br/>
+c.	Striped volumes<br/>
+d.	Software RAID<br/>
+<br/>
+10.	After accessing a file in the file server, you try to ping the file server but it fails. What can be the reason?<br/>
+<b>a.	Firewall blocks ICMP packets.</b><br/>
+b.	Applocker blocks ICMP packets.<br/>
+c.	Applocker blocks SMB packets.<br/>
+d.	Firewall blocks SMB packets.<br/>
+<br/>
+11.	What is the purpose of LSASS in the Windows OS?<br/>
+a.	Manages user and group creation.<br/>
+<b>b.	Manages user authentication.</b><br/>
+c.	A security measure for files and directories.<br/>
+d.	Coordinates communication between the TGT and KDC.<br/>
+<br/>
+<br/>
+</span></body></html>

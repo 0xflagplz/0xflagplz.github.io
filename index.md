@@ -1,23 +1,33 @@
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="stylesheet" type="text/css" href="responsive.css">
-  <link rel="shortcut icon" href="favicon.ico" >
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="responsive.css">
+    <link rel="shortcut icon" href="favicon.ico" >
 
-</head>
-<body>
+  </head>
+  <body>
     <header>
       <div class="container">
-        <div class="header-left">
-          
-          <img class="logo" src="https://avatars.githubusercontent.com/u/59506742?s=400&u=a5cf8db47dc51928ff5d736f391201f90ba7c75c&v=4">
-          <p style="text-align:right">I used to have a girlfriend but she ransomware, so I wannacry</p>
-          
-        </div>
+        <a href="/" style="text-decoration: none">
+          <h1>Archives</h1>
+        </a>
+        <h2>keeping_the_blinds_closed.exe</h2>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>Welcome to my directory!</h1>
+
+<p>I used to have a girlfriend but she ransomware, so I wannacry</p>
+
+<p>Gotta love a bad joke.</p>
+        
+<h1>Directory List</h1>
 
         <span class="fa fa-bars menu-icon"></span>
         <div class="header-right">

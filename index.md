@@ -18,7 +18,7 @@
         <span class="fa fa-bars menu-icon"></span>
         <div class="header-right">
           <a href="/notebook/index.html">Notes</a> <br>
-          <a href="#">Rubber Ducky</a> <br>
+          <a href="https://github.com/AchocolatechipPancake/DuckyWin10">Rubber Ducky Stuff</a> <br>
           <a href="#">Repo List</a>
         </div>
       </div>

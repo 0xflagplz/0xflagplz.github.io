@@ -13,7 +13,8 @@
     <header>
       <div class="container">
         <div class="header-left">
-          <img class="logo" src="https://avatars.githubusercontent.com/u/59506742?s=400&u=a5cf8db47dc51928ff5d736f391201f90ba7c75c&v=4"><p style="text-align:right">I used to have a girlfriend but she ransomware, so I wannacry</p>
+          <p>I used to have a girlfriend but she ransomware, so I wannacry</p>
+          <img class="logo" src="https://avatars.githubusercontent.com/u/59506742?s=400&u=a5cf8db47dc51928ff5d736f391201f90ba7c75c&v=4" style="text-align:right">
           
         </div>
 

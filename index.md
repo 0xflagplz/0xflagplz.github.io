@@ -35,11 +35,7 @@
         <h1></h1>
         <p>Progate is a web service where you can learn programming online.</p>
         <p>We offer you a fully equipped coding environment to get you started.</p>
-        <div class="btn-wrapper">
 
-        </div>
-      </div>
-    </div>
 
     
   </body>

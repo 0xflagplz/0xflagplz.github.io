@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>45a865fe-68a5-4020-9a7b-9b3051953809</string>
+  <key>title</key><string>Put/ Post</string>
+  <key>nodeid</key><string>56880da4-6d6f-4382-8f7c-53248f188571</string>
+  <key>modified_time</key><integer>1605033641</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1605033604</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>2</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

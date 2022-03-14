@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>expanded</key><false/>
+  <key>duplicate_of</key><string>8a455b6b-84b1-47d7-990e-0d9b9489cebb</string>
+  <key>title</key><string>Common Ports</string>
+  <key>nodeid</key><string>40ff56ed-e58d-4bc0-9bf6-87ffff6720e9</string>
+  <key>modified_time</key><integer>1625843770</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1606834910</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>0</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

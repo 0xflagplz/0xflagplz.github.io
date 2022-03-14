@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>expanded</key><false/>
+  <key>duplicate_of</key><string>7877dcac-d537-4d4d-9e12-a7bc66aa0053</string>
+  <key>nodeid</key><string>bb34b9fb-9c81-47cf-b91d-8f371c370885</string>
+  <key>modified_time</key><integer>1606834896</integer>
+  <key>content_type</key><string>application/x-notebook-dir</string>
+  <key>created_time</key><integer>1606834896</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>title</key><string>Ports</string>
+  <key>version</key><integer>6</integer>
+  <key>order</key><integer>6</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

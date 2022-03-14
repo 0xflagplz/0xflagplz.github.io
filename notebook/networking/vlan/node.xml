@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>c74cf561-922e-4362-9ad2-0b1ac64db31b</string>
+  <key>title</key><string>VLAN</string>
+  <key>nodeid</key><string>acb94955-6795-46fd-88bc-f56411a1b187</string>
+  <key>modified_time</key><integer>1623089960</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1623089907</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>7</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

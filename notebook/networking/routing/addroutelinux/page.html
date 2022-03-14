@@ -1,0 +1,40 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>addRouteLinux</title>
+</head><body><span style="font-size: 16pt">Add route on Linux using ip</span><br/>
+<b>The easiest way to add a route on Linux is to use the “ip route add” command followed by the network address to be reached and the gateway to be used for this route.</b><br/>
+<br/>
+$ ip route add &lt;network_ip&gt;/&lt;cidr&gt; via &lt;gateway_ip&gt; <br/>
+<br/>
+<span style="font-size: 14pt"># Example </span><br/>
+$ ip route add 10.0.3.0/24 via 10.0.3.1<br/>
+<br/>
+<br/>
+<span style="font-size: 14pt">However, if you want to have a specific device, you can add it to the end of the command.</span><br/>
+$ ip route add &lt;network_ip&gt;/&lt;cidr&gt; via &lt;gateway_ip&gt; dev &lt;network_card_name&gt;<br/>
+<br/>
+<span style="font-size: 18pt">------------------------------------------------------------------------------------<br/>
+Example Lab<br/>
+Situation: <br/>
+<span style="font-size: 12pt">web servers that can be connected to already <br/>
+192.168.241.12<br/>
+172.16.88.81<br/>
+cannot connect to 192.168.222.199<br/>
+<br/>
+</span><span style="font-size: 14pt">Checking the route table:<br/>
+</span><img src="image 2.png"/><br/>
+<br/>
+</span><span style="font-size: 14pt">We see the route to those networks are already in place</span><span style="font-size: 18pt"><br/>
+</span><span style="font-size: 14pt">So we need to add another to 192.168.222.0/24</span><span style="font-size: 18pt"><br/>
+</span><span style="font-size: 18pt">Gateway &lt;Seen in the route table&gt; <ul><li style="list-style-type: none">= 10.175.34.1</li>
+<li style="list-style-type: none"/>
+</ul>
+Add route knowing the gateway and IP<br/>
+</span><span style="font-size: 16pt">&gt; ip route add 192.168.222.0/24 via 10.175.34.1 dev tap0<br/>
+<br/>
+</span><img src="image 3.png"/><ul><span style="font-size: 18pt"><li style="list-style-type: none"/>
+</span></ul>
+<img height="494" src="image.png" width="600"/><br/>
+<br/>
+</body></html>

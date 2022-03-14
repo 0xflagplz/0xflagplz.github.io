@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>expanded</key><true/>
+  <key>duplicate_of</key><string>ad2994ec-f60b-4ab1-bc08-9c17e9381621</string>
+  <key>title</key><string>Subnetting</string>
+  <key>nodeid</key><string>6864de1e-9981-43cc-8ad9-3c2c995ddb58</string>
+  <key>modified_time</key><integer>1623278523</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1604032021</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>1</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

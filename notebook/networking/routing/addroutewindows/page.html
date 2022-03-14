@@ -1,0 +1,28 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>addRouteWindows</title>
+</head><body><span style="font-size: 16pt">print the routing table<br/>
+&gt; route print<br/>
+<br/>
+adding the route<br/>
+</span><span style="font-size: 12pt">&gt; route ADD <i>destination_network</i>MASK <i>subnet_mask</i>  <i>gateway_ip</i> <i>metric_cost</i> <br/>
+</span>&gt; metric cost and subnet_mask are optional --&gt; subnet can be includeed most of the time though<br/>
+<br/>
+<span style="font-size: 14pt">Example<br/>
+&gt; route ADD 192.168.35.0 MASK 255.255.255.0 192.168.0.2</span><ul><span style="font-size: 14pt"><li style="list-style-type: none">destination_network = 192.168.35.0</li>
+<li style="list-style-type: none">subnet_mask = 255.255.255.0</li>
+</span><li style="list-style-type: none"><span style="font-size: 14pt">gateway_ip = 192.168.0.2</span></li>
+</ul>
+<br/>
+<span style="font-size: 14pt">adding a { -p } creates a persistant route<br/>
+</span><span style="font-size: 14pt">&gt; route -p ADD 192.168.35.0 MASK 255.255.255.0 192.168.0.2</span><br/>
+<br/>
+<span style="font-size: 18pt">---------------------------------------------------------------------------<br/>
+Deleting a route<br/>
+<br/>
+&gt; route delete &lt;desitination_network&gt;<br/>
+<br/>
+Example:<br/>
+</span><span style="font-size: 18pt">&gt; </span><span style="font-size: 16pt">route delete 192.168.35.0</span><br/>
+</body></html>

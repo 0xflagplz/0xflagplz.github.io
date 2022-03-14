@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>718c6745-a1ff-485b-bbbe-21c05d08689f</string>
+  <key>title</key><string>addRouteWindows</string>
+  <key>nodeid</key><string>2ce36151-d946-489c-91e0-48b688d97f16</string>
+  <key>modified_time</key><integer>1622843612</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1622842825</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>1</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

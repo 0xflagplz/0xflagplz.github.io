@@ -17,7 +17,7 @@
         </div>
         <span class="fa fa-bars menu-icon"></span>
         <div class="header-right">
-          <a href="/notebook/index.html">Notes</a><p><font size="1">     : Archived Notes, most of it won't make sense to you</font></p>
+          <a href="/notebook/index.html">Notes</a><p><font size="-1">     : Archived Notes, most of it won't make sense to you</font></p>
           <a href="https://github.com/AchocolatechipPancake/DuckyWin10">Rubber Ducky Stuff</a> <br>
           <a href="https://github.com/AchocolatechipPancake">Repo List</a>
         </div>

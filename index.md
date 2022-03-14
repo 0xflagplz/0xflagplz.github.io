@@ -23,12 +23,6 @@
         </div>
       </div>
     </header>
-    <div class="top-wrapper">
-      <div class="container">
-        <h1></h1>
-        <h1></h1>
-
-
 
     
   </body>

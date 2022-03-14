@@ -1,0 +1,24 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>SMB</title>
+</head><body><span style="font-size: 20pt">Search msfvenom dummy<br/>
+<br/>
+smbclient -L \\\\{connect to me}\\ 		--replace all of {connect to me}<br/>
+</span><img height="241" src="image.png" width="950"/><br/>
+<span style="font-size: 18pt">woah look at the IPC$ and ADMIN$<br/>
+<br/>
+</span><span style="font-size: 20pt">smbclient \\\\10.0.2.10\\ADMIN$ or IPC$<br/>
+<br/>
+<br/>
+<br/>
+------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
+SSH &lt;-- usually no vulernability but we look for a banner<br/>
+</span><img src="image 2.png"/><span style="font-size: 18pt"> Weird error<br/>
+</span><br/>
+<span style="font-size: 22pt">try <br/>
+ssh 10.0.2.10 -oKexAlgorithms=+<b>diffie-hellman-group1-sha1  &lt;-- added end statement<br/>
+</b></span><img height="47" src="image 3.png" width="1000"/><br/>
+<br/>
+<span style="font-size: 18pt">Another weird error so we try <br/>
+</span><span style="font-size: 22pt">ssh 10.0.2.10 -oKexAlgorithms=+diffie-hellman-group1-sha1 <b>-c aes128-cbc</b></span></body></html>

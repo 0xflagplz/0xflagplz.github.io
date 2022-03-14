@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>b72294ab-a1df-4df9-9d7c-186edc233638</string>
+  <key>title</key><string>Port Scanning</string>
+  <key>nodeid</key><string>1a2a6938-c64e-4f8e-a044-6926bc27f6ab</string>
+  <key>modified_time</key><integer>1615825404</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1615825032</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>5</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

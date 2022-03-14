@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>expanded</key><false/>
+  <key>duplicate_of</key><string>cae7ec4c-175e-401d-8c43-550feaebbbd6</string>
+  <key>nodeid</key><string>423053db-ca43-4aa4-a40c-c55972cc2beb</string>
+  <key>modified_time</key><integer>1612843580</integer>
+  <key>content_type</key><string>application/x-notebook-dir</string>
+  <key>created_time</key><integer>1612843580</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>icon</key><string>folder-red.png</string>
+  <key>title</key><string>Information Gathering Tools</string>
+  <key>version</key><integer>6</integer>
+  <key>order</key><integer>0</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

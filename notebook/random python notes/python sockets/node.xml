@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>2b8cd758-716c-4dd0-8b9e-1e0003dbb142</string>
+  <key>title</key><string>Python sockets</string>
+  <key>nodeid</key><string>5cf3c564-e43c-4ddb-9ba1-ccc214752002</string>
+  <key>modified_time</key><integer>1612842209</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1612841225</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>7</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

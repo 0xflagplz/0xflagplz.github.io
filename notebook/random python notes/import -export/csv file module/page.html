@@ -1,0 +1,24 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>csv file module</title>
+</head><body><b><span style="font-size: 16pt">csv.reader(<i>csvfile</i>, <i>dialect='excel'</i>, <i>**fmtparams</i>)<br/>
+</span></b><span style="font-size: 16pt"><b>csv.writer(<i>csvfile</i>, <i>dialect='excel'</i>, <i>**fmtparams</i>)</b><br/>
+csv.register_dialect(<i>name</i>[, <i>dialect</i>[, <i>**fmtparams</i>]])<br/>
+csv.unregister_dialect(<i>name</i>)<br/>
+<b>csv.get_dialect(<i>name</i>)</b><br/>
+csv.list_dialects()<br/>
+csv.field_size_limit([<i>new_limit</i>])<br/>
+<b><i>class </i>csv.DictReader(<i>f</i>, <i>fieldnames=None</i>, <i>restkey=None</i>, <i>restval=None</i>, <i>dialect='excel'</i>, <i>*args</i>, <i>**kwds</i>)<br/>
+</b><b><i>class </i>csv.DictWriter(<i>f</i>, <i>fieldnames</i>, <i>restval=''</i>, <i>extrasaction='raise'</i>, <i>dialect='excel'</i>, <i>*args</i>, <i>**kwds</i>)</b><br/>
+<i>class </i>csv.Dialect<div style="text-align: justify"><br/>
+</div><div style="text-align: justify"><br/>
+</div></span><span style="font-size: 16pt"><i>class </i>csv.excel</span><div style="text-align: justify"><span style="font-size: 12pt">	--The <a href="https://docs.python.org/3/library/csv.html#csv.excel">excel</a> class defines the usual properties of an Excel-generated CSV file. It is registered with the dialect name 'excel'.</span><span style="font-size: 16pt"><br/>
+</span></div><span style="font-size: 16pt"><i>class </i>csv.excel_tab<div style="text-align: justify">	--</div></span><div style="text-align: justify"><span style="font-size: 12pt">The <a href="https://docs.python.org/3/library/csv.html#csv.excel_tab">excel_tab</a> class defines the usual properties of an Excel-generated TAB-delimited file. It is registered with the dialect name 'excel-tab'.</span><span style="font-size: 16pt"><br/>
+</span></div><span style="font-size: 16pt"><i>class </i>csv.unix_dialect</span><div style="text-align: justify"><span style="font-size: 12pt">	</span><span style="font-size: 14pt">--The <a href="https://docs.python.org/3/library/csv.html#csv.unix_dialect">unix_dialect</a> class defines the usual properties of a CSV file generated on UNIX systems, i.e. using '\n' as line terminator and quoting all fields. It is registered with the dialect name 'unix'.</span></div><span style="font-size: 16pt"><br/>
+</span><span style="font-size: 16pt"><div style="text-align: justify"><br/>
+</div><i>class </i>csv.Sniffer<div style="text-align: justify">		-- The <a href="https://docs.python.org/3/library/csv.html#csv.Sniffer">Sniffer</a> class is used to deduce the format of a CSV file.</div><ul><li style="list-style-type: none">- sniff(<i>sample</i>, <i>delimiters=None</i>)<div style="text-align: justify"/></li>
+<li style="list-style-type: none">- has_header(<i>sample</i>)</li>
+</ul>
+<div style="text-align: justify"><br/>
+</div></span><span style="font-size: 16pt"> </span><img src="image.png"/></body></html>

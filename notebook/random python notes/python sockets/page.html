@@ -1,0 +1,20 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>sockets</title>
+</head><body><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 18pt">---sys is used for a lot of things---				---notice <b>as dt</b>, creates a shortname---</span></li>
+</ul>
+</li>
+</ul>
+<img src="image.png"/><img src="image 2.png"/><br/>
+<span style="font-size: 16pt">--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br/>
+<span style="font-size: 16pt">Sockets --&gt; connectin to an open port and ip address / connecting 2 nodes<br/>
+Example Code: <br/>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
+import socket<br/>
+HOST = '127.0.0.1'<br/>
+PORT = 6666<br/>
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)		// socket.AF_INET --&gt; IPV4		//socket.SOCK_STREAM --&gt; port<br/>
+s.connect((HOST,PORT))		// in theory I could just s.connect((127.0.0.1, 6666))<br/>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
+</span><img height="34" src="image 3.png" width="200"/><span style="font-size: 16pt"> ---&gt; Establishes python3</span></body></html>

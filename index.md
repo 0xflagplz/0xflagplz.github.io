@@ -18,7 +18,7 @@
         
 <h1>Directory List</h1>
 
-        <span class="fa fa-bars menu-icon"></span>
+        <span class="fa fa-cog fa-spin fa-3x fa-fw"></span>
         <div class="header-right">
           <ul>
             <li><a href="/notebook/index.html">Notes</a><p>    - Archived Notes, most of it won't make sense to you</p></li>

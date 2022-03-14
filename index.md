@@ -16,9 +16,7 @@
           <img class="logo" src="https://avatars.githubusercontent.com/u/59506742?s=400&u=a5cf8db47dc51928ff5d736f391201f90ba7c75c&v=4">
           <p style="text-align:right">I used to have a girlfriend but she ransomware, so I wannacry</p>
         </div>
-        <div class="header-right">
-          
-        </div>
+
         <span class="fa fa-bars menu-icon"></span>
         <div class="header-right">
           <a href="/notebook/index.html">Notes</a><p>    - Archived Notes, most of it won't make sense to you</p>

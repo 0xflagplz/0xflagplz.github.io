@@ -10,13 +10,13 @@
 
     <div class="container">
       <section id="main_content">
-        <h1><span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-terminal fa-stack-1x fa-inverse"></i></span>  cd ../../</h1>
+        <h1> <span class="fa fa-spinner fa-pulse fa-lg fa-fw"></span>Welcome to my directory!</h1>
 
 <p><strong style="color: red;"> ></strong> I used to have a girlfriend but she ransomware, so I wannacry.</p>
 
 <p><strong style="color: red;"> ></strong> Gotta love a bad joke.</p>
         
-<h1>Directory List</h1>
+<h1><span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-terminal fa-stack-1x fa-inverse"></i></span>  cd ../../</h1>
 
         <div class="header-right">
           <ul>

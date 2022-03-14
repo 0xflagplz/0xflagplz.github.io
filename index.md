@@ -24,6 +24,3 @@
       </div>
     </header>
 
-    
-  </body>
-</html>

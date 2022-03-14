@@ -16,7 +16,7 @@
           <img class="logo" src="https://avatars.githubusercontent.com/u/59506742?s=400&u=a5cf8db47dc51928ff5d736f391201f90ba7c75c&v=4">
         </div>
         <div class="header-right">
-          <p>I used to have a girlfriend but she ransomware, so I wannacry</p>
+          <p style="text-align:right">I used to have a girlfriend but she ransomware, so I wannacry</p>
         </div>
         <span class="fa fa-bars menu-icon"></span>
         <div class="header-right">

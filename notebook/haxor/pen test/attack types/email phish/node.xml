@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>dc3f6c4f-e7c5-4fee-9621-a042cdd4c415</string>
+  <key>title</key><string>Email phish</string>
+  <key>nodeid</key><string>3137b2b6-4aa4-4579-8383-830e4e9f6fb0</string>
+  <key>modified_time</key><integer>1622299866</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1622299776</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>2</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

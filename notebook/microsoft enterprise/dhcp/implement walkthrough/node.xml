@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>duplicate_of</key><string>4877aae2-73db-4050-8fe7-17d2be9bd63c</string>
+  <key>title</key><string>implement walkthrough</string>
+  <key>nodeid</key><string>0eeaecb0-2a08-4d7f-88fb-3125a18cc834</string>
+  <key>modified_time</key><integer>1623281949</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1623281409</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>0</integer>
+  <key>info_sort</key><string>order</string>
+  <key>icon</key><string>note-violet.png</string>
+</dict>
+</node>

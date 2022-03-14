@@ -10,15 +10,14 @@
 
     <div class="container">
       <section id="main_content">
-        <h1>Welcome to my directory!</h1>
+        <h1> <span class="fa fa-cog fa-spin fa-3x fa-fw">Welcome to my directory!</span></h1>
 
 <p><strong style="color: red;"> ></strong> I used to have a girlfriend but she ransomware, so I wannacry.</p>
 
 <p><strong style="color: red;"> ></strong> Gotta love a bad joke.</p>
         
-<h1>Directory List</h1>
+<h1><span class="fa-terminal on fa-square">Directory List</span></h1>
 
-        <span class="fa fa-cog fa-spin fa-3x fa-fw"></span>
         <div class="header-right">
           <ul>
             <li><a href="/notebook/index.html">Notes</a><p>    - Archived Notes, most of it won't make sense to you</p></li>

@@ -1,0 +1,67 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>samba/SMB</title>
+</head><body><div style="text-align: left"><span style="font-size: 16pt"><span style="font-family: Ubuntu">SMB has two ports, 445 and 139.</span></span></div><br/>
+<br/>
+<b><span style="font-size: 18pt">Brute Force </span></b><span style="font-size: 18pt">SMB login with only usernames</span><b><br/>
+</b><br/>
+<div style="text-align: left"><span style="font-size: 13pt"><span style="font-family: Helvetica Neue">&gt; crackmapexec smb 10.10.10.172 -u users.txt -p users.txt<br/>
+</span></span></div> <br/>
+<span style="font-size: 18pt">-------------------------------------------------------------------------------------------------</span><br/>
+<span style="font-size: 16pt"><b>NMAP ENUMERATE SHARING<br/>
+</b></span><br/>
+<br/>
+<br/>
+<span style="font-family: Ubuntu"><span style="font-size: 16pt"><div style="text-align: left">nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse [ip]<br/>
+</div></span></span><br/>
+ <span style="font-size: 18pt">-------------------------------------------------------------------------------------------------</span><br/>
+<span style="font-size: 18pt">Enumerate SMB shares without credentials</span><br/>
+<span style="font-family: Helvetica Neue"><span style="font-size: 13pt"><div style="text-align: left">smbclient -N -L \\\\&lt;server_IP&gt;\\<br/>
+</div></span></span><br/>
+<span style="font-family: Helvetica Neue"><span style="font-size: 13pt"><div style="text-align: left">or<br/>
+</div></span></span><br/>
+<span style="font-family: Helvetica Neue"><span style="font-size: 13pt"><div style="text-align: left">smbmap -d &lt;domain&gt; -L -H &lt;IP&gt;<br/>
+</div></span></span> <span style="font-size: 18pt">-------------------------------------------------------------------------------------------------<br/>
+</span><span style="font-size: 18pt"><b>Shared Drive</b></span><ul><b><li style="list-style-type: none"><span style="font-size: 16pt">Connect</span><span style="font-size: 18pt">:</span></li>
+</b><li style="list-style-type: none"><ul><span style="font-family: Ubuntu"><span style="font-size: 16pt"><div style="text-align: left"><li style="list-style-type: none">smbclient //&lt;ip&gt;/anonymous 	||		smbclient //&lt;ip&gt;/&lt;user&gt;</li>
+</div></span></span></ul>
+</li>
+</ul>
+<span style="font-family: Ubuntu"><span style="font-size: 16pt"><div style="text-align: left"><br/>
+</div></span></span><span style="font-family: Ubuntu"><span style="font-size: 16pt"><div style="text-align: left"/></span></span><ul><li style="list-style-type: none"><b><span style="font-size: 14pt">Download:</span></b></li>
+</ul>
+<ul><li style="list-style-type: none"><ul><div style="text-align: left"><span style="font-size: 16pt"><span style="font-family: Ubuntu"><li style="list-style-type: none">smbget -R smb://&lt;ip&gt;/anonymous</li>
+</span></span></div><li style="list-style-type: none"/>
+</ul>
+</li>
+</ul>
+<span style="font-size: 18pt">-------------------------------------------------------------------------------------------------</span><br/>
+<span style="font-size: 14pt">Copying an entire SMB folder recursively using smbclient:</span><ul><li style="list-style-type: none"><ul><span style="font-size: 14pt"><li style="list-style-type: none"/>
+<li style="list-style-type: none">Connect using: smbclient -U &lt;user&gt; \\\\&lt;ip&gt;\\&lt;folder&gt; &lt;password&gt;</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">smb: tarmode</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">smb: recurse</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">smb: prompt</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+</span><li style="list-style-type: none"><span style="font-size: 14pt">smb: mget &lt;folder_to_copy&gt;</span></li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"> </li>
+</ul>
+</li>
+</ul>
+<ul><div style="text-align: left"><span style="font-size: 16pt"><span style="font-family: Ubuntu"><li style="list-style-type: none"/>
+</span></span></div></ul>
+<br/>
+<br/>
+ <span style="font-size: 18pt">-------------------------------------------------------------------------------------------------<b><br/>
+</b></span><b><span style="font-size: 16pt">Mounting a Drive <br/>
+</span></b><span style="font-size: 16pt"><span style="font-family: Ubuntu"><div style="text-align: left">mkdir /mnt/kenobiNFS</div></span></span><br/>
+<span style="font-family: Ubuntu"><span style="font-size: 16pt"><div style="text-align: left">mount machine_ip:/var /mnt/kenobiNFS</div></span></span><br/>
+<span style="font-family: Ubuntu"><span style="font-size: 16pt"><div style="text-align: left">ls -la /mnt/kenobiNFS</div></span></span> </body></html>

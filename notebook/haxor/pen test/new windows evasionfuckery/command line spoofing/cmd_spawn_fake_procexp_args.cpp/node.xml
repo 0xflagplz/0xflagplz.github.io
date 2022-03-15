@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>cmd_spawn_fake_procexp_args.cpp</string>
+  <key>nodeid</key><string>6742c1c8-ced7-4121-8533-614d858170f2</string>
+  <key>modified_time</key><integer>1647278729</integer>
+  <key>version</key><integer>6</integer>
+  <key>payload_filename</key><string>cmd_spawn_fake_procexp_args.cpp</string>
+  <key>content_type</key><string>application/octet-stream</string>
+  <key>created_time</key><integer>1647278729</integer>
+  <key>order</key><integer>3</integer>
+</dict>
+</node>

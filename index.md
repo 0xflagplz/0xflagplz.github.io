@@ -14,7 +14,7 @@ h2 {font-size: 12px;}
 
     <div class="container">
       <section id="main_content">
-        <h1> <span class="fa fa-spinner fa-pulse fa-lg fa-fw"></span>Welcome to my directory!</h1>
+        <h1> <span class="fa fa-spinner fa-pulse fa-lg fa-fw"></span>Welcome to my Directory!</h1>
 
 <p><strong style="color: red;"> ></strong> I used to have a girlfriend but she ransomware, so I wannacry.</p>
 

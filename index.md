@@ -24,7 +24,7 @@ h2 {font-size: 12px;}
 
         <div class="header-right">
           <ul>
-            <li><a href="/notebook/index.html">Notes</a><p>    - Archived Notes, most of it won't make sense to you</p></li>
+            <li><a href="/notebook/index.html">Notes</a><p>    - Archived Notes, most of it won't make sense to you  ~  Contains malicious script</p></li>
             <li><a href="https://github.com/AchocolatechipPancake/DuckyWin10">Rubber Ducky Stuff</a><p>    - Few of my recent ducky scripts </p></li>
             <li><a href="https://github.com/AchocolatechipPancake/netsweeper">NetworkSweeper</a><p>    - Script to discover devices on specified network | Ex. ./netsweeper 192.168.30 </p></li>       <li><a href="https://github.com/AchocolatechipPancake/Encrypted_Message_Phish">Phish [P]</a><p>    - templates I created </p></li>
            

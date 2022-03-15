@@ -1,0 +1,66 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>VBA Smashing</title>
+</head><body>Essentially VBA smashing is removing the source code for the macro<ul><li style="list-style-type: none">This makes it harder to analyze the macro code (for AV bypass) </li>
+<li style="list-style-type: none"/>
+</ul>
+Attached to this file is the setup file for <b>FlexHEX<br/>
+</b><b><br/>
+What we will be doing is opening the file in FlexHEX and finding the compiled vba code (know as p-code).<br/>
+This stores the source code in a variable called &quot;compressed source code&quot;<ul><li style="list-style-type: none">Worth mentioning: if our malicious word document is opened on a different computer that uses the same version of Microsoft Word, the cached precompiled p-code is executed </li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">this results in successfully avoiding the translatation of source code by the VBA interpreter</li>
+</ul>
+</li>
+</ul>
+<br/>
+</b><b>Open the malicious .doc file</b><br/>
+<img height="209" src="image.png" width="250"/>   --------------&gt;    <img height="176" src="image 2.png" width="250"/><br/>
+<br/>
+<br/>
+What you Should see:<ul><li style="list-style-type: none"/>
+</ul>
+<img height="298" src="image 3.png" width="300"/><br/>
+<br/>
+find the cocument with the variable &quot;compressed source code&quot; (it wont be in plain text lol)<br/>
+<img height="155" src="image 4.png" width="350"/><br/>
+<br/>
+To get rid of it, search for &quot;41 74 74 72&quot; as seen below <br/>
+<img src="image 5.png"/><br/>
+<br/>
+Once found grab them as well as all code below (it's the source code)<br/>
+<br/>
+ONCE ALL CODE TO THE BOTTOM HAS BEEN SELECTED<ul><li style="list-style-type: none"><b>-Insert Zero Block</b></li>
+</ul>
+<img height="325" src="image 6.png" width="200"/><br/>
+<br/>
+<b>just accept the size (it's the size of everything you highlighted)<br/>
+</b><img src="image 7.png"/><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

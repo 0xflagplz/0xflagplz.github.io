@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>DotNetToJScript.zip</string>
+  <key>nodeid</key><string>52eb3161-11a9-4fec-85d1-60e9084984fe</string>
+  <key>modified_time</key><integer>1647284216</integer>
+  <key>version</key><integer>6</integer>
+  <key>payload_filename</key><string>dotnettojscript.zip</string>
+  <key>content_type</key><string>application/zip</string>
+  <key>created_time</key><integer>1647284216</integer>
+  <key>order</key><integer>2</integer>
+</dict>
+</node>

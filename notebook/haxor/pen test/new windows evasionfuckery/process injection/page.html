@@ -1,0 +1,34 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>process injection</title>
+</head><body>Cool tool I wanted to mark down<br/>
+<br/>
+<b>Inject Payload into a target Process</b><br/>
+https://github.com/0xvpr/Pidjeon<br/>
+<br/>
+<b>Building</b><ul><li style="list-style-type: none">Linux/WSL2 (MinGW)</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">&gt; make # makes release binaries by default</li>
+</ul>
+</li>
+<li style="list-style-type: none">Windows (MinGW)</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">&gt; make.exe -f Makefile.win # makes release binaries by default</li>
+<li style="list-style-type: none"/>
+</ul>
+</li>
+</ul>
+<b>Examples</b><ul><li style="list-style-type: none">Standard LoadLibraryA injection:</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">&gt; ./payload_injector_x86.exe explorer.exe test_payload.dll</li>
+</ul>
+</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">Silent Manual Map injection after 850 millisecond delay, output to out.txt using Stealth level 3:</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">&gt; ./payload_injector_x86.exe explorer.exe test_payload.dll -s -i ManualMap -d 850 -o out.txt -S 3</li>
+</ul>
+</li>
+</ul>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

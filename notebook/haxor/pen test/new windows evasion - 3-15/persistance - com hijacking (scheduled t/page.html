@@ -1,0 +1,89 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Persistance - COM Hijacking (Scheduled Tasks)</title>
+</head><body><span style="font-size: 14pt">The ultimate goal for this is to replace the dll file which the task is using </span><ul><span style="font-size: 14pt"><li style="list-style-type: none">The things you'll want</li>
+</span><span style="font-size: 12pt"><li style="list-style-type: none">-Persistence Loader .dll file           - i mean the code... look through this if you feel lost lol</li>
+<li style="list-style-type: none">- Create-Install.ps1                  - create the installer</li>
+</span><li style="list-style-type: none"><span style="font-size: 12pt">- Get-ScheduledTaskComHandler.ps1  - see open tasks</span></li>
+</ul>
+<br/>
+<br/>
+Following the path below shows the default scheduled windows tasks<br/>
+<img height="408" src="image.png" width="500"/><br/>
+<span style="font-size: 12pt">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br/>
+<span style="font-size: 12pt">For this example we are going to use <b>WindowsColorSystem</b></span><ul><span style="font-size: 10pt"><li style="list-style-type: none">First notes are the name &quot;Calibration Loader&quot; - this does not seem suspicious</li>
+<li style="list-style-type: none">Second is the &quot;Status: Disabled&quot;  -  we can test persistance</li>
+</span></ul>
+<br/>
+<span style="font-size: 10pt">\</span><img height="297" src="image 2.png" width="450"/><br/>
+<br/>
+<b><span style="font-size: 14pt">The triggers found here are great for persistance.</span></b><br/>
+<br/>
+<img src="image 3.png"/><br/>
+<br/>
+<span style="font-size: 12pt">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br/>
+<b><span style="font-size: 14pt">Under the actions tab - we can see what happenes when the task is started</span></b><br/>
+We can export the custom handler via XML ()<br/>
+<img height="287" src="image 4.png" width="450"/><br/>
+<span style="font-size: 12pt">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br/>
+<br/>
+<span style="font-size: 14pt"><b>Once we have exported it and opened it in notepad or whatever, we look to the bottom<br/>
+</b></span><img height="148" src="image 5.png" width="600"/><br/>
+<br/>
+<b><span style="font-size: 18pt">WE HAVE A ComHandler!!</span></b><br/>
+<br/>
+<span style="font-size: 12pt">---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><br/>
+<br/>
+<span style="font-size: 14pt">We now must use this ID to search in <b>Registry Editor</b><br/>
+<img src="image 6.png"/><img src="image 7.png"/><br/>
+<br/>
+<img height="349" src="image 8.png" width="750"/><br/>
+</span><br/>
+<br/>
+We can find the user specific tasks in the registry <br/>
+<br/>
+HKEY_CURRENT_USER\Software\Classes\CLSID<br/>
+------------------------------------------------------------------------------------------------------------------------<br/>
+Windows Registry Editor Version 5.00<br/>
+[HKEY_CURRENT_USER\Software\Classes\CLSID{...}\InprocServer32<br/>
+@=&quot;C:\\Evil\\Persistence\\Loader.dll<br/>
+<br/>
+*** Fill In both {...} with the correct ID***<br/>
+<br/>
+<img src="image 9.png"/><br/>
+<br/>
+Then just run the file, it should add to the computer &lt;most times you cant double click it though so go to next note&gt;<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body></html>

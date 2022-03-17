@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>expanded</key><false/>
+  <key>title</key><string>Create-Installer.ps1</string>
+  <key>nodeid</key><string>422099b8-947f-410b-a8ca-4e602d017888</string>
+  <key>modified_time</key><integer>1647311212</integer>
+  <key>version</key><integer>6</integer>
+  <key>payload_filename</key><string>create-installer.ps1</string>
+  <key>content_type</key><string>application/octet-stream</string>
+  <key>created_time</key><integer>1647311212</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>0</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

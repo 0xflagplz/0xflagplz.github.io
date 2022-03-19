@@ -16,9 +16,9 @@ h2 {font-size: 12px;}
       <section id="main_content">
         <h1> <span class="fa fa-spinner fa-pulse fa-lg fa-fw"></span>Welcome to my Directory!</h1>
 
-<p><strong style="color: red;"> ></strong> I used to have a girlfriend but she ransomware, so I wannacry.</p>
+<p><strong style="color: red;"> >></strong> I used to have a girlfriend but she ransomware, so I wannacry.</p>
 
-<p><strong style="color: red;"> ></strong> Gotta love a bad joke.</p>
+<p><strong style="color: red;"> >></strong> Gotta love a bad joke.</p>
         
 <h1><span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-terminal fa-stack-1x fa-inverse"></i></span>  cd ../../</h1>
 
@@ -26,8 +26,11 @@ h2 {font-size: 12px;}
           <ul>
             <li><a href="/notebook/index.html">Notes</a><p>    - Archived Notes, most of it won't make sense to you  ~  Contains malicious script</p></li>
             <li><a href="https://github.com/AchocolatechipPancake/DuckyWin10">Rubber Ducky Stuff</a><p>    - Few of my recent ducky scripts </p></li>
-            <li><a href="https://github.com/AchocolatechipPancake/netsweeper">NetworkSweeper</a><p>    - Script to discover devices on specified network | Ex. ./netsweeper 192.168.30 </p></li>       <li><a href="https://github.com/AchocolatechipPancake/Encrypted_Message_Phish">Phish [P]</a><p>    - templates I created </p></li>
-           <li><a href="https://github.com/AchocolatechipPancake/Cobalt-Strike-patch-files">Cobalt Custom Patch.c [P]</a></li>
+            <li><a href="https://github.com/AchocolatechipPancake/netsweeper">NetworkSweeper</a><p>    - Script to discover devices on specified network | Ex. ./netsweeper 192.168.30 </p></li>       
+            <li><a href="https://github.com/AchocolatechipPancake/NmapIT">Automated Nmap</a><p>    - Enables Hostlist Import / Choose Scan Depth </p></li>
+            <li><a href="https://github.com/AchocolatechipPancake/Encrypted_Message_Phish">Phish [P]</a><p>    - templates I created </p></li>
+            <li><a href="https://github.com/AchocolatechipPancake/Cobalt-Strike-patch-files">Cobalt Custom Patch.c [P]</a></li>
+            
             <br>
 
             <li><a href="https://github.com/AchocolatechipPancake">Repo List</a></li>

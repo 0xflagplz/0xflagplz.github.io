@@ -28,7 +28,7 @@ h2 {font-size: 12px;}
             <li><a href="https://github.com/AchocolatechipPancake/DuckyWin10">Rubber Ducky Stuff</a><p>    - Few of my recent ducky scripts </p></li>
             <li><a href="https://github.com/AchocolatechipPancake/netsweeper">NetworkSweeper</a><p>    - Script to discover devices on specified network | Ex. ./netsweeper 192.168.30 </p></li>  
             <li><a href="https://github.com/AchocolatechipPancake/NmapIT">Automated Nmap</a><p>    - Enables Host List Import / Choose Scan Depth </p></li>
-            <li><a href="https://github.com/AchocolatechipPancake/ctf_me">Auto Scanner For CTFs</a><p>    - Adds to /etc/hosts, nmaps, gobuster, sublist3r, + </p></li>
+            <li><a href="https://github.com/AchocolatechipPancake/ctf_me">Auto Scanner For CTFs</a><p>    - Adds to /etc/hosts | Scams via nmap, gobuster, sublist3r, + </p></li>
          
             <li><a href="https://github.com/AchocolatechipPancake/Encrypted_Message_Phish">Phish [P]</a><p>    - templates I created </p></li>
             <li><a href="https://github.com/AchocolatechipPancake/Cobalt-Strike-patch-files">Cobalt Custom Patch.c [P]</a><p>    - changed to heap API call, so much potential... </p></li>

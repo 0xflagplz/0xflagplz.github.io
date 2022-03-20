@@ -31,7 +31,7 @@ h2 {font-size: 12px;}
             <li><a href="https://github.com/AchocolatechipPancake/ctf_me">Auto Scanner For CTFs</a><p>    - Adds to /etc/hosts, nmaps, gobuster, sublist3r, + </p></li>
          
             <li><a href="https://github.com/AchocolatechipPancake/Encrypted_Message_Phish">Phish [P]</a><p>    - templates I created </p></li>
-            <li><a href="https://github.com/AchocolatechipPancake/Cobalt-Strike-patch-files">Cobalt Custom Patch.c [P]</a></li>
+            <li><a href="https://github.com/AchocolatechipPancake/Cobalt-Strike-patch-files">Cobalt Custom Patch.c [P]</a><p>    - changed to heap API call, so much potential... </p></li>
             
             <br>
 

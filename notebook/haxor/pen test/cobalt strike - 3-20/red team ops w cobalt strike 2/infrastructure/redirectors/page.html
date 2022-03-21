@@ -1,0 +1,59 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Redirectors</title>
+</head><body><br/>
+This is a way of giving yourself multiple addresses during an engagement<br/>
+<br/>
+<span style="font-size: 16pt"><b><br/>
+</b></span><span style="font-size: 16pt"><b>cdn - </b></span><a href="https://en.wikipedia.org/wiki/Content_delivery_network">Content delivery network</a> <b><span style="font-size: 16pt"><br/>
+</span></b><b><span style="font-size: 16pt"><br/>
+</span></b><b><span style="font-size: 24pt">CDN Redirectors  </span></b><ul><span style="font-size: 18pt"><li style="list-style-type: none">- use valid SSL certificate</li>
+</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 14pt"><i>~often time the CDN requires one</i></span></li>
+</ul>
+</li>
+</ul>
+<span style="font-size: 18pt">- Allow HTTP POST and HTTP GET verbs</span><ul><span style="font-size: 18pt"><li style="list-style-type: none">- Consider HTTP-GET only C2</li>
+<li style="list-style-type: none">- Disable all cache options </li>
+</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><i><span style="font-size: 14pt">~ giving a better chance to redirect to your cobalt server</span></i></li>
+</ul>
+</li>
+<span style="font-size: 18pt"><li style="list-style-type: none">- be aware of transformed requests</li>
+</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><span style="font-size: 14pt"><i><li style="list-style-type: none">~ <b>Cloudfront</b>likes to rearrange the cookie value</li>
+<li style="list-style-type: none">~ if youre beacon <b>Malleable c2 profile</b>is using the cookie header to send data back to cobalt strike</li>
+<li style="list-style-type: none">~ possible to break <b>contract</b>between Malleable c2 profile the beacon payload and the beacon controller</li>
+<li style="list-style-type: none"/>
+</i></span></ul>
+</li>
+<i><li style="list-style-type: none"><b><span style="font-size: 16pt"><u>Server Consolidation</u></span></b><span style="font-size: 14pt"/></li>
+</i><li style="list-style-type: none"><ul><li style="list-style-type: none"><img height="334" src="image 5.png" width="250"/></li>
+</ul>
+</li>
+<li style="list-style-type: none"/>
+</ul>
+</li>
+</ul>
+<br/>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
+<br/>
+<br/>
+<img height="400" src="image.png" width="450"/><br/>
+<br/>
+<img height="214" src="image 2.png" width="450"/><ul><li style="list-style-type: none">- socat TCP4-LISTEN:80,fork TCP4:[team server]:80</li>
+</ul>
+<br/>
+<img src="image 3.png"/><br/>
+<br/>
+<br/>
+<span style="font-size: 18pt"><b>Setup redirect proxy</b></span><br/>
+so linux commands for getting the proxy running<ul><li style="list-style-type: none">&gt; sudo socat TCP4-LISTEN:80, fork TCP4:secure.losenolove.com:80</li>
+<li style="list-style-type: none">**cntr-z** to pause</li>
+<li style="list-style-type: none">&gt; bg      <i>backgrounds the proxy</i></li>
+<li style="list-style-type: none">&gt; screen -d</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+</ul>
+<span style="font-size: 16pt">Now create listeners for each of the redirects</span><br/>
+<img height="306" src="image 4.png" width="300"/><ul><li style="list-style-type: none"/>
+</ul>
+</body></html>

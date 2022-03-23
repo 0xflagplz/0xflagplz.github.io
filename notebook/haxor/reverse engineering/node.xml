@@ -2,7 +2,7 @@
 <node>
 <version>6</version>
 <dict>
-  <key>expanded</key><true/>
+  <key>expanded</key><false/>
   <key>title</key><string>Reverse Engineering</string>
   <key>nodeid</key><string>f665762e-0986-45c5-9b30-4716b492baf1</string>
   <key>modified_time</key><integer>1624321174</integer>

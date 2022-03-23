@@ -2,19 +2,19 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Infrastructure</title>
-</head><body><b><span style="font-size: 18pt"> <span style="font-size: 22pt">Overview</span></span></b><ul><span style="font-size: 18pt"><b><li style="list-style-type: none">&gt; Listener Managment</li>
+</head><body><tt><b><span style="font-size: 18pt"> <span style="font-size: 22pt">Overview</span></span></b><ul><b><span style="font-size: 18pt"><li style="list-style-type: none">&gt; Listener Managment</li>
 <li style="list-style-type: none">&gt; Beacon Payloads</li>
-</b></span><li style="list-style-type: none"><ul><span style="font-size: 12pt"><i><li style="list-style-type: none">HTTP and HTTPS Beacon</li>
+</span></b><li style="list-style-type: none"><ul><i><span style="font-size: 12pt"><li style="list-style-type: none">HTTP and HTTPS Beacon</li>
 <li style="list-style-type: none">DNS Beacon</li>
 <li style="list-style-type: none">SMB and TCP Beacon</li>
-</i></span><i><li style="list-style-type: none"><span style="font-size: 12pt">External C2</span></li>
+</span><li style="list-style-type: none"><span style="font-size: 12pt">External C2</span></li>
 <span style="font-size: 14pt"><li style="list-style-type: none"/>
 </span></i></ul>
 </li>
 </ul>
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
 <br/>
-<span style="font-size: 14pt"><u><b>Types of Listeners</b></u><br/>
+<span style="font-size: 14pt"><b><u>Types of Listeners</u></b><br/>
 </span><ul><span style="font-size: 14pt"><li style="list-style-type: none">egree 			~ is a payload that beacons out of a network</li>
 <li style="list-style-type: none">peer-to-peer		~ is a payload that communicates through a parent payload </li>
 <li style="list-style-type: none">alias			~ is a refrence to a payload handler elsewere (another toolkit)</li>
@@ -23,7 +23,7 @@
 <br/>
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
 <br/>
-<span style="font-size: 14pt"><b><u>Stagers</u></b><br/>
+<span style="font-size: 14pt"><u><b>Stagers</b></u><br/>
  ~ a tiny program that downloads a payload and passes execution to it<ul><li style="list-style-type: none"/>
 <li style="list-style-type: none">- less secure</li>
 <li style="list-style-type: none">- more brittle</li>
@@ -46,21 +46,21 @@ The whole point is to make a get request<ul><li style="list-style-type: none">Ta
 <br/>
 </span>--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<span style="font-size: 14pt"><br/>
 </span><span style="font-size: 14pt"><br/>
-</span><span style="font-size: 20pt"><b>HTTP Beacon - under the hood</b></span><ul><span style="font-size: 14pt"><li style="list-style-type: none">- <b>GET</b>request is the &quot;beacon&quot;</li>
+</span><b><span style="font-size: 20pt">HTTP Beacon - under the hood</span></b><ul><span style="font-size: 14pt"><li style="list-style-type: none">- <b>GET</b>request is the &quot;beacon&quot;</li>
 </span><li style="list-style-type: none"><span style="font-size: 14pt">- the ENCRYPTED <b>POST</b>request only happens when there is output from victim host</span></li>
-<b><span style="font-size: 20pt"><li style="list-style-type: none"/>
-</span></b></ul>
+<span style="font-size: 20pt"><b><li style="list-style-type: none"/>
+</b></span></ul>
 <img height="361" src="image 3.png" width="700"/><span style="font-size: 14pt"><br/>
-</span><ul><li style="list-style-type: none"><u><span style="font-size: 16pt">you can do some cool alternatives</span></u></li>
+</span><ul><li style="list-style-type: none"><span style="font-size: 16pt"><u>you can do some cool alternatives</u></span></li>
 <li style="list-style-type: none"><ul><span style="font-size: 14pt"><li style="list-style-type: none">- have<b>output chumped</b>sent ove<b>r many GET</b>requests <b>instead</b></li>
 <li style="list-style-type: none">- swap the GET beacon for a post beacon</li>
 <li style="list-style-type: none"/>
 </span></ul>
 </li>
 </ul>
-<span style="font-size: 14pt"><img height="460" src="image 4.png" width="600"/><b><u><br/>
-</u></b><b><u><img height="108" src="image 5.png" width="250"/><br/>
-</u></b></span><ul><span style="font-size: 14pt"><li style="list-style-type: none">you can use comma seperated list</li>
+<span style="font-size: 14pt"><img height="460" src="image 4.png" width="600"/><u><b><br/>
+</b></u><u><b><img height="108" src="image 5.png" width="250"/><br/>
+</b></u></span><ul><span style="font-size: 14pt"><li style="list-style-type: none">you can use comma seperated list</li>
 </span><li style="list-style-type: none"><ul><span style="font-size: 14pt"><li style="list-style-type: none">foo.bar.com is allowed</li>
 <li style="list-style-type: none">192.168.1.2 is allowed</li>
 <li style="list-style-type: none">[::1] ipv6 is allowed with brackets</li>
@@ -70,9 +70,9 @@ The whole point is to make a get request<ul><li style="list-style-type: none">Ta
 </li>
 </ul>
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<span style="font-size: 14pt"><br/>
-</span><span style="font-size: 14pt"><b><u><br/>
+</span><span style="font-size: 14pt"><u><b><br/>
 <img height="276" src="image 6.png" width="550"/><br/>
-</u></b><a href="https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/topics/malleable-c2_main.htm?cshid=1062">Link In Slide</a><br/>
+</b></u><a href="https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/topics/malleable-c2_main.htm?cshid=1062">Link In Slide</a><br/>
 <br/>
 <br/>
 <br/>
@@ -86,4 +86,4 @@ The whole point is to make a get request<ul><li style="list-style-type: none">Ta
 <br/>
 <br/>
 <br/>
-</span></body></html>
+</span></tt></body></html>

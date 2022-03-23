@@ -2,24 +2,24 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Artifact Kit</title>
-</head><body><ul><b><u><span style="font-size: 28pt"><li style="list-style-type: none"/>
+</head><body><tt><ul><b><u><span style="font-size: 28pt"><li style="list-style-type: none"/>
 </span></u></b><li style="list-style-type: none"><ul><b><u><li style="list-style-type: none"><span style="font-size: 20pt">Avoid creating a thread affiliated with a module on disk</span></li>
-</u></b><li style="list-style-type: none"><ul><span style="font-size: 16pt"><i><li style="list-style-type: none">- creates thread </li>
+</u></b><li style="list-style-type: none"><ul><i><span style="font-size: 16pt"><li style="list-style-type: none">- creates thread </li>
 <li style="list-style-type: none">- calls function named &quot;run&quot;</li>
 <li style="list-style-type: none">- function takes arg (pointer to beacon reflective dll package)</li>
 <li style="list-style-type: none">- cast that to a function pointer</li>
-</i><li style="list-style-type: none"><i>- then calls it</i></li>
+</span></i><span style="font-size: 16pt"><li style="list-style-type: none"><i>- then calls it</i></li>
 <i><li style="list-style-type: none"/>
 </i></span><li style="list-style-type: none"><img height="355" src="image 9.png" width="550"/></li>
 <li style="list-style-type: none"/>
 </ul>
 </li>
-<li style="list-style-type: none"><u><b><span style="font-size: 20pt">Process Injection (avoid modules threads)</span></b></u><span style="font-size: 16pt"/></li>
-<li style="list-style-type: none"><ul><span style="font-size: 16pt"><i><li style="list-style-type: none">- create suspended process (<b>including desirable start addres</b>s)</li>
+<li style="list-style-type: none"><span style="font-size: 20pt"><b><u>Process Injection (avoid modules threads)</u></b></span></li>
+<li style="list-style-type: none"><ul><i><span style="font-size: 16pt"><li style="list-style-type: none">- create suspended process (<b>including desirable start addres</b>s)</li>
 <li style="list-style-type: none">- get the context</li>
-</i><li style="list-style-type: none"><i>- update the context to have it call desired <b>start address of payload</b></i></li>
+</span></i><span style="font-size: 16pt"><li style="list-style-type: none"><i>- update the context to have it call desired <b>start address of payload</b></i></li>
 <i><li style="list-style-type: none">- set the thread to the new <b>context</b></li>
-<li style="list-style-type: none"><b>- </b>then resume (the thread will have the desired start address but call the payload)<b/></li>
+<li style="list-style-type: none"><b>- </b>then resume (the thread will have the desired start address but call the payload)</li>
 </i><li style="list-style-type: none"/>
 </span></ul>
 </li>
@@ -31,8 +31,8 @@
 </ul>
 </li>
 </ul>
-<b>=============================================================================================================================================================================================<u/></b><ul><b><u><span style="font-size: 28pt"><li style="list-style-type: none"/>
-</span></u></b><li style="list-style-type: none"><b><u><span style="font-size: 28pt">Artifact Kit:</span></u></b><span style="font-size: 28pt">  </span><span style="font-size: 16pt">generate exes, dlls, and service exes</span></li>
+<b>=============================================================================================================================================================================================</b><ul><span style="font-size: 28pt"><u><b><li style="list-style-type: none"/>
+</b></u></span><li style="list-style-type: none"><span style="font-size: 28pt"><u><b>Artifact Kit:</b></u>  </span><span style="font-size: 16pt">generate exes, dlls, and service exes</span></li>
 </ul>
 <img height="143" src="image.png" width="550"/><br/>
 <ul><li style="list-style-type: none">you can change <b>/artifact/src-common/bypass-pip.c</b></li>
@@ -54,7 +54,7 @@
 <li style="list-style-type: none"/>
 </ul>
 </li>
-<li style="list-style-type: none"><b><span style="font-size: 16pt"><u>Example Change </u></span></b><span style="font-size: 14pt">~ largly does the exact same thing, just using different apis</span></li>
+<li style="list-style-type: none"><u><span style="font-size: 16pt"><b>Example Change </b></span></u><span style="font-size: 14pt">~ largly does the exact same thing, just using different apis</span></li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none"><img height="235" src="image 8.png" width="500"/></li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none"/>
 <li style="list-style-type: none"/>
@@ -68,8 +68,8 @@
 </li>
 <span style="font-size: 18pt"><li style="list-style-type: none"><b>&gt; ./build.sh</b> ~ once scripts have been modified</li>
 </span></ul>
-<ul><span style="font-size: 18pt">then go build you're exe and dlls like normal</span></ul>
-<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"/>
+<br/>
+<span style="font-size: 18pt">then go build you're exe and dlls like normal</span><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"/>
 </ul>
 </li>
 </ul>
@@ -91,8 +91,8 @@
 <img height="452" src="image 9.png" width="700"/><br/>
 <br/>
 <br/>
-<span style="font-size: 20pt">Recommend that you <b>AVOID</b></span><ul><i><span style="font-size: 16pt"><li style="list-style-type: none">use of <b>RWX</b>memory</li>
-</span></i><li style="list-style-type: none"><i><span style="font-size: 16pt">Threads with which have a start address that <b>is not </b>associated with a <b>memory mapped dll</b>or <b>your executable</b>itself</span></i></li>
+<span style="font-size: 20pt">Recommend that you <b>AVOID</b></span><ul><span style="font-size: 16pt"><i><li style="list-style-type: none">use of <b>RWX</b>memory</li>
+</i></span><li style="list-style-type: none"><span style="font-size: 16pt"><i>Threads with which have a start address that <b>is not </b>associated with a <b>memory mapped dll</b>or <b>your executable</b>itself</i></span></li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"/>
 <li style="list-style-type: none"/>
 </ul>
@@ -128,7 +128,7 @@
 </ul>
 ========================================================================================================================================<br/>
 <br/>
-<span style="font-size: 16pt"><b>What does the AV think of your exe?</b></span><ul><span style="font-size: 16pt"><li style="list-style-type: none">What about unknown?</li>
+<b><span style="font-size: 16pt">What does the AV think of your exe?</span></b><ul><span style="font-size: 16pt"><li style="list-style-type: none">What about unknown?</li>
 </span><li style="list-style-type: none"><ul><span style="font-size: 16pt"><i><li style="list-style-type: none">- some environments default to good (not as common)</li>
 <li style="list-style-type: none">- some will default to run but notify client</li>
 <li style="list-style-type: none">- some environments default to big scary screen (more common)</li>
@@ -140,42 +140,42 @@
 <li style="list-style-type: none"/>
 <li style="list-style-type: none"/>
 <li style="list-style-type: none"/>
-<b><li style="list-style-type: none"><u><span style="font-size: 20pt">Local Analysis</span></u></li>
+<b><li style="list-style-type: none"><span style="font-size: 20pt"><u>Local Analysis</u></span></li>
 </b><li style="list-style-type: none"><ul><span style="font-size: 16pt"><li style="list-style-type: none">~ static</li>
 <li style="list-style-type: none">~ dynamic</li>
-</span><span style="font-size: 18pt"><b><li style="list-style-type: none"/>
-</b></span></ul>
+</span><b><span style="font-size: 18pt"><li style="list-style-type: none"/>
+</span></b></ul>
 </li>
 <span style="font-size: 18pt"><li style="list-style-type: none"><b><u>Static</u></b><span style="font-size: 14pt"/></li>
 </span><li style="list-style-type: none"><ul><span style="font-size: 16pt"><li style="list-style-type: none"><b>- rule</b><b>based</b></li>
-</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 14pt"><i>~ signature</i></span></li>
+</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><i><span style="font-size: 14pt">~ signature</span></i></li>
 </ul>
 </li>
 <span style="font-size: 16pt"><li style="list-style-type: none"><b>- heuristic</b></li>
-</span><li style="list-style-type: none"><ul><i><span style="font-size: 14pt"><li style="list-style-type: none">~ compile time</li>
+</span><li style="list-style-type: none"><ul><span style="font-size: 14pt"><i><li style="list-style-type: none">~ compile time</li>
 <li style="list-style-type: none">~ compiler</li>
 <li style="list-style-type: none">~ import table (what does it think itll be doing)</li>
 <li style="list-style-type: none">~ metadata [name of app, whats the icon, etc] &amp; resources </li>
 <li style="list-style-type: none">~ signed?</li>
-</span></i><li style="list-style-type: none"><i><span style="font-size: 14pt">~ entropy [does it look like suspicious packed data (encoded)]</span></i></li>
+</i></span><li style="list-style-type: none"><span style="font-size: 14pt"><i>~ entropy [does it look like suspicious packed data (encoded)]</i></span></li>
 </ul>
 </li>
-<li style="list-style-type: none"><b><span style="font-size: 18pt">- </span><span style="font-size: 16pt">correlation</span></b></li>
-<li style="list-style-type: none"><ul><span style="font-size: 14pt"><i><li style="list-style-type: none">~ list of vectors of things we know about the binary</li>
+<li style="list-style-type: none"><span style="font-size: 18pt"><b>- </b></span><b><span style="font-size: 16pt">correlation</span></b></li>
+<li style="list-style-type: none"><ul><i><span style="font-size: 14pt"><li style="list-style-type: none">~ list of vectors of things we know about the binary</li>
 <li style="list-style-type: none">~ compare this vector to library of binaries</li>
-</i></span><li style="list-style-type: none"><ul><i><span style="font-size: 12pt"><b><li style="list-style-type: none">Which on is it most like? {list will include good and bad binaries}</li>
+</span></i><li style="list-style-type: none"><ul><i><b><span style="font-size: 12pt"><li style="list-style-type: none">Which on is it most like? {list will include good and bad binaries}</li>
 <li style="list-style-type: none"/>
-</b></span></i></ul>
+</span></b></i></ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li style="list-style-type: none"><b><span style="font-size: 16pt"><u>What to do about this?</u></span></b></li>
+<li style="list-style-type: none"><b><u><span style="font-size: 16pt">What to do about this?</span></u></b></li>
 <li style="list-style-type: none"><ul><span style="font-size: 18pt"><li style="list-style-type: none"/>
 </span><span style="font-size: 16pt"><li style="list-style-type: none"><b>- rule</b><b>based</b></li>
-</span><li style="list-style-type: none"><ul><i><span style="font-size: 14pt"><li style="list-style-type: none">~ obfuscate</li>
-</span></i><li style="list-style-type: none"><i><span style="font-size: 14pt">~ change it until the signature breaks</span></i></li>
+</span><li style="list-style-type: none"><ul><span style="font-size: 14pt"><i><li style="list-style-type: none">~ obfuscate</li>
+</i></span><li style="list-style-type: none"><span style="font-size: 14pt"><i>~ change it until the signature breaks</i></span></li>
 </ul>
 </li>
 </ul>
@@ -184,9 +184,9 @@
 </li>
 </ul>
 <br/>
-<b><span style="font-size: 16pt">- heuristic</span></b><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><span style="font-size: 14pt"><i><li style="list-style-type: none">~ take metadata from an existing program</li>
+<span style="font-size: 16pt"><b>- heuristic</b></span><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><i><span style="font-size: 14pt"><li style="list-style-type: none">~ take metadata from an existing program</li>
 <li style="list-style-type: none">~ pay attention to the IMPORT table (obfuscate the known malicious handles)</li>
-</i></span><li style="list-style-type: none"><span style="font-size: 14pt"><i>~ use a valid code signing certificate</i></span></li>
+</span></i><li style="list-style-type: none"><i><span style="font-size: 14pt">~ use a valid code signing certificate</span></i></li>
 </ul>
 </li>
 </ul>
@@ -195,17 +195,17 @@
 </li>
 </ul>
 <br/>
-<span style="font-size: 18pt"><b>- </b></span><b><span style="font-size: 16pt">correlation</span></b><br/>
+<b><span style="font-size: 18pt">- </span><span style="font-size: 16pt">correlation</span></b><br/>
 <br/>
 <br/>
 <br/>
 <br/>
 <br/>
-<u><b><span style="font-size: 18pt">Dynamic</span></b></u><br/>
+<span style="font-size: 18pt"><b><u>Dynamic</u></b></span><br/>
 <ul><li style="list-style-type: none"><ul><span style="font-size: 14pt"><li style="list-style-type: none">starts executing in the sandbox until it hits <b>API call</b></li>
 </span><li style="list-style-type: none"><ul><span style="font-size: 14pt"><li style="list-style-type: none">the idea is that it takes the api calls in <b>memory</b>until it can conclude whether its malicious</li>
 <li style="list-style-type: none"/>
-</span><li style="list-style-type: none"><span style="font-size: 14pt"><b><u>Drawbacks</u></b></span></li>
+</span><li style="list-style-type: none"><span style="font-size: 14pt"><u><b>Drawbacks</b></u></span></li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none">1. time it takes </li>
 <li style="list-style-type: none">2. incomplete emulation</li>
 <li style="list-style-type: none"><img height="255" src="image 4.png" width="450"/></li>
@@ -273,4 +273,4 @@
 <br/>
 <br/>
 <br/>
-</body></html>
+</tt></body></html>

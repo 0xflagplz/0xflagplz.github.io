@@ -2,7 +2,7 @@
 <node>
 <version>6</version>
 <dict>
-  <key>expanded</key><false/>
+  <key>expanded</key><true/>
   <key>title</key><string>New Windows Evasion - 3/15</string>
   <key>nodeid</key><string>3c56d9c7-dbea-4e26-9de2-044410f84247</string>
   <key>modified_time</key><integer>1647274174</integer>

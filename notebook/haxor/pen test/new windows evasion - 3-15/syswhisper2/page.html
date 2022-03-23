@@ -1,0 +1,97 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>syswhisper2</title>
+</head><body><tt><span style="font-size: 14pt">jesus no videos to visualize sh</span>it<br/>
+<br/>
+The functions in <b>ntdll.dll</b>that make the syscalls consist of just a few assembly instructions, so <b>re-implementing them</b>in your own implant can bypass<br/>
+<br/>
+<b><span style="font-size: 20pt"><u>SysWhispers2 </u></span></b><br/>
+<ul><span style="font-size: 14pt"><li style="list-style-type: none">SysWhispers2 can generate Heders capable of making direct system calls</li>
+</span><li style="list-style-type: none"><span style="font-size: 14pt">can generate a Header/ASM file for any system call in the core kernel image (ntoskrnl.exe), which also contains the necessary type definitions.</span></li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<span style="font-size: 16pt"><li style="list-style-type: none">Technology Introduction</li>
+<li style="list-style-type: none">Various security products place hooks in user-mode API functions, which allow them to redirect execution data flow to their engines and detect suspicious behavior. </li>
+<li style="list-style-type: none">The functions in <b>ntdll.dll</b>that can perform system calls consist of only a few assembly instructions, </li>
+</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 16pt"><b>so we can reimplement them in our own porting program to bypass the hooks set by these security products.</b></span></li>
+</ul>
+</li>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<span style="font-size: 16pt"><li style="list-style-type: none"/>
+</span></ul>
+<span style="font-size: 16pt"># Export compatible with all versions of NtProtectVirtualMemory and NtWriteVirtualMemory</span><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 14pt"><i>PS C:\Projects\SysWhispers2&gt;</i></span><b><span style="font-size: 16pt">py .\syswhispers.py --functions NtProtectVirtualMemory,NtWriteVirtualMemory -o syscalls_mem</span></b></li>
+</ul>
+</li>
+<span style="font-size: 16pt"><li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+</span></ul>
+<span style="font-size: 16pt"># export common functions	</span><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 14pt"><i>PS C:\Projects\SysWhispers2&gt;</i></span> <b><span style="font-size: 16pt">py .\syswhispers.py --preset common --out-file syscalls_common</span></b></li>
+</ul>
+</li>
+<span style="font-size: 16pt"><li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"/>
+<li style="list-style-type: none"># Export all compatible functions for all supported Windows OS versions (see the example-output/ directory for details)</li>
+</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><i><span style="font-size: 14pt">PS C:\Projects\SysWhispers2&gt;</span></i><b><span style="font-size: 16pt">py .\syswhispers.py --preset all -o syscalls_all</span></b></li>
+</ul>
+</li>
+</ul>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<span style="font-size: 18pt">this doesn’t call <b>RtlGetVersion</b>to query the OS version, but instead does this in the assembly by querying the <a href="https://docs.microsoft.com/en-us/windows/win32/api/winternl/ns-winternl-peb">PEB</a></span><br/>
+<br/>
+<br/>
+<img height="465" src="image.png" width="450"/><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</tt></body></html>

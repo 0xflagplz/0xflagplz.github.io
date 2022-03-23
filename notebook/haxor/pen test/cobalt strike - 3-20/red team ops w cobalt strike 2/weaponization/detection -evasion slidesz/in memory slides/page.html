@@ -2,7 +2,7 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>in memory slides</title>
-</head><body><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"/>
+</head><body><tt><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"/>
 <li style="list-style-type: none"/>
 <li style="list-style-type: none"><a href="https://youtu.be/H0_CKdwbMRk?t=5151">A Payloads Life</a>- describes a lot of the proccess a dll takes to execute</li>
 <li style="list-style-type: none"/>
@@ -13,15 +13,15 @@
 </ul>
 </li>
 </ul>
-<span style="font-size: 20pt"><b>Module Stomping</b></span><ul><li style="list-style-type: none"><ul><span style="font-size: 20pt"><b><li style="list-style-type: none"><img height="46" src="image 2.png" width="400"/></li>
-</b></span><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><span style="font-size: 20pt"><i><li style="list-style-type: none">Dangers ~ </li>
+<b><span style="font-size: 20pt">Module Stomping</span></b><ul><li style="list-style-type: none"><ul><b><span style="font-size: 20pt"><li style="list-style-type: none"><img height="46" src="image 2.png" width="400"/></li>
+</span></b><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><span style="font-size: 20pt"><i><li style="list-style-type: none">Dangers ~ </li>
 </i></span><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 14pt">if you choose a module that one of you process context needs to load later, and instead refrences youre stomped module, <span style="color: #ff0000">it will crash</span></span></li>
-<li style="list-style-type: none"><span style="font-size: 14pt">if the module is too small, your beacon will crash when trying to write itself into the module space</span><i><span style="font-size: 18pt"/></i></li>
-<i><span style="font-size: 18pt"><li style="list-style-type: none"/>
-</span></i><span style="font-size: 18pt"><li style="list-style-type: none"><b>you also now have a really odd dll loading everywhere your beacon is loading</b><i/></li>
-</span><li style="list-style-type: none"><ul><i><span style="font-size: 16pt"><li style="list-style-type: none"><b><span style="color: #ff0000">you</span><span style="color: #ff0000">should be using this technique on your long haul access</span><span style="color: #ff0000">server</span></b></li>
-</span></i><li style="list-style-type: none"><ul><i><span style="font-size: 16pt"><li style="list-style-type: none">its good pratice to seperate your persistance callbacks from post exploitation</li>
-</span></i><li style="list-style-type: none"><i><span style="font-size: 16pt">also <b>making beacons harder to find in memory</b></span></i></li>
+<li style="list-style-type: none"><span style="font-size: 14pt">if the module is too small, your beacon will crash when trying to write itself into the module space</span></li>
+<span style="font-size: 18pt"><i><li style="list-style-type: none"/>
+</i><li style="list-style-type: none"><b>you also now have a really odd dll loading everywhere your beacon is loading</b></li>
+</span><li style="list-style-type: none"><ul><span style="font-size: 16pt"><i><li style="list-style-type: none"><span style="color: #ff0000"><b>you</b></span><b><span style="color: #ff0000">should be using this technique on your long haul access</span><span style="color: #ff0000">server</span></b></li>
+</i></span><li style="list-style-type: none"><ul><span style="font-size: 16pt"><i><li style="list-style-type: none">its good pratice to seperate your persistance callbacks from post exploitation</li>
+</i></span><li style="list-style-type: none"><span style="font-size: 16pt"><i>also <b>making beacons harder to find in memory</b></i></span></li>
 </ul>
 </li>
 </ul>
@@ -50,7 +50,7 @@
 <li style="list-style-type: none"/>
 <li style="list-style-type: none"><b>Obfuscate -&gt; True</b></li>
 <li style="list-style-type: none"/>
-<li style="list-style-type: none"><b>Cleanup</b>--&gt; <b>True  </b>(cleanup reflective dll package)<b/></li>
+<li style="list-style-type: none"><b>Cleanup</b>--&gt; <b>True  </b>(cleanup reflective dll package)</li>
 <b><li style="list-style-type: none"/>
 </b><li style="list-style-type: none"><b>sleep_mask --&gt; obfuscate code while asleep, deobfuscate when awake</b></li>
 </ul>
@@ -87,4 +87,4 @@
 <br/>
 <br/>
 <br/>
-</body></html>
+</tt></body></html>

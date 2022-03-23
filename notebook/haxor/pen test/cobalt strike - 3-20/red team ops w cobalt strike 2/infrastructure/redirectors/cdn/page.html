@@ -2,22 +2,22 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>cdn</title>
-</head><body><b><span style="font-size: 16pt">CDN - </span></b><a href="https://en.wikipedia.org/wiki/Content_delivery_network">Content delivery network</a> <b><span style="font-size: 16pt"><br/>
-</span></b><b><span style="font-size: 16pt"><br/>
-</span></b><b><span style="font-size: 24pt">CDN Redirectors  </span></b><ul><span style="font-size: 18pt"><li style="list-style-type: none">- use valid SSL certificate</li>
-</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 14pt"><i>~often time the CDN requires one</i></span></li>
+</head><body><tt><b><span style="font-size: 16pt">CDN - </span></b><a href="https://en.wikipedia.org/wiki/Content_delivery_network">Content delivery network</a> <span style="font-size: 16pt"><b><br/>
+</b></span><span style="font-size: 16pt"><b><br/>
+</b></span><b><span style="font-size: 24pt">CDN Redirectors  </span></b><ul><span style="font-size: 18pt"><li style="list-style-type: none">- use valid SSL certificate</li>
+</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><i><span style="font-size: 14pt">~often time the CDN requires one</span></i></li>
 </ul>
 </li>
 </ul>
 <span style="font-size: 18pt">- Allow HTTP POST and HTTP GET verbs</span><ul><span style="font-size: 18pt"><li style="list-style-type: none">- Consider HTTP-GET only C2</li>
 <li style="list-style-type: none">- Disable all cache options </li>
-</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><i><span style="font-size: 14pt">~ giving a better chance to redirect to your cobalt server</span></i></li>
+</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 14pt"><i>~ giving a better chance to redirect to your cobalt server</i></span></li>
 </ul>
 </li>
 <span style="font-size: 18pt"><li style="list-style-type: none">- be aware of transformed requests</li>
-</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><span style="font-size: 14pt"><i><li style="list-style-type: none">~ <b>Cloudfront</b>likes to rearrange the cookie value</li>
+</span><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><i><span style="font-size: 14pt"><li style="list-style-type: none">~ <b>Cloudfront</b>likes to rearrange the cookie value</li>
 <li style="list-style-type: none">~ if youre beacon <b>Malleable c2 profile</b>is using the cookie header to send data back to cobalt strike</li>
-</i></span><li style="list-style-type: none"><span style="font-size: 14pt"><i>~ possible to break <b>contract</b>between Malleable c2 profile the beacon payload and the beacon controller</i></span></li>
+</span></i><li style="list-style-type: none"><i><span style="font-size: 14pt">~ possible to break <b>contract</b>between Malleable c2 profile the beacon payload and the beacon controller</span></i></li>
 </ul>
 </li>
 </ul>
@@ -27,11 +27,11 @@
 <br/>
 <br/>
 <br/>
-<b><span style="font-size: 16pt">multiple different origin servers Per CDN</span></b><ul><span style="font-size: 16pt"><li style="list-style-type: none">some of the origin servers are highly trusted</li>
+<span style="font-size: 16pt"><b>multiple different origin servers Per CDN</b></span><ul><span style="font-size: 16pt"><li style="list-style-type: none">some of the origin servers are highly trusted</li>
 </span><li style="list-style-type: none"><span style="font-size: 16pt">we can become a customer too ;)</span></li>
 </ul>
 <br/>
-<span style="font-size: 18pt"><b><u>What is an Origin Server?</u></b></span><ul><span style="font-size: 14pt"><li style="list-style-type: none">the CDN receives a client from so call &quot;client&quot;</li>
+<u><b><span style="font-size: 18pt">What is an Origin Server?</span></b></u><ul><span style="font-size: 14pt"><li style="list-style-type: none">the CDN receives a client from so call &quot;client&quot;</li>
 <li style="list-style-type: none">if the CDN analyzes to see if it has the correct response in the cache</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none"><b>IF IT DOESNT</b></li>
 </ul>
@@ -111,4 +111,4 @@
 <br/>
 <br/>
 <br/>
-</body></html>
+</tt></body></html>

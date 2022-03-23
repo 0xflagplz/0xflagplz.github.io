@@ -1,0 +1,76 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Qradar Queries</title>
+</head><body><tt><span style="font-size: 12pt">SELECT UTF8(payload) from events  <br/>
+<b>- single result column 'utf8_payload'</b><br/>
+<img height="145" src="image.png" width="350"/><br/>
+------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
+SELECT qid,QIDNAME(qid), * from events<br/>
+<b>~ selects qid and qidname columns first then puts the rest after with the *</b><br/>
+------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
+SELECT qid,QIDNAME(qid) AS &quot;My Parameter&quot; from events<br/>
+<b>Rename Parameter<br/>
+</b>------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
+SELECT QIDNAME(qid), * FROM events WHERE QIDNAME(qid) ILIKE '%HEALTH%' LAST 2 DAYS<br/>
+<b>queries qid first column, then rest. The displays where QID name includes &quot;health&quot; ~~~ % is a wildcard</b><br/>
+<img src="image 2.png"/><br/>
+</span><span style="font-size: 12pt">------------------------------------------------------------------------------------------------------------------------------------------------------------</span>------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
+<span style="font-size: 12pt"><br/>
+</span>select UNIQUECOUNT(DATEFORMAT(firstpackettime,'MM')) As 'different months', UNIQUECOUNT(DATEFORMAT(firstpackettime,'dd')) As 'different days', sourceip, destinationip, sum(sourcebytes/1048576) As 'transmitted data (MB)', count(*) As 'total flows' from flows where flowdirection='L2R' GROUP BY SourceIP, destinationip last 200 DAYS<br/>
+<br/>
+select UNIQUECOUNT(DATEFORMAT(firstpackettime,'MM')) As 'different months', UNIQUECOUNT(DATEFORMAT(firstpackettime,'dd')) As 'different days', UNIQUECOUNT(sourceip) As 'different SourceIP',destinationip,XFORCE_IP_CATEGORY(destinationip), sum(sourcebytes/1048576) As 'transmitted data (MB)', count(*) As 'total flows' from flows where flowdirection='L2R' and XFORCE_IP_CATEGORY(destinationip) is not NULL GROUP BY destinationip last 200 DAYS<br/>
+<br/>
+<br/>
+GET IP classificassions<br/>
+select UNIQUECOUNT(DATEFORMAT(firstpackettime,'MM')) As 'different months', UNIQUECOUNT(DATEFORMAT(firstpackettime,'dd')) As 'different days', UNIQUECOUNT(sourceip) As 'different SourceIP',destinationip, sum(sourcebytes/1048576) As 'transmitted data (MB)', count(*) As 'total flows' from flows where flowdirection='L2R' GROUP BY destinationip having sum(sourcebytes) &quot;PUT A RIGHT BRACKET HERE&quot; 1048576 last 200 DAYS<br/>
+<br/>
+DRILL DOWN<br/>
+select DATEFORMAT(firstpackettime,'yyyy-MM-dd HH:mm:ss') As 'FlowStartTime', sourceip,sourceport, destinationip, destinationport, (sourcebytes/1048576) As 'transmitted data (MB)' from flows where destinationip = '91.234.46.206' last 200 DAYS<br/>
+<br/>
+select QIDNAME(qid), sourceip, destinationip, &quot;sc-status&quot; from events where qid= 49750002 last 15 MINUTES<br/>
+<br/>
+<b>Traffic error codes</b><br/>
+select QIDNAME(qid), sourceip, destinationip, CASE &quot;sc-status&quot; when '200' then 'OK' when '400' then 'Bad request' when '401' then 'Unauthorized' when '403' then 'Forbidden' when '404' then 'Not found' when '500' then 'Internal Server Error' when '10060' then 'A connection timed out' when '12234' then 'The traffic was blocked by IPS' when '12308' then 'The server is too busy to handle this request' else 'N/A' end As 'HTTP status' from events where qid= 49750002 last 2 HOURS<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</tt></body></html>

@@ -1,8 +1,8 @@
 <!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<title>Install Updated Java Kali Linux</title>
-</head><body><br/>
+<title>Install Updated Java Version Kali Linux</title>
+</head><body><tt><br/>
 <a href="https://www.javahelps.com/2021/03/install-oracle-jdk-16-on-linux.html">https://www.javahelps.com/2021/03/install-oracle-jdk-16-on-linux.html</a><br/>
 <br/>
 <span style="font-size: 18pt">First get you .deb version file you want to install<br/>
@@ -11,27 +11,27 @@
 </ul>
 <br/>
 <br/>
-<b><u><span style="font-size: 22pt">Step 5:</span></u></b><br/>
-<div style="text-align: justify"><span style="font-family: Open Sans"><span style="font-size: 14pt">Enter the following command to open the environment variables file.</span></span></div> <br/>
+<span style="font-size: 22pt"><u><b>Step 5:</b></u></span><br/>
+<span style="font-size: 14pt"><span style="font-family: Open Sans"><div style="text-align: justify">Enter the following command to open the environment variables file.</div></span></span> <br/>
 &gt; sudo nano /etc/environment<br/>
 <br/>
 <br/>
-<b><u><span style="font-size: 22pt">Step 6:</span></u></b><br/>
-<div style="text-align: justify"><span style="font-family: Open Sans"><span style="font-size: 14pt">In the opened file, add the following bin folder to the existing PATH variable.</span></span></div> <br/>
+<span style="font-size: 22pt"><u><b>Step 6:</b></u></span><br/>
+<span style="font-size: 14pt"><span style="font-family: Open Sans"><div style="text-align: justify">In the opened file, add the following bin folder to the existing PATH variable.</div></span></span> <br/>
 <b>ADD  ---&gt;  <span style="color: #ff0000">/usr/lib/jvm/jdk-&lt;version&gt;/bin</span><br/>
 </b><b>ADD AT BOTTOM --&gt;  <span style="color: #ff0000">JAVA_HOME=&quot;/usr/lib/jvm/jdk-&lt;verison&gt;&quot; </span></b><br/>
 <br/>
 <br/>
-<b><span style="font-size: 16pt"><u>Before:</u></span></b><br/>
+<u><span style="font-size: 16pt"><b>Before:</b></span></u><br/>
 PATH=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games&quot;<br/>
 <br/>
-<b><u><span style="font-size: 16pt">AFTER:</span></u></b><br/>
+<span style="font-size: 16pt"><u><b>AFTER:</b></u></span><br/>
 PATH=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/jdk-&lt;version&gt;/bin&quot; <br/>
 <br/>
 <br/>
 <br/>
-<b><div style="text-align: left"><span style="font-family: Open Sans"><span style="font-size: 22pt"><u>Step 7:</u></span><span style="font-size: 14pt"><br/>
-</span></span></div></b><span style="font-family: Open Sans"><span style="font-size: 14pt"><div style="text-align: justify">Enter the following commands to inform the system about the Java's location. Depending on your JDK version, the paths can be different.</div></span></span> <ul><li style="list-style-type: none"><ul><span style="font-size: 14pt"><li style="list-style-type: none">&gt; sudo update-alternatives --install &quot;/usr/bin/java&quot; &quot;java&quot; &quot;/usr/lib/jvm/jdk-16.0.2/bin/java&quot; 0</li>
+<span style="font-family: Open Sans"><div style="text-align: left"><b><u><span style="font-size: 22pt">Step 7:</span></u><span style="font-size: 14pt"><br/>
+</span></b></div></span><span style="font-family: Open Sans"><span style="font-size: 14pt"><div style="text-align: justify">Enter the following commands to inform the system about the Java's location. Depending on your JDK version, the paths can be different.</div></span></span> <ul><li style="list-style-type: none"><ul><span style="font-size: 14pt"><li style="list-style-type: none">&gt; sudo update-alternatives --install &quot;/usr/bin/java&quot; &quot;java&quot; &quot;/usr/lib/jvm/jdk-16.0.2/bin/java&quot; 0</li>
 <li style="list-style-type: none">&gt; sudo update-alternatives --install &quot;/usr/bin/javac&quot; &quot;javac&quot; &quot;/usr/lib/jvm/jdk-16.0.2/bin/javac&quot; 0</li>
 <li style="list-style-type: none">&gt; sudo update-alternatives --set java /usr/lib/jvm/jdk-16.0.2/bin/java</li>
 </span><li style="list-style-type: none"><span style="font-size: 14pt">&gt; sudo update-alternatives --set javac /usr/lib/jvm/jdk-16.0.2/bin/javac</span></li>
@@ -41,8 +41,8 @@ PATH=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/gam
 <br/>
 <br/>
 <br/>
-<b><u><span style="font-size: 22pt">Step 8:</span></u></b><br/>
-<div style="text-align: justify"><span style="font-family: Open Sans"><span style="font-size: 14pt">To verify the setup enter the following commands and make sure that they print the location of java and javac as you have provided in the previous step.</span></span></div> <ul><li style="list-style-type: none"><ul><span style="font-size: 16pt"><li style="list-style-type: none">&gt; update-alternatives --list java</li>
+<span style="font-size: 22pt"><u><b>Step 8:</b></u></span><br/>
+<span style="font-size: 14pt"><span style="font-family: Open Sans"><div style="text-align: justify">To verify the setup enter the following commands and make sure that they print the location of java and javac as you have provided in the previous step.</div></span></span> <ul><li style="list-style-type: none"><ul><span style="font-size: 16pt"><li style="list-style-type: none">&gt; update-alternatives --list java</li>
 <li style="list-style-type: none">&gt; update-alternatives --list javac</li>
 </span><li style="list-style-type: none"><span style="font-size: 16pt">&gt; java -version</span></li>
 </ul>
@@ -58,4 +58,4 @@ PATH=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/gam
 <br/>
 <br/>
 <br/>
-</body></html>
+</tt></body></html>

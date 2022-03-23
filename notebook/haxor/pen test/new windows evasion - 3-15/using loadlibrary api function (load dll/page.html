@@ -1,0 +1,36 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Using LoadLibrary API function (load dll)</title>
+</head><body><tt><span style="font-size: 18pt">#include &lt;windows.h&gt;<br/>
+<br/>
+HANDLE inject_DLL(const char* file_name, int PID)<br/>
+{<br/>
+  HANDLE h_process = OpenProcess(PROCESS_ALL_ACCESS, FALSE, PID);     		// retrieving a handle to the target process<br/>
+<br/>
+  char fullDLLPath[_MAX_PATH];                         	// getting the full path of the dll file<br/>
+  GetFullPathName(file_name, _MAX_PATH, fullDLLPath, NULL);<br/>
+<br/>
+  LPVOID DLLPath_addr = VirtualAllocEx(h_process, NULL, _MAX_PATH,<br/>
+             MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);         	// allocating memory in the target process<br/>
+  WriteProcessMemory(h_process, DLLPath_addr, fullDLLPath,<br/>
+           strlen(fullDLLPath), NULL);                  	// writing the dll path into that memory<br/>
+<br/>
+  LPVOID LoadLib_addr = GetProcAddress(GetModuleHandle(&quot;Kernel32&quot;),        	// getting LoadLibraryA address (same across<br/>
+                    &quot;LoadLibraryA&quot;);           	 	// all processes) to start execution at it<br/>
+<br/>
+  HANDLE h_rThread = CreateRemoteThread(h_process, NULL, 0,        		// starting a remote execution thread at LoadLibraryA<br/>
+           (LPTHREAD_START_ROUTINE)LoadLib_addr, DLLPath_addr, 0, NULL); 	// and passing the dll path as an argument<br/>
+<br/>
+  WaitForSingleObject(h_rThread, INFINITE);              		// waiting for it to be finished<br/>
+<br/>
+  DWORD exit_code;<br/>
+  GetExitCodeThread(h_rThread, &amp;exit_code);               		// retrieving the return value, i.e., the module<br/>
+                                          	// handle returned by LoadLibraryA<br/>
+<br/>
+  CloseHandle(h_rThread);                				// freeing the injected thread handle,<br/>
+  VirtualFreeEx(h_process, DLLPath_addr, 0, MEM_RELEASE);    			// ... and the memory allocated for the DLL path,<br/>
+  CloseHandle(h_process);                            	// ... and the handle for the target process<br/>
+<br/>
+  return (HANDLE)exit_code;<br/>
+}</span></tt></body></html>

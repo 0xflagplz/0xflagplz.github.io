@@ -2,9 +2,9 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Egress &amp; Network Evasion</title>
-</head><body><img height="410" src="image.png" width="500"/><br/>
+</head><body><tt><img height="410" src="image.png" width="500"/><br/>
 <br/>
-<u><b><span style="font-size: 18pt">The C2 Problem Set:</span></b></u><ul><li style="list-style-type: none">- most places have a network firewall that denies all outbound traffic</li>
+<span style="font-size: 18pt"><b><u>The C2 Problem Set:</u></b></span><ul><li style="list-style-type: none">- most places have a network firewall that denies all outbound traffic</li>
 <li style="list-style-type: none">- traffic will need to conform to the proxy's protocol</li>
 <li style="list-style-type: none">- we also need to evade IOC looking for cobalt or other known attacks</li>
 <li style="list-style-type: none"/>
@@ -12,7 +12,7 @@
 <li style="list-style-type: none"><img height="365" src="image 3.png" width="600"/></li>
 <li style="list-style-type: none"/>
 </ul>
-<span style="font-size: 18pt"><b><u>HTTP/S Proxy Details:</u></b></span><ul><li style="list-style-type: none">Uses the IE's proxy settings for current user</li>
+<u><b><span style="font-size: 18pt">HTTP/S Proxy Details:</span></b></u><ul><li style="list-style-type: none">Uses the IE's proxy settings for current user</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none"><i>this means if the user can access google.com so can you</i></li>
 </ul>
 </li>
@@ -32,9 +32,9 @@
 <i><li style="list-style-type: none"/>
 </i><li style="list-style-type: none"/>
 </ul>
-<u><b><span style="font-size: 18pt">Profile TIPS:</span></b></u><ul><li style="list-style-type: none"/>
-<li style="list-style-type: none"><span style="color: #ff0000"><b><span style="font-size: 16pt">dont use public examples in production</span></b></span><span style="font-size: 14pt">- everyone fucking knows about them </span></li>
-<li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 16pt"><b>- use them as bases ;)</b></span></li>
+<span style="font-size: 18pt"><b><u>Profile TIPS:</u></b></span><ul><li style="list-style-type: none"/>
+<li style="list-style-type: none"><span style="font-size: 16pt"><b><span style="color: #ff0000">dont use public examples in production</span></b></span><span style="font-size: 14pt">- everyone fucking knows about them </span></li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><b><span style="font-size: 16pt">- use them as bases ;)</span></b></li>
 </ul>
 </li>
 <li style="list-style-type: none"><span style="font-size: 14pt">do not allow http-get -&gt; server -&gt; output response</span></li>
@@ -48,7 +48,7 @@
 </ul>
 </li>
 <li style="list-style-type: none">Change URIs and use prepend to mask IOC in http-stager block</li>
-<li style="list-style-type: none"><ul><li style="list-style-type: none"><i><b>only if you allow staging</b></i></li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><b><i>only if you allow staging</i></b></li>
 </ul>
 </li>
 </ul>
@@ -91,4 +91,4 @@ AVS observe the fixed bytes at the beginning of a data stream, it can regognize 
 <br/>
 <br/>
 <br/>
-</body></html>
+</tt></body></html>

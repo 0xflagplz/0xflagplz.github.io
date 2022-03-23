@@ -2,18 +2,18 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Domain Fronting</title>
-</head><body><div style="text-align: left"><br/>
+</head><body><tt><div style="text-align: left"><br/>
 We as an attacker would like a request to a high reputable domain<br/>
 &quot;safedomain&quot; to NOT go to &quot;safedomain&quot; origin server.<br/>
 <b>how do we get the normal domain to redirect to <span style="color: #ff0000">our malicious origin host<br/>
-</span><span style="color: #ff0000"/><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><img height="288" src="image.png" width="350"/></li>
+</span><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><img height="288" src="image.png" width="350"/></li>
 </ul>
 </li>
 </ul>
 <br/>
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
 </b><br/>
-<u><span style="font-size: 16pt"><b>How do CDN work?</b></span></u><br/>
+<b><span style="font-size: 16pt"><u>How do CDN work?</u></span></b><br/>
 </div><div style="text-align: left">Client making a request to <b>something backed by the</b><b>CDN</b></div><ul><li style="list-style-type: none">the client does a DNS lookup and gets back the IP address associated with CDN</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none"><img height="283" src="image 2.png" width="400"/></li>
 </ul>
@@ -21,8 +21,8 @@ We as an attacker would like a request to a high reputable domain<br/>
 </ul>
 <br/>
 <br/>
-<span style="font-size: 18pt"><b><div style="text-align: left"><u>How to exploit?</u></div></b></span><ul><div style="text-align: left"><span style="font-size: 16pt"><li style="list-style-type: none">We need to change the HTTP host header</li>
-</span><li style="list-style-type: none"><span style="font-size: 16pt">Client will make request to approved domain but redirect to our Origin Server</span></li>
+<u><div style="text-align: left"><b><span style="font-size: 18pt">How to exploit?</span></b></div></u><ul><span style="font-size: 16pt"><div style="text-align: left"><li style="list-style-type: none">We need to change the HTTP host header</li>
+</div></span><div style="text-align: left"><li style="list-style-type: none"><span style="font-size: 16pt">Client will make request to approved domain but redirect to our Origin Server</span></li>
 </div></ul>
 <br/>
 <ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><img height="323" src="image 3.png" width="450"/>	<img height="311" src="image 4.png" width="450"/>	<img height="288" src="image 5.png" width="400"/></li>
@@ -103,4 +103,4 @@ We as an attacker would like a request to a high reputable domain<br/>
 <br/>
 <br/>
 <br/>
-</body></html>
+</tt></body></html>

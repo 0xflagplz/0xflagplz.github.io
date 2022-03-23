@@ -1,0 +1,134 @@
+<!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>CreateRemoteThread DLL injection sample
+</title>
+</head><body><tt>CreateRemoteThread DLL injection sample<br/>
+<ul><li style="list-style-type: none"><span style="font-size: 16pt"><b>BEFORE</b></span></li>
+</ul>
+<b>==========================================================</b><br/>
+#include &lt;Windows.h&gt;<br/>
+<br/>
+<br/>
+<br/>
+void InjectDll(const HANDLE hProcess, const char* dllPath)<br/>
+{<br/>
+  LPVOID lpBaseAddress = <b>VirtualAllocEx</b>(hProcess, NULL, strlen(dllPath), MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);<br/>
+  LPVOID lpStartAddress = <b>GetProcAddress</b>(GetModuleHandle(L&quot;kernel32.dll&quot;), &quot;LoadLibraryA&quot;);<br/>
+<br/>
+  <b>WriteProcessMemory</b>(hProcess, lpBaseAddress, dllPath, strlen(dllPath), nullptr);<br/>
+  <b>CreateRemoteThread</b>(hProcess, nullptr, 0, (LPTHREAD_START_ROUTINE)lpStartAddress, lpBaseAddress, 0, nullptr);<br/>
+}<br/>
+<br/>
+<b>==========================================================<ul><li style="list-style-type: none"><span style="font-size: 16pt">AFTER</span></li>
+</ul>
+</b><b>==========================================================</b><br/>
+#include &lt;Windows.h&gt;<br/>
+<br/>
+#include &quot;syscalls.h&quot; // Import the generated header.<br/>
+<br/>
+<br/>
+<br/>
+void InjectDll(const HANDLE hProcess, const char* dllPath)<br/>
+{<br/>
+  HANDLE hThread = NULL;<br/>
+<br/>
+  LPVOID lpAllocationStart = nullptr;<br/>
+<br/>
+  SIZE_T szAllocationSize = strlen(dllPath);<br/>
+<br/>
+  LPVOID lpStartAddress = <b>GetProcAddress</b>(GetModuleHandle(L&quot;kernel32.dll&quot;), &quot;LoadLibraryA&quot;);<br/>
+<br/>
+  <b>NtAllocateVirtualMemory</b>(hProcess, &amp;lpAllocationStart, 0, (PULONG)&amp;szAllocationSize, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);<br/>
+<br/>
+  <b>NtWriteVirtualMemory</b>(hProcess, lpAllocationStart, (PVOID)dllPath, strlen(dllPath), nullptr);<br/>
+<br/>
+  <b>NtCreateThreadEx</b>(&amp;hThread, GENERIC_EXECUTE, NULL, hProcess, lpStartAddress, lpAllocationStart, FALSE, 0, 0, 0, nullptr);<br/>
+}<br/>
+<b>==========================================================</b><br/>
+<span style="font-size: 16pt"><u>Common functions Using the --preset common option will create a Header/ASM pair with the following functions:<br/>
+</u></span><br/>
+NtCreateProcess (CreateProcess)<br/>
+NtCreateThreadEx (CreateRemoteThread)<br/>
+NtOpenProcess (OpenProcess)<br/>
+NtOpenThread (OpenThread)<br/>
+NtSuspendProcess<br/>
+NtSuspendThread (SuspendThread)<br/>
+NtResumeProcess<br/>
+NtResumeThread (ResumeThread)<br/>
+NtGetContextThread (GetThreadContext)<br/>
+NtSetContextThread (SetThreadContext)<br/>
+NtClose (CloseHandle)<br/>
+NtReadVirtualMemory (ReadProcessMemory)<br/>
+NtWriteVirtualMemory (WriteProcessMemory)<br/>
+NtAllocateVirtualMemory (VirtualAllocEx)<br/>
+NtProtectVirtualMemory (VirtualProtectEx)<br/>
+NtFreeVirtualMemory (VirtualFreeEx)<br/>
+NtQuerySystemInformation (GetSystemInfo)<br/>
+NtQueryDirectoryFile<br/>
+NtQueryInformationFile<br/>
+NtQueryInformationProcess<br/>
+NtQueryInformationThread<br/>
+NtCreateSection (CreateFileMapping)<br/>
+NtOpenSection<br/>
+NtMapViewOfSection<br/>
+NtUnmapViewOfSection<br/>
+NtAdjustPrivilegesToken (AdjustTokenPrivileges)<br/>
+NtDeviceIoControlFile (DeviceIoControl)<br/>
+NtQueueApcThread (QueueUserAPC)<br/>
+NtWaitForMultipleObjects (WaitForMultipleObjectsEx)<br/>
+<br/>
+<b>==========================================================</b><br/>
+<br/>
+<u><span style="font-size: 20pt"><b>Import into Visual Studio</b></span></u><ul><span style="font-size: 16pt"><li style="list-style-type: none">- Copy the generated H/C/ASM files to the project directory. </li>
+<li style="list-style-type: none">- In Visual Studio, click &quot;Project → Build Customizations...&quot; and <b>enable MASM</b>. In Solution Explorer, <b>add .h and .c/.asm files to the project as Header and Source files</b>. </li>
+<li style="list-style-type: none">- Click the properties of the ASM file and <b>set the Item Type to Microsoft Macro Assembler</b>. </li>
+</span><li style="list-style-type: none"><span style="font-size: 16pt">- Make sure the project platform is set to x64 as 32-bit projects are not yet supported.</span></li>
+</ul>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</tt></body></html>

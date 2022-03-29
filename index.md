@@ -18,7 +18,6 @@ h2 {font-size: 12px;}
 
 <p><strong style="color: red;"> >></strong> I used to have a girlfriend but she ransomware, so I wannacry.</p>
 
-<p><strong style="color: red;"> >></strong> Gotta love a bad joke.</p>
         
 <h1><span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-terminal fa-stack-1x fa-inverse"></i></span>  cd ../../</h1>
 

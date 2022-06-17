@@ -22,8 +22,9 @@ h2 {font-size: 12px;}
         <div class="header-right">
           <ul>
             <li><a href="/notebook/index.html">Notes</a><p>    - Archived Notes, it's years of content that I no longer know how to organize. Sorry.  ~  Contains malicious script</p></li>
-            <li><a href="https://github.com/AchocolatechipPancake/DuckyWin10">Rubber Ducky Stuff</a><p>    - Few of my recent ducky scripts </p></li>
+            <li><a href="https://github.com/AchocolatechipPancake/FUD_x64_Loader">FUD_x64_Loader</a><p>    - Built alongside BIN ENCODE. Utilizing alternative shellcode execution via callbacks. </p></li>
             <li><a href="https://github.com/AchocolatechipPancake/encode_payload">BIN ENCODE - C++</a><p>    - XOR/AES encode a .bin/.raw payload via given key w/ C++ decode stub. Also includes post base64 output.</p></li>  
+            <li><a href="https://github.com/AchocolatechipPancake/DuckyWin10">Rubber Ducky Stuff</a><p>    - Few of my recent ducky scripts </p></li>
             <li><a href="https://github.com/AchocolatechipPancake/Process_Hollow_shellcode">Process Hollow Shellcode Loader [P]</a><p>    - use XOR encypter on payload.</p></li>  
             <li><a href="https://github.com/AchocolatechipPancake/MS-MSDT-Office-RCE-Follina">MS-MSDT-Office-RCE-Follina </a><p>    - CVE-2022-30190 POC / Payloads</p></li>  
             
